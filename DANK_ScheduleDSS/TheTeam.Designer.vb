@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class TheTeam
+Partial Class frmTeam
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,214 +22,214 @@ Partial Class TheTeam
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(TheTeam))
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmTeam))
+        Me.lblAlexName = New System.Windows.Forms.Label()
+        Me.lblCodyName = New System.Windows.Forms.Label()
+        Me.lblDiamondName = New System.Windows.Forms.Label()
+        Me.lblKaraName = New System.Windows.Forms.Label()
+        Me.lblNolanName = New System.Windows.Forms.Label()
+        Me.lblAlexEmail = New System.Windows.Forms.Label()
+        Me.lblCodyEmail = New System.Windows.Forms.Label()
+        Me.lblDiamondEmail = New System.Windows.Forms.Label()
+        Me.lblKaraEmail = New System.Windows.Forms.Label()
+        Me.lblNolanEmail = New System.Windows.Forms.Label()
+        Me.picAlex = New System.Windows.Forms.PictureBox()
+        Me.picCody = New System.Windows.Forms.PictureBox()
+        Me.picDiamond = New System.Windows.Forms.PictureBox()
+        Me.picKara = New System.Windows.Forms.PictureBox()
+        Me.picNolan = New System.Windows.Forms.PictureBox()
+        CType(Me.picAlex, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picCody, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picDiamond, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picKara, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picNolan, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'Label1
+        'lblAlexName
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(345, 52)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(166, 25)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Alexander Hahn"
+        Me.lblAlexName.AutoSize = True
+        Me.lblAlexName.Location = New System.Drawing.Point(345, 52)
+        Me.lblAlexName.Name = "lblAlexName"
+        Me.lblAlexName.Size = New System.Drawing.Size(166, 25)
+        Me.lblAlexName.TabIndex = 0
+        Me.lblAlexName.Text = "Alexander Hahn"
         '
-        'Label2
+        'lblCodyName
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(918, 116)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(145, 25)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Cody Dewees"
+        Me.lblCodyName.AutoSize = True
+        Me.lblCodyName.Location = New System.Drawing.Point(918, 116)
+        Me.lblCodyName.Name = "lblCodyName"
+        Me.lblCodyName.Size = New System.Drawing.Size(145, 25)
+        Me.lblCodyName.TabIndex = 1
+        Me.lblCodyName.Text = "Cody Dewees"
         '
-        'Label3
+        'lblDiamondName
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(608, 354)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(139, 25)
-        Me.Label3.TabIndex = 2
-        Me.Label3.Text = "Diamond Lee"
+        Me.lblDiamondName.AutoSize = True
+        Me.lblDiamondName.Location = New System.Drawing.Point(608, 354)
+        Me.lblDiamondName.Name = "lblDiamondName"
+        Me.lblDiamondName.Size = New System.Drawing.Size(139, 25)
+        Me.lblDiamondName.TabIndex = 2
+        Me.lblDiamondName.Text = "Diamond Lee"
         '
-        'Label4
+        'lblKaraName
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(1052, 546)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(119, 25)
-        Me.Label4.TabIndex = 3
-        Me.Label4.Text = "Kara Wong"
+        Me.lblKaraName.AutoSize = True
+        Me.lblKaraName.Location = New System.Drawing.Point(1052, 546)
+        Me.lblKaraName.Name = "lblKaraName"
+        Me.lblKaraName.Size = New System.Drawing.Size(119, 25)
+        Me.lblKaraName.TabIndex = 3
+        Me.lblKaraName.Text = "Kara Wong"
         '
-        'Label5
+        'lblNolanName
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(295, 742)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(134, 25)
-        Me.Label5.TabIndex = 4
-        Me.Label5.Text = "Nolan Turley"
+        Me.lblNolanName.AutoSize = True
+        Me.lblNolanName.Location = New System.Drawing.Point(295, 742)
+        Me.lblNolanName.Name = "lblNolanName"
+        Me.lblNolanName.Size = New System.Drawing.Size(134, 25)
+        Me.lblNolanName.TabIndex = 4
+        Me.lblNolanName.Text = "Nolan Turley"
         '
-        'Label6
+        'lblAlexEmail
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(361, 81)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(185, 25)
-        Me.Label6.TabIndex = 5
-        Me.Label6.Text = "AlexHahn@vt.edu"
+        Me.lblAlexEmail.AutoSize = True
+        Me.lblAlexEmail.Location = New System.Drawing.Point(361, 81)
+        Me.lblAlexEmail.Name = "lblAlexEmail"
+        Me.lblAlexEmail.Size = New System.Drawing.Size(180, 25)
+        Me.lblAlexEmail.TabIndex = 5
+        Me.lblAlexEmail.Text = "alexhahn@vt.edu"
         '
-        'Label7
+        'lblCodyEmail
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(939, 145)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(169, 25)
-        Me.Label7.TabIndex = 6
-        Me.Label7.Text = "Codywd@vt.edu"
+        Me.lblCodyEmail.AutoSize = True
+        Me.lblCodyEmail.Location = New System.Drawing.Point(939, 145)
+        Me.lblCodyEmail.Name = "lblCodyEmail"
+        Me.lblCodyEmail.Size = New System.Drawing.Size(165, 25)
+        Me.lblCodyEmail.TabIndex = 6
+        Me.lblCodyEmail.Text = "codywd@vt.edu"
         '
-        'Label8
+        'lblDiamondEmail
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(634, 383)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(189, 25)
-        Me.Label8.TabIndex = 7
-        Me.Label8.Text = "Diamond7@vt.edu"
+        Me.lblDiamondEmail.AutoSize = True
+        Me.lblDiamondEmail.Location = New System.Drawing.Point(634, 383)
+        Me.lblDiamondEmail.Name = "lblDiamondEmail"
+        Me.lblDiamondEmail.Size = New System.Drawing.Size(189, 25)
+        Me.lblDiamondEmail.TabIndex = 7
+        Me.lblDiamondEmail.Text = "Diamond7@vt.edu"
         '
-        'Label9
+        'lblKaraEmail
         '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(1073, 582)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(185, 25)
-        Me.Label9.TabIndex = 8
-        Me.Label9.Text = "karawong@vt.edu"
+        Me.lblKaraEmail.AutoSize = True
+        Me.lblKaraEmail.Location = New System.Drawing.Point(1073, 582)
+        Me.lblKaraEmail.Name = "lblKaraEmail"
+        Me.lblKaraEmail.Size = New System.Drawing.Size(185, 25)
+        Me.lblKaraEmail.TabIndex = 8
+        Me.lblKaraEmail.Text = "karawong@vt.edu"
         '
-        'Label10
+        'lblNolanEmail
         '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(316, 771)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(151, 25)
-        Me.Label10.TabIndex = 9
-        Me.Label10.Text = "nolant@vt.edu"
+        Me.lblNolanEmail.AutoSize = True
+        Me.lblNolanEmail.Location = New System.Drawing.Point(316, 771)
+        Me.lblNolanEmail.Name = "lblNolanEmail"
+        Me.lblNolanEmail.Size = New System.Drawing.Size(151, 25)
+        Me.lblNolanEmail.TabIndex = 9
+        Me.lblNolanEmail.Text = "nolant@vt.edu"
         '
-        'PictureBox1
+        'picAlex
         '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(12, 12)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(327, 314)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 10
-        Me.PictureBox1.TabStop = False
+        Me.picAlex.Image = CType(resources.GetObject("picAlex.Image"), System.Drawing.Image)
+        Me.picAlex.Location = New System.Drawing.Point(12, 12)
+        Me.picAlex.Name = "picAlex"
+        Me.picAlex.Size = New System.Drawing.Size(327, 314)
+        Me.picAlex.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.picAlex.TabIndex = 10
+        Me.picAlex.TabStop = False
         '
-        'PictureBox2
+        'picCody
         '
-        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(660, 81)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(241, 225)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox2.TabIndex = 11
-        Me.PictureBox2.TabStop = False
+        Me.picCody.Image = CType(resources.GetObject("picCody.Image"), System.Drawing.Image)
+        Me.picCody.Location = New System.Drawing.Point(660, 81)
+        Me.picCody.Name = "picCody"
+        Me.picCody.Size = New System.Drawing.Size(241, 225)
+        Me.picCody.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.picCody.TabIndex = 11
+        Me.picCody.TabStop = False
         '
-        'PictureBox3
+        'picDiamond
         '
-        Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
-        Me.PictureBox3.Location = New System.Drawing.Point(310, 341)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(284, 266)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox3.TabIndex = 12
-        Me.PictureBox3.TabStop = False
+        Me.picDiamond.Image = CType(resources.GetObject("picDiamond.Image"), System.Drawing.Image)
+        Me.picDiamond.Location = New System.Drawing.Point(310, 341)
+        Me.picDiamond.Name = "picDiamond"
+        Me.picDiamond.Size = New System.Drawing.Size(284, 266)
+        Me.picDiamond.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.picDiamond.TabIndex = 12
+        Me.picDiamond.TabStop = False
         '
-        'PictureBox4
+        'picKara
         '
-        Me.PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), System.Drawing.Image)
-        Me.PictureBox4.Location = New System.Drawing.Point(723, 523)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(324, 274)
-        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox4.TabIndex = 13
-        Me.PictureBox4.TabStop = False
+        Me.picKara.Image = CType(resources.GetObject("picKara.Image"), System.Drawing.Image)
+        Me.picKara.Location = New System.Drawing.Point(723, 523)
+        Me.picKara.Name = "picKara"
+        Me.picKara.Size = New System.Drawing.Size(324, 274)
+        Me.picKara.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.picKara.TabIndex = 13
+        Me.picKara.TabStop = False
         '
-        'PictureBox5
+        'picNolan
         '
-        Me.PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), System.Drawing.Image)
-        Me.PictureBox5.Location = New System.Drawing.Point(24, 556)
-        Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(265, 338)
-        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox5.TabIndex = 14
-        Me.PictureBox5.TabStop = False
+        Me.picNolan.Image = CType(resources.GetObject("picNolan.Image"), System.Drawing.Image)
+        Me.picNolan.Location = New System.Drawing.Point(24, 556)
+        Me.picNolan.Name = "picNolan"
+        Me.picNolan.Size = New System.Drawing.Size(265, 338)
+        Me.picNolan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.picNolan.TabIndex = 14
+        Me.picNolan.TabStop = False
         '
-        'TheTeam
+        'frmTeam
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1270, 929)
-        Me.Controls.Add(Me.PictureBox5)
-        Me.Controls.Add(Me.PictureBox4)
-        Me.Controls.Add(Me.PictureBox3)
-        Me.Controls.Add(Me.PictureBox2)
-        Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.Label10)
-        Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
-        Me.Name = "TheTeam"
-        Me.Text = "TheTeam"
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Controls.Add(Me.picNolan)
+        Me.Controls.Add(Me.picKara)
+        Me.Controls.Add(Me.picDiamond)
+        Me.Controls.Add(Me.picCody)
+        Me.Controls.Add(Me.picAlex)
+        Me.Controls.Add(Me.lblNolanEmail)
+        Me.Controls.Add(Me.lblKaraEmail)
+        Me.Controls.Add(Me.lblDiamondEmail)
+        Me.Controls.Add(Me.lblCodyEmail)
+        Me.Controls.Add(Me.lblAlexEmail)
+        Me.Controls.Add(Me.lblNolanName)
+        Me.Controls.Add(Me.lblKaraName)
+        Me.Controls.Add(Me.lblDiamondName)
+        Me.Controls.Add(Me.lblCodyName)
+        Me.Controls.Add(Me.lblAlexName)
+        Me.Name = "frmTeam"
+        Me.Text = "The Team"
+        CType(Me.picAlex, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picCody, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picDiamond, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picKara, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picNolan, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Label6 As Label
-    Friend WithEvents Label7 As Label
-    Friend WithEvents Label8 As Label
-    Friend WithEvents Label9 As Label
-    Friend WithEvents Label10 As Label
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents PictureBox3 As PictureBox
-    Friend WithEvents PictureBox4 As PictureBox
-    Friend WithEvents PictureBox5 As PictureBox
+    Friend WithEvents lblAlexName As Label
+    Friend WithEvents lblCodyName As Label
+    Friend WithEvents lblDiamondName As Label
+    Friend WithEvents lblKaraName As Label
+    Friend WithEvents lblNolanName As Label
+    Friend WithEvents lblAlexEmail As Label
+    Friend WithEvents lblCodyEmail As Label
+    Friend WithEvents lblDiamondEmail As Label
+    Friend WithEvents lblKaraEmail As Label
+    Friend WithEvents lblNolanEmail As Label
+    Friend WithEvents picAlex As PictureBox
+    Friend WithEvents picCody As PictureBox
+    Friend WithEvents picDiamond As PictureBox
+    Friend WithEvents picKara As PictureBox
+    Friend WithEvents picNolan As PictureBox
 End Class

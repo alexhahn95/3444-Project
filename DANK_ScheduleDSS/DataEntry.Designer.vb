@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class DataEntry
+Partial Class frmDataEntry
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,45 +22,45 @@ Partial Class DataEntry
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.CheckedListBox1 = New System.Windows.Forms.CheckedListBox()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblClassSelect = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
+        Me.lblWeights = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.TextBox7 = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.TextBox8 = New System.Windows.Forms.TextBox()
+        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.TextBox9 = New System.Windows.Forms.TextBox()
+        Me.TextBox10 = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
-        'CheckedListBox1
+        'lblClassSelect
         '
-        Me.CheckedListBox1.FormattingEnabled = True
-        Me.CheckedListBox1.Location = New System.Drawing.Point(12, 78)
-        Me.CheckedListBox1.Name = "CheckedListBox1"
-        Me.CheckedListBox1.Size = New System.Drawing.Size(272, 576)
-        Me.CheckedListBox1.TabIndex = 0
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(16, 28)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(268, 25)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Please select your classes"
+        Me.lblClassSelect.AutoSize = True
+        Me.lblClassSelect.Location = New System.Drawing.Point(396, 392)
+        Me.lblClassSelect.Name = "lblClassSelect"
+        Me.lblClassSelect.Size = New System.Drawing.Size(268, 25)
+        Me.lblClassSelect.TabIndex = 1
+        Me.lblClassSelect.Text = "Please select your classes"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(569, 116)
+        Me.Label2.Location = New System.Drawing.Point(253, 100)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(90, 25)
         Me.Label2.TabIndex = 2
@@ -69,150 +69,237 @@ Partial Class DataEntry
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(498, 188)
+        Me.Label3.Location = New System.Drawing.Point(152, 259)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(191, 25)
         Me.Label3.TabIndex = 3
         Me.Label3.Text = "Tuesday Thursday"
         '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(414, 262)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(275, 25)
-        Me.Label4.TabIndex = 4
-        Me.Label4.Text = "Monday Wednesday Friday"
-        '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(695, 116)
+        Me.TextBox1.Location = New System.Drawing.Point(379, 94)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(100, 31)
         Me.TextBox1.TabIndex = 5
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(695, 188)
+        Me.TextBox2.Location = New System.Drawing.Point(379, 259)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(100, 31)
         Me.TextBox2.TabIndex = 6
         '
         'TextBox3
         '
-        Me.TextBox3.Location = New System.Drawing.Point(695, 262)
+        Me.TextBox3.Location = New System.Drawing.Point(379, 310)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(100, 31)
         Me.TextBox3.TabIndex = 7
         '
-        'Label5
+        'lblWeights
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(414, 42)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(424, 25)
-        Me.Label5.TabIndex = 8
-        Me.Label5.Text = "Enter your desigered time for each variable"
+        Me.lblWeights.AutoSize = True
+        Me.lblWeights.Location = New System.Drawing.Point(98, 46)
+        Me.lblWeights.Name = "lblWeights"
+        Me.lblWeights.Size = New System.Drawing.Size(359, 25)
+        Me.lblWeights.TabIndex = 8
+        Me.lblWeights.Text = "Enter desired hours for each section" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(414, 370)
+        Me.Label6.Location = New System.Drawing.Point(570, 46)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(449, 25)
         Me.Label6.TabIndex = 9
         Me.Label6.Text = "Enter your allowed deviation for each variable"
         '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(611, 94)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(0, 25)
+        Me.Label9.TabIndex = 10
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(68, 310)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(275, 25)
+        Me.Label4.TabIndex = 4
+        Me.Label4.Text = "Monday Wednesday Friday"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(253, 146)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(90, 25)
+        Me.Label1.TabIndex = 16
+        Me.Label1.Text = "Morning"
+        '
+        'TextBox7
+        '
+        Me.TextBox7.Location = New System.Drawing.Point(379, 146)
+        Me.TextBox7.Name = "TextBox7"
+        Me.TextBox7.Size = New System.Drawing.Size(100, 31)
+        Me.TextBox7.TabIndex = 17
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(134, 204)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(209, 25)
+        Me.Label5.TabIndex = 18
+        Me.Label5.Text = "Monday Wednesday"
+        '
+        'TextBox8
+        '
+        Me.TextBox8.Location = New System.Drawing.Point(379, 204)
+        Me.TextBox8.Name = "TextBox8"
+        Me.TextBox8.Size = New System.Drawing.Size(100, 31)
+        Me.TextBox8.TabIndex = 19
+        '
         'TextBox4
         '
-        Me.TextBox4.Location = New System.Drawing.Point(695, 568)
+        Me.TextBox4.Location = New System.Drawing.Point(893, 204)
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.Size = New System.Drawing.Size(100, 31)
-        Me.TextBox4.TabIndex = 15
-        '
-        'TextBox5
-        '
-        Me.TextBox5.Location = New System.Drawing.Point(695, 494)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(100, 31)
-        Me.TextBox5.TabIndex = 14
-        '
-        'TextBox6
-        '
-        Me.TextBox6.Location = New System.Drawing.Point(695, 422)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(100, 31)
-        Me.TextBox6.TabIndex = 13
+        Me.TextBox4.TabIndex = 29
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(414, 568)
+        Me.Label7.Location = New System.Drawing.Point(648, 204)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(275, 25)
-        Me.Label7.TabIndex = 12
-        Me.Label7.Text = "Monday Wednesday Friday"
+        Me.Label7.Size = New System.Drawing.Size(209, 25)
+        Me.Label7.TabIndex = 28
+        Me.Label7.Text = "Monday Wednesday"
+        '
+        'TextBox5
+        '
+        Me.TextBox5.Location = New System.Drawing.Point(893, 146)
+        Me.TextBox5.Name = "TextBox5"
+        Me.TextBox5.Size = New System.Drawing.Size(100, 31)
+        Me.TextBox5.TabIndex = 27
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(498, 494)
+        Me.Label8.Location = New System.Drawing.Point(767, 146)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(191, 25)
-        Me.Label8.TabIndex = 11
-        Me.Label8.Text = "Tuesday Thursday"
+        Me.Label8.Size = New System.Drawing.Size(90, 25)
+        Me.Label8.TabIndex = 26
+        Me.Label8.Text = "Morning"
         '
-        'Label9
+        'TextBox6
         '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(569, 422)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(90, 25)
-        Me.Label9.TabIndex = 10
-        Me.Label9.Text = "Evening"
+        Me.TextBox6.Location = New System.Drawing.Point(893, 310)
+        Me.TextBox6.Name = "TextBox6"
+        Me.TextBox6.Size = New System.Drawing.Size(100, 31)
+        Me.TextBox6.TabIndex = 25
         '
-        'DataEntry
+        'TextBox9
+        '
+        Me.TextBox9.Location = New System.Drawing.Point(893, 259)
+        Me.TextBox9.Name = "TextBox9"
+        Me.TextBox9.Size = New System.Drawing.Size(100, 31)
+        Me.TextBox9.TabIndex = 24
+        '
+        'TextBox10
+        '
+        Me.TextBox10.Location = New System.Drawing.Point(893, 94)
+        Me.TextBox10.Name = "TextBox10"
+        Me.TextBox10.Size = New System.Drawing.Size(100, 31)
+        Me.TextBox10.TabIndex = 23
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(582, 310)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(275, 25)
+        Me.Label10.TabIndex = 22
+        Me.Label10.Text = "Monday Wednesday Friday"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(666, 259)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(191, 25)
+        Me.Label11.TabIndex = 21
+        Me.Label11.Text = "Tuesday Thursday"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(767, 100)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(90, 25)
+        Me.Label12.TabIndex = 20
+        Me.Label12.Text = "Evening"
+        '
+        'frmDataEntry
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(906, 681)
+        Me.ClientSize = New System.Drawing.Size(1178, 1135)
         Me.Controls.Add(Me.TextBox4)
-        Me.Controls.Add(Me.TextBox5)
-        Me.Controls.Add(Me.TextBox6)
         Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.TextBox5)
         Me.Controls.Add(Me.Label8)
+        Me.Controls.Add(Me.TextBox6)
+        Me.Controls.Add(Me.TextBox9)
+        Me.Controls.Add(Me.TextBox10)
+        Me.Controls.Add(Me.Label10)
+        Me.Controls.Add(Me.Label11)
+        Me.Controls.Add(Me.Label12)
+        Me.Controls.Add(Me.TextBox8)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.TextBox7)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.lblWeights)
         Me.Controls.Add(Me.TextBox3)
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.CheckedListBox1)
-        Me.Name = "DataEntry"
-        Me.Text = "S"
+        Me.Controls.Add(Me.lblClassSelect)
+        Me.Name = "frmDataEntry"
+        Me.Text = "Data Entry"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents CheckedListBox1 As CheckedListBox
-    Friend WithEvents Label1 As Label
+    Friend WithEvents lblClassSelect As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents Label5 As Label
+    Friend WithEvents lblWeights As Label
     Friend WithEvents Label6 As Label
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents TextBox6 As TextBox
-    Friend WithEvents Label7 As Label
-    Friend WithEvents Label8 As Label
     Friend WithEvents Label9 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents TextBox7 As TextBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents TextBox8 As TextBox
+    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents TextBox5 As TextBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents TextBox6 As TextBox
+    Friend WithEvents TextBox9 As TextBox
+    Friend WithEvents TextBox10 As TextBox
+    Friend WithEvents Label10 As Label
+    Friend WithEvents Label11 As Label
+    Friend WithEvents Label12 As Label
 End Class

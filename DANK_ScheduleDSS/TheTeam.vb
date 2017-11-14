@@ -1,3 +1,3 @@
-﻿Public Class TheTeam
+﻿Public Class frmTeam
 
 End Class

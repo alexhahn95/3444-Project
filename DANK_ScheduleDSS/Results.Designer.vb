@@ -22,105 +22,105 @@ Partial Class Results
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Monday = New System.Windows.Forms.Label()
-        Me.Tuesday = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.TableLayoutPanel1.SuspendLayout()
+        Me.tblResults = New System.Windows.Forms.TableLayoutPanel()
+        Me.lblMonday = New System.Windows.Forms.Label()
+        Me.lblTuesday = New System.Windows.Forms.Label()
+        Me.lblWednesday = New System.Windows.Forms.Label()
+        Me.lblThursday = New System.Windows.Forms.Label()
+        Me.lblFriday = New System.Windows.Forms.Label()
+        Me.tblResults.SuspendLayout()
         Me.SuspendLayout()
         '
-        'TableLayoutPanel1
+        'tblResults
         '
-        Me.TableLayoutPanel1.ColumnCount = 5
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
-        Me.TableLayoutPanel1.Controls.Add(Me.Monday, 0, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.Tuesday, 1, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.Label3, 2, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.Label4, 3, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.Label5, 4, 0)
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(39, 30)
-        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
-        Me.TableLayoutPanel1.RowCount = 8
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(1214, 818)
-        Me.TableLayoutPanel1.TabIndex = 0
+        Me.tblResults.ColumnCount = 5
+        Me.tblResults.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.tblResults.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.tblResults.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.tblResults.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.tblResults.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.tblResults.Controls.Add(Me.lblMonday, 0, 0)
+        Me.tblResults.Controls.Add(Me.lblTuesday, 1, 0)
+        Me.tblResults.Controls.Add(Me.lblWednesday, 2, 0)
+        Me.tblResults.Controls.Add(Me.lblThursday, 3, 0)
+        Me.tblResults.Controls.Add(Me.lblFriday, 4, 0)
+        Me.tblResults.Location = New System.Drawing.Point(39, 30)
+        Me.tblResults.Name = "tblResults"
+        Me.tblResults.RowCount = 8
+        Me.tblResults.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5!))
+        Me.tblResults.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5!))
+        Me.tblResults.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5!))
+        Me.tblResults.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5!))
+        Me.tblResults.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5!))
+        Me.tblResults.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5!))
+        Me.tblResults.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5!))
+        Me.tblResults.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5!))
+        Me.tblResults.Size = New System.Drawing.Size(1214, 818)
+        Me.tblResults.TabIndex = 0
         '
-        'Monday
+        'lblMonday
         '
-        Me.Monday.AutoSize = True
-        Me.Monday.Location = New System.Drawing.Point(3, 0)
-        Me.Monday.Name = "Monday"
-        Me.Monday.Size = New System.Drawing.Size(89, 25)
-        Me.Monday.TabIndex = 0
-        Me.Monday.Text = "Monday"
+        Me.lblMonday.AutoSize = True
+        Me.lblMonday.Location = New System.Drawing.Point(3, 0)
+        Me.lblMonday.Name = "lblMonday"
+        Me.lblMonday.Size = New System.Drawing.Size(89, 25)
+        Me.lblMonday.TabIndex = 0
+        Me.lblMonday.Text = "Monday"
         '
-        'Tuesday
+        'lblTuesday
         '
-        Me.Tuesday.AutoSize = True
-        Me.Tuesday.Location = New System.Drawing.Point(245, 0)
-        Me.Tuesday.Name = "Tuesday"
-        Me.Tuesday.Size = New System.Drawing.Size(95, 25)
-        Me.Tuesday.TabIndex = 1
-        Me.Tuesday.Text = "Tuesday"
+        Me.lblTuesday.AutoSize = True
+        Me.lblTuesday.Location = New System.Drawing.Point(245, 0)
+        Me.lblTuesday.Name = "lblTuesday"
+        Me.lblTuesday.Size = New System.Drawing.Size(95, 25)
+        Me.lblTuesday.TabIndex = 1
+        Me.lblTuesday.Text = "Tuesday"
         '
-        'Label3
+        'lblWednesday
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(487, 0)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(126, 25)
-        Me.Label3.TabIndex = 2
-        Me.Label3.Text = "Wednesday"
+        Me.lblWednesday.AutoSize = True
+        Me.lblWednesday.Location = New System.Drawing.Point(487, 0)
+        Me.lblWednesday.Name = "lblWednesday"
+        Me.lblWednesday.Size = New System.Drawing.Size(126, 25)
+        Me.lblWednesday.TabIndex = 2
+        Me.lblWednesday.Text = "Wednesday"
         '
-        'Label4
+        'lblThursday
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(729, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(102, 25)
-        Me.Label4.TabIndex = 3
-        Me.Label4.Text = "Thursday"
+        Me.lblThursday.AutoSize = True
+        Me.lblThursday.Location = New System.Drawing.Point(729, 0)
+        Me.lblThursday.Name = "lblThursday"
+        Me.lblThursday.Size = New System.Drawing.Size(102, 25)
+        Me.lblThursday.TabIndex = 3
+        Me.lblThursday.Text = "Thursday"
         '
-        'Label5
+        'lblFriday
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(971, 0)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(72, 25)
-        Me.Label5.TabIndex = 4
-        Me.Label5.Text = "Friday"
+        Me.lblFriday.AutoSize = True
+        Me.lblFriday.Location = New System.Drawing.Point(971, 0)
+        Me.lblFriday.Name = "lblFriday"
+        Me.lblFriday.Size = New System.Drawing.Size(72, 25)
+        Me.lblFriday.TabIndex = 4
+        Me.lblFriday.Text = "Friday"
         '
         'Results
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1286, 881)
-        Me.Controls.Add(Me.TableLayoutPanel1)
+        Me.Controls.Add(Me.tblResults)
         Me.Name = "Results"
         Me.Text = "Results"
-        Me.TableLayoutPanel1.ResumeLayout(False)
-        Me.TableLayoutPanel1.PerformLayout()
+        Me.tblResults.ResumeLayout(False)
+        Me.tblResults.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
-    Friend WithEvents Monday As Label
-    Friend WithEvents Tuesday As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label5 As Label
+    Friend WithEvents tblResults As TableLayoutPanel
+    Friend WithEvents lblMonday As Label
+    Friend WithEvents lblTuesday As Label
+    Friend WithEvents lblWednesday As Label
+    Friend WithEvents lblThursday As Label
+    Friend WithEvents lblFriday As Label
 End Class

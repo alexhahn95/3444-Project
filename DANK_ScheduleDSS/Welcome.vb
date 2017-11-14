@@ -1,3 +1,3 @@
-﻿Public Class Welcome
+﻿Public Class frmWelcome
 
 End Class

@@ -1,4 +1,4 @@
-﻿Public Class DataEntry
+﻿Public Class frmDataEntry
 
     Dim eveningHoursGoal As Integer
     Dim tuesdayThursdayGoal As Integer
@@ -15,53 +15,54 @@
     Dim deviationMondayWednesday As Integer
 
     'Reads the input data
-    Private Sub readData()
+    Private Sub ReadData()
 
     End Sub
 
     'calculates the hours using the stuff
-    Private Function calculateHours(ByRef goalHours, ByRef deviation)
+    Private Function CalculateHours(ByRef goalHours, ByRef deviation)
 
     End Function
 
     'scores each possible schedule, which really this might all be solver so possible ignore this
-    Private Function calculateScoreOfSchedule(ByRef periods(,), ByRef rowIndex)
+    Private Function CalculateScoreOfSchedule(ByRef periods(,), ByRef rowIndex)
 
     End Function
 
     'Mail that data to solver
-    Private Sub sendToSolver()
+    Private Sub SendToSolver()
 
     End Sub
 
     Private Sub Main()
-        readData()
-        calculateHours()
-        calculateScoreOfSchedule()
+        'readData()
+        'CalculateHours()
+        'CalculateScoreOfSchedule()
 
     End Sub
 
-    Private Sub showWelcome()
+
+    'Private Sub ShowWelcome()
 
     End Sub
 
-    Private Sub showTheTeam()
+    Private Sub ShowTheTeam()
 
     End Sub
 
-    Private Sub showResults()
+    Private Sub ShowResults()
 
     End Sub
 
-    Private Sub showHomeScreen()
+    Private Sub ShowHomeScreen()
 
     End Sub
 
-    Private Sub showDataEntry()
+    Private Sub ShowDataEntry()
 
     End Sub
 
-    Private Sub readPassword()
+    Private Sub ReadPassword()
 
     End Sub
 

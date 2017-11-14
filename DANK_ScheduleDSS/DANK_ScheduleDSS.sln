@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DANK_ScheduleDSS", "DANK_ScheduleDSS.vbproj", "{6B250D93-8DDD-4C07-874F-A28E067B0FEB}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DANK_ScheduleDSS", "DANK_ScheduleDSS.vbproj", "{FD928762-CD48-448E-B86C-2FC6A97CE27A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,12 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6B250D93-8DDD-4C07-874F-A28E067B0FEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6B250D93-8DDD-4C07-874F-A28E067B0FEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6B250D93-8DDD-4C07-874F-A28E067B0FEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6B250D93-8DDD-4C07-874F-A28E067B0FEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD928762-CD48-448E-B86C-2FC6A97CE27A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD928762-CD48-448E-B86C-2FC6A97CE27A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD928762-CD48-448E-B86C-2FC6A97CE27A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD928762-CD48-448E-B86C-2FC6A97CE27A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2700AB68-6B5B-4AB1-B90F-3187A93B60DF}
 	EndGlobalSection
 EndGlobal

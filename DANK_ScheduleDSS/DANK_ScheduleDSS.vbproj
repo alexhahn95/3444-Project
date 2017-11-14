@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6B250D93-8DDD-4C07-874F-A28E067B0FEB}</ProjectGuid>
+    <ProjectGuid>{FD928762-CD48-448E-B86C-2FC6A97CE27A}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>DANK_ScheduleDSS.My.MyApplication</StartupObject>
-    <RootNamespace>DANK_ScheduleDSS</RootNamespace>
-    <AssemblyName>DANK_ScheduleDSS</AssemblyName>
+    <StartupObject>DANKSolutions_ClassScheduleDSS.My.MyApplication</StartupObject>
+    <RootNamespace>DANKSolutions_ClassScheduleDSS</RootNamespace>
+    <AssemblyName>DANKSolutions_ClassScheduleDSS</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -21,7 +21,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>DANK_ScheduleDSS.xml</DocumentationFile>
+    <DocumentationFile>DANKSolutions_ClassScheduleDSS.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -31,7 +31,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>DANK_ScheduleDSS.xml</DocumentationFile>
+    <DocumentationFile>DANKSolutions_ClassScheduleDSS.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
@@ -45,6 +45,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>appLogo.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -72,11 +75,37 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.vb">
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Class.vb" />
+    <Compile Include="DataEntry.Designer.vb">
+      <DependentUpon>DataEntry.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DataEntry.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="Results.Designer.vb">
+      <DependentUpon>Results.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Results.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TheTeam.Designer.vb">
+      <DependentUpon>TheTeam.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TheTeam.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Welcome.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Welcome.Designer.vb">
+      <DependentUpon>Welcome.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomeScreen.Designer.vb">
+      <DependentUpon>HomeScreen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HomeScreen.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -96,6 +125,21 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="DataEntry.resx">
+      <DependentUpon>DataEntry.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Results.resx">
+      <DependentUpon>Results.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TheTeam.resx">
+      <DependentUpon>TheTeam.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Welcome.resx">
+      <DependentUpon>Welcome.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeScreen.resx">
+      <DependentUpon>HomeScreen.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -115,12 +159,8 @@
     </None>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="appLogo.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>

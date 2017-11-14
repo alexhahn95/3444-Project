@@ -1,3 +1,3 @@
-﻿Public Class HomeScreen
+﻿Public Class frmHomeScreen
 
 End Class

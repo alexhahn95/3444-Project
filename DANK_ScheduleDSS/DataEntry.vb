@@ -43,6 +43,7 @@
 
 
     'Private Sub ShowWelcome()
+    Private Sub ShowWelcome()
 
     End Sub
 

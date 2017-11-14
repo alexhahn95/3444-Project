@@ -22,5 +22,390 @@ DANKSolutions_ClassScheduleDSS
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet.ACISDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet._ACIS__ImportErrorsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet.BITDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet._BIT__ImportErrorsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet.CSDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet._CS__ImportErrorsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet.ECONDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet._ECON__ImportErrorsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet.ENGLDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet._ENGL__ImportErrorsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet.FINDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet._FIN__ImportErrorsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet.MATHDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet._MATH__ImportErrorsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet.MGTDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet.MKTGDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet._MKTG__ImportErrorsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet.ACISRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet._ACIS__ImportErrorsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet.BITRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet._BIT__ImportErrorsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet.CSRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet._CS__ImportErrorsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet.ECONRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet._ECON__ImportErrorsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet.ENGLRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet._ENGL__ImportErrorsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet.FINRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet._FIN__ImportErrorsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet.MATHRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet._MATH__ImportErrorsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet.MGTRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet.MKTGRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet._MKTG__ImportErrorsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet.ACISRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet._ACIS__ImportErrorsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet.BITRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet._BIT__ImportErrorsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet.CSRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet._CS__ImportErrorsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet.ECONRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet._ECON__ImportErrorsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet.ENGLRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet._ENGL__ImportErrorsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet.FINRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet._FIN__ImportErrorsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet.MATHRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet._MATH__ImportErrorsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet.MGTRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet.MKTGRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet._MKTG__ImportErrorsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSetTableAdapters.ACISTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSetTableAdapters.ACIS__ImportErrorsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSetTableAdapters.BITTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSetTableAdapters.BIT__ImportErrorsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSetTableAdapters.CSTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSetTableAdapters.CS__ImportErrorsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSetTableAdapters.ECONTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSetTableAdapters.ECON__ImportErrorsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSetTableAdapters.ENGLTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSetTableAdapters.ENGL__ImportErrorsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSetTableAdapters.FINTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSetTableAdapters.FIN__ImportErrorsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSetTableAdapters.MATHTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSetTableAdapters.MATH__ImportErrorsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSetTableAdapters.MGTTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSetTableAdapters.MKTGTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSetTableAdapters.MKTG__ImportErrorsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSetTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSetTableAdapters.TableAdapterManager.UpdateInsertedRows(DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSetTableAdapters.TableAdapterManager.UpdateDeletedRows(DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSetTableAdapters.TableAdapterManager.UpdateAll(DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSetTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
 </members>
 </doc>

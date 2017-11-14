@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class HomeScreen
+Partial Class frmHomeScreen
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -93,7 +93,7 @@ Partial Class HomeScreen
         Me.Button3.Text = "View"
         Me.Button3.UseVisualStyleBackColor = True
         '
-        'HomeScreen
+        'frmHomeScreen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -105,8 +105,8 @@ Partial Class HomeScreen
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Name = "HomeScreen"
-        Me.Text = "Form2"
+        Me.Name = "frmHomeScreen"
+        Me.Text = "Home"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

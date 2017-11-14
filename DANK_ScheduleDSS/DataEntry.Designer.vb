@@ -22,6 +22,7 @@ Partial Class frmDataEntry
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.lblClassSelect = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -46,6 +47,12 @@ Partial Class frmDataEntry
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Fall2017ClassesDataSet = New DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet()
+        Me.Fall2017ClassesDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Fall2017ClassesDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Fall2017ClassesDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblClassSelect
@@ -243,11 +250,33 @@ Partial Class frmDataEntry
         Me.Label12.TabIndex = 20
         Me.Label12.Text = "Evening"
         '
+        'DataGridView1
+        '
+        Me.DataGridView1.AutoGenerateColumns = False
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.DataSource = Me.Fall2017ClassesDataSetBindingSource
+        Me.DataGridView1.Location = New System.Drawing.Point(29, 448)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.RowTemplate.Height = 33
+        Me.DataGridView1.Size = New System.Drawing.Size(1052, 446)
+        Me.DataGridView1.TabIndex = 30
+        '
+        'Fall2017ClassesDataSet
+        '
+        Me.Fall2017ClassesDataSet.DataSetName = "Fall2017ClassesDataSet"
+        Me.Fall2017ClassesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'Fall2017ClassesDataSetBindingSource
+        '
+        Me.Fall2017ClassesDataSetBindingSource.DataSource = Me.Fall2017ClassesDataSet
+        Me.Fall2017ClassesDataSetBindingSource.Position = 0
+        '
         'frmDataEntry
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1178, 1135)
+        Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.TextBox4)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.TextBox5)
@@ -274,6 +303,9 @@ Partial Class frmDataEntry
         Me.Controls.Add(Me.lblClassSelect)
         Me.Name = "frmDataEntry"
         Me.Text = "Data Entry"
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Fall2017ClassesDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Fall2017ClassesDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -302,4 +334,7 @@ Partial Class frmDataEntry
     Friend WithEvents Label10 As Label
     Friend WithEvents Label11 As Label
     Friend WithEvents Label12 As Label
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents Fall2017ClassesDataSetBindingSource As BindingSource
+    Friend WithEvents Fall2017ClassesDataSet As Fall2017ClassesDataSet
 End Class

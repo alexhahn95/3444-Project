@@ -83,6 +83,11 @@
     <Compile Include="DataEntry.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Fall2017ClassesDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Fall2017ClassesDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Results.Designer.vb">
       <DependentUpon>Results.vb</DependentUpon>
     </Compile>
@@ -148,6 +153,17 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Fall2017ClassesDataSet.xsc">
+      <DependentUpon>Fall2017ClassesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Fall2017ClassesDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Fall2017ClassesDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Fall2017ClassesDataSet.xss">
+      <DependentUpon>Fall2017ClassesDataSet.xsd</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -161,6 +177,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="appLogo.ico" />
+    <Content Include="Fall2017Classes.accdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

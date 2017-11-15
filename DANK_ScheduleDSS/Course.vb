@@ -1,38 +1,27 @@
-﻿Public Class ClassInst
+﻿Public Class Course
     'Will be when the class meets from db
     'Public Property classMeetings
-    Private Property CRN
-    Public Property Professor
-    Public Property Title
+    Public Property CRN
     Public Property Course
-    Public Property Hours
+    Public Property Title
+    Public Property Instructor
     Public Property Days
+    Public Property Begin
+    Public Property EndInst
     Public Property Location
+
 
     'Constructor
     Public Sub New(CRN As String, Professor As String, Title As String, Course As String, Hours As String, Days As String, Location As String)
         Me.CRN = CRN
-        Me.Professor = Professor
+        Me.Course = Course
         Me.Title = Title
         Me.Course = Course
-        Me.Hours = Hours
+        Me.Instructor = Instructor
         Me.Days = Days
+        Me.Begin = Begin
+        Me.EndInst = EndInst
         Me.Location = Location
 
     End Sub
-
-    'get morning hours
-    Public Function GetMorningHours()
-
-    End Function
-
-    'get evening hours
-    Public Function GetEveningHours()
-
-    End Function
-
-    'converts class to a string
-    Public Function classToString()
-
-    End Function
 End Class

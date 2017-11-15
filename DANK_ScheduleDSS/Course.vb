@@ -1,6 +1,5 @@
 ﻿Public Class Course
-    'Will be when the class meets from db
-    'Public Property classMeetings
+
     Public Property CRN
     Public Property Course
     Public Property Title
@@ -9,19 +8,11 @@
     Public Property Begin
     Public Property EndInst
     Public Property Location
+    Public Property Period
 
-
-    'Constructor
-    Public Sub New(CRN As String, Professor As String, Title As String, Course As String, Hours As String, Days As String, Location As String)
-        Me.CRN = CRN
-        Me.Course = Course
-        Me.Title = Title
-        Me.Course = Course
-        Me.Instructor = Instructor
-        Me.Days = Days
-        Me.Begin = Begin
-        Me.EndInst = EndInst
-        Me.Location = Location
-
+    Public Sub New()
+        Dim Generator As Random = New Random()
+        Me.Period = Generator.Next(0, 19)
     End Sub
+
 End Class

@@ -9,10 +9,11 @@ Public Class Optimization
     Public Sub BuildModel()
 
         CreateObjects.MakeObjects()
-        'DFL: Define the decision variables
+        'Define the decision variables
         Dim dvKey As String
         Dim dvIndex As Integer
 
+        'TODO: WHAT TO DO BELOW
         For Each Element As Enrollment In CreateObjects.EnrollmentList
             For Each activity As Activity In CreateObjects.
                 dvKey = capacity.DepartmentName & activity.ActivityName
@@ -21,7 +22,7 @@ Public Class Optimization
             Next
         Next
 
-        'DFL: Create capacity constraints for departments
+        'Create capacity constraints for departments
         Dim coefficient As Single
         Dim constraintKey As String
         Dim constraintIndex As Integer
@@ -29,17 +30,18 @@ Public Class Optimization
 
         For Each capacity As Capacity In IC5CreateObjects.CapacityList
             constraintKey = "Capacity Constraint_" & capacity.DepartmentName
-            IC5Solver.AddRow(constraintKey, constraintIndex)
-            For Each activity As Activity In IC5CreateObjects.ActivityList
+            Solver.AddRow(constraintKey, constraintIndex)
+            For Each activity As Activity In CreateObjects.ActivityList
                 coefficient = 1
                 dvKey = "BIT_Activity 1"
                 dvIndex = IC5Solver.GetIndexFromKey(dvKey)
                 IC5Solver.SetCoefficient(constraintIndex, dvIndex, coefficient)
             Next
-            IC5Solver.SetBounds(constraintIndex, 0, capacity.Capacity)
+            Solver.SetBounds(constraintIndex, 0, capacity.Capacity)
 
         Next
-        'DFL: Acitivty Coverage Constraints
+
+        'Acitivty Coverage Constraints
         For Each activity As Activity In IC5CreateObjects.ActivityList
             constraintKey = "Activity Constraint_" & activity.ActivityName
             IC5Solver.AddRow(constraintKey, constraintIndex)
@@ -53,7 +55,7 @@ Public Class Optimization
 
         Next
 
-        'DFL: Define the objective
+        'Define the objective
         Dim objKey As String = "Objective Function"
         Dim objIndex As Integer
         Solver.AddRow(objKey, objIndex)
@@ -72,7 +74,7 @@ Public Class Optimization
         Solver.AddGoal(objIndex, 0, False)
         '************************************************************************************************
 
-        'DFL: Solve the optimization
+        'Solve the optimization
         Dim mySolverParams As New SimplexSolverParams
         mySolverParams.MixedIntegerGapTolerance = 0.01
         Solver.Solve(mySolverParams)

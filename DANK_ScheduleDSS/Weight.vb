@@ -1,4 +1,4 @@
-﻿Public Class Weights
+﻿Public Class Weight
 
     Public Property Section As String
     Public Property PositiveDeviation As Single

@@ -77,17 +77,22 @@
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
     <Compile Include="Class.vb" />
+    <Compile Include="CreateObjects.vb" />
+    <Compile Include="Database.vb" />
     <Compile Include="DataEntry.Designer.vb">
       <DependentUpon>DataEntry.vb</DependentUpon>
     </Compile>
     <Compile Include="DataEntry.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Enrollment.vb" />
     <Compile Include="Fall2017ClassesDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Fall2017ClassesDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Overlap.vb" />
+    <Compile Include="RequestedHours.vb" />
     <Compile Include="Results.Designer.vb">
       <DependentUpon>Results.vb</DependentUpon>
     </Compile>
@@ -100,6 +105,7 @@
     <Compile Include="TheTeam.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Weight.vb" />
     <Compile Include="Welcome.vb">
       <SubType>Form</SubType>
     </Compile>

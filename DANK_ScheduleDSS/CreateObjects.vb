@@ -1,7 +1,7 @@
 ﻿Public Class CreateObjects
 
     'TODO: Update comments
-    Public CourseList As List(Of Course)
+    Public CourseList As New List(Of Course)
     Public WeightList As List(Of Weight)
 
     Public Database As New Database
@@ -20,15 +20,15 @@
             Dim Course As New Course With {
                 .CRN = DataSet.Tables(tableName).Rows(rowNum)("CRN ?"),
                 .Department = DataSet.Tables(tableName).Rows(rowNum)("Department"),
-                .CourseName = DataSet.Tables(tableName).Rows(rowNum)("Course"),
                 .Title = DataSet.Tables(tableName).Rows(rowNum)("Title"),
                 .Instructor = DataSet.Tables(tableName).Rows(rowNum)("Instructor"),
-                .Days = DataSet.Tables(tableName).Rows(rowNum)("Days"),
+                .Days = DataSet.Tables(tableName).Rows(rowNum)("Days ?"),
                 .Begin = DataSet.Tables(tableName).Rows(rowNum)("Begin"),
-                .EndInst = DataSet.Tables(tableName).Rows(rowNum)("EndInst"),
-                .Location = DataSet.Tables(tableName).Rows(rowNum)("Location")
+                .EndInst = DataSet.Tables(tableName).Rows(rowNum)("End"),
+                .Location = DataSet.Tables(tableName).Rows(rowNum)("Location ?")
             }
             CourseList.Add(Course)
+            rowNum = rowNum + 1
         Next
 
     End Sub
@@ -39,3 +39,5 @@
     End Sub
 
 End Class
+
+'.CourseName = DataSet.Tables(tableName).Rows(rowNum)("Course"),

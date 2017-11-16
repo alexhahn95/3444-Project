@@ -13,13 +13,13 @@ Public Class Database
     Public Sub New()
     End Sub
 
-    Public Sub RunSql(SQL, ConnectionString, DataSet, TableName)
+    Public Sub RunSql(ConnectionString, ProjSQL, DataSet, tableName)
         DataConnection.ConnectionString = ConnectionString
 
         Command = DataConnection.CreateCommand()
-        Command.CommandText = SQL
+        Command.CommandText = ProjSQL
 
         DataAdapter.SelectCommand = Command
-        DataAdapter.Fill(DataSet, TableName)
+        DataAdapter.Fill(DataSet, tableName)
     End Sub
 End Class

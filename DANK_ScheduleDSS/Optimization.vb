@@ -4,13 +4,11 @@ Imports Microsoft.SolverFoundation.Solvers
 
 Public Class Optimization
 
-    Sub New()
-
-    End Sub
-
     Dim CreateObjects As New CreateObjects
     Dim Solver As SimplexSolver
     Public Sub BuildModel()
+
+        Solver = New SimplexSolver
 
         CreateObjects.CreateObjects()
 
@@ -18,12 +16,14 @@ Public Class Optimization
         Dim dvKey As String
         Dim dvIndex As Integer
 
-        'For Each enrollment As Enrollment In CreateObjects.
-        '    dvKey = enrollment.Name
-        '    Solver.AddVariable(dvKey, dvIndex)
-        '    Solver.SetIntegrality(dvIndex, True)
-        '    Solver.SetBounds(dvIndex, 0, 1)
-        'Next
+        For Each course As Course In CreateObjects.CourseList
+            dvKey = course.CRN
+            Solver.AddVariable(dvKey, dvIndex)
+            Solver.SetIntegrality(dvIndex, True)
+            Solver.SetBounds(dvIndex, 0, 1)
+        Next
+
+        Dim test As String = "test"
 
         'TODO: WHAT TO DO BELOW
         'For Each Element As Enrollment In CreateObjects.EnrollmentList

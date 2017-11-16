@@ -4,19 +4,26 @@ Imports Microsoft.SolverFoundation.Solvers
 
 Public Class Optimization
 
+    Sub New()
+
+    End Sub
+
     Dim CreateObjects As New CreateObjects
     Dim Solver As SimplexSolver
     Public Sub BuildModel()
 
-        CreateObjects.MakeObjects()
+        CreateObjects.CreateObjects()
 
         'Define the decision variables
         Dim dvKey As String
         Dim dvIndex As Integer
 
-        For Each Element As Enrollment In CreateObjects.EnrollmentList
-
-        Next
+        'For Each enrollment As Enrollment In CreateObjects.
+        '    dvKey = enrollment.Name
+        '    Solver.AddVariable(dvKey, dvIndex)
+        '    Solver.SetIntegrality(dvIndex, True)
+        '    Solver.SetBounds(dvIndex, 0, 1)
+        'Next
 
         'TODO: WHAT TO DO BELOW
         'For Each Element As Enrollment In CreateObjects.EnrollmentList

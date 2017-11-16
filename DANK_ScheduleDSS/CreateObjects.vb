@@ -1,7 +1,7 @@
 ﻿Public Class CreateObjects
 
     'TODO: Update comments
-    Public EnrollmentList As List(Of Enrollment)
+    Public CourseList As List(Of Course)
     Public WeightList As List(Of Weight)
 
     Public Database As New Database
@@ -9,35 +9,33 @@
     Public ProjSQL As String
     Public DataSet As New DataSet
 
-    Public Sub MakeObjects()
+    Public Sub CreateObjects()
         'First, we get the table in the dataset updated
-        Dim tableName As String = "Enrollment"
+        Dim tableName As String = "Classes"
         ProjSQL = "SELECT * FROM " & tableName
         Database.RunSql(ConnectionString, ProjSQL, DataSet, tableName)
-        'Next we transfer data from the table to objects
-        For rowNum As Integer = 0 To DataSet.Tables(tableName).Rows.Count - 1
-            Dim Enrollment As New Enrollment
-            Enrollment.Name = DataSet.Tables(tableName).Rows(rowNum)("Name")
-            Enrollment.Enrollment = DataSet.Tables(tableName).Rows(rowNum)("Enrollment")
-            EnrollmentList.Add(Enrollment)
-        Next
 
-        'First, we get the table in the dataset updated
-        tableName = "Weight"
-        ProjSQL = "SELECT * FROM " & tableName
-        Database.RunSql(ConnectionString, ProjSQL, DataSet, tableName)
         'Next we transfer data from the table to objects
         For rowNum As Integer = 0 To DataSet.Tables(tableName).Rows.Count - 1
-            Dim Weight As New Weight
-            Weight.Section = DataSet.Tables(tableName).Rows(rowNum)("Section")
-            Weight.PositiveDeviation = DataSet.Tables(tableName).Rows(rowNum)("Positive Deviation")
-            Weight.NegativeDeviation = DataSet.Tables(tableName).Rows(rowNum)("Negative Deviation")
-            WeightList.Add(Weight)
+            Dim Course As New Course With {
+                .CRN = DataSet.Tables(tableName).Rows(rowNum)("CRN ?"),
+                .Department = DataSet.Tables(tableName).Rows(rowNum)("Department"),
+                .CourseName = DataSet.Tables(tableName).Rows(rowNum)("Course"),
+                .Title = DataSet.Tables(tableName).Rows(rowNum)("Title"),
+                .Instructor = DataSet.Tables(tableName).Rows(rowNum)("Instructor"),
+                .Days = DataSet.Tables(tableName).Rows(rowNum)("Days"),
+                .Begin = DataSet.Tables(tableName).Rows(rowNum)("Begin"),
+                .EndInst = DataSet.Tables(tableName).Rows(rowNum)("EndInst"),
+                .Location = DataSet.Tables(tableName).Rows(rowNum)("Location")
+            }
+            CourseList.Add(Course)
         Next
 
     End Sub
+
     Public Sub Query()
         'TODO This is for creating queries for certian criteria on the client
+
     End Sub
 
 End Class

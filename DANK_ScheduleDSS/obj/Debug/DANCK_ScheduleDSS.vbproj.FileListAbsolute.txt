@@ -15,3 +15,4 @@ C:\Users\Alex-PC\Documents\DANK_ScheduleDSS\DANK_ScheduleDSS\bin\Debug\DANKSolut
 C:\Users\Alex-PC\Documents\DANK_ScheduleDSS\DANK_ScheduleDSS\bin\Debug\DANKSolutions_ClassScheduleDSS.pdb
 C:\Users\Alex-PC\Documents\DANK_ScheduleDSS\DANK_ScheduleDSS\bin\Debug\DANKSolutions_ClassScheduleDSS.xml
 C:\Users\Alex-PC\Documents\DANK_ScheduleDSS\DANK_ScheduleDSS\obj\Debug\DANKSolutions_ClassScheduleDSS.frmHomeScreen.resources
+C:\Users\Alex-PC\Documents\DANK_ScheduleDSS\DANK_ScheduleDSS\bin\Debug\Microsoft.Solver.Foundation.dll

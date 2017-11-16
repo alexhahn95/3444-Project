@@ -1,7 +1,8 @@
 ﻿Public Class Course
 
     Public Property CRN
-    Public Property Course
+    Public Property Department
+    Public Property CourseName
     Public Property Title
     Public Property Instructor
     Public Property Days

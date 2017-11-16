@@ -80,7 +80,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
-    <Compile Include="Class.vb" />
+    <Compile Include="Course.vb" />
     <Compile Include="CreateObjects.vb" />
     <Compile Include="Database.vb" />
     <Compile Include="DataEntry.Designer.vb">

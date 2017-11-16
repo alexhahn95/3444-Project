@@ -2,7 +2,9 @@
 
     'TODO: Update comments
     Public CourseList As New List(Of Course)
-    Public WeightList As List(Of Weight)
+    Public WeightList As New List(Of Weight)
+    Public SectionList As New List(Of Section)
+    Public PeriodList As New List(Of Period)
 
     Public Database As New Database
     Public ConnectionString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\Fall2017Classes.accdb"
@@ -29,6 +31,26 @@
             }
             CourseList.Add(Course)
             rowNum = rowNum + 1
+        Next
+
+        'Creates Sections
+        Dim evening As New Section() With {.Section = "evening"}
+        Dim morning As New Section() With {.Section = "morning"}
+        Dim tuesThurs As New Section() With {.Section = "tuesThurs"}
+        Dim monWedFri As New Section() With {.Section = "monWedFri"}
+        Dim monWed As New Section() With {.Section = "monWed"}
+
+        SectionList.Add(evening)
+        SectionList.Add(morning)
+        SectionList.Add(tuesThurs)
+        SectionList.Add(monWedFri)
+        SectionList.Add(monWed)
+
+        'Creates Periods
+        Dim period
+        For i As Integer = 1 To 20
+            period = New Period With {.Period = i}
+            PeriodList.Add(period)
         Next
 
     End Sub

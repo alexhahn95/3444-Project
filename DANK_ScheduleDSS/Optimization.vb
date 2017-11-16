@@ -23,21 +23,34 @@ Public Class Optimization
             Solver.SetBounds(dvIndex, 0, 1)
         Next
 
-        Dim test As String = "test"
-
-        'TODO: WHAT TO DO BELOW
-        'For Each Element As Enrollment In CreateObjects.EnrollmentList
-        ' For Each activity As Activity In CreateObjects.
-        'dvKey = capacity.DepartmentName & activity.ActivityName
-        'Solver.AddVariable(dvKey, dvIndex)
-        'Solver.SetBounds(dvIndex, 0, Rational.PositiveInfinity)
-        'Next
-        'Next
-
-        'Create capacity constraints for departments
+        'Create satisfaction constraints
         'Dim coefficient As Single
         'Dim constraintKey As String
         'Dim constraintIndex As Integer
+
+        'constraintKey = "Satisfaction"
+        'For Each course As Course In CreateObjects.CourseList
+
+        'Next
+
+
+        'Create satisfaction constraints
+        Dim coefficient As Single
+        Dim constraintKey As String
+        Dim constraintIndex As Integer
+
+        'Create Overlap constraints
+        For Each period As Period In CreateObjects.PeriodList
+            constraintKey = "Overlap Constraint: " & period.Period
+            Solver.AddRow(constraintKey, constraintIndex)
+            For Each course As Course In CreateObjects.CourseList
+                coefficient = course.Enrollment
+                dvKey = course.CRN
+                dvIndex = Solver.GetIndexFromKey(dvKey)
+                Solver.SetCoefficient(constraintIndex, dvIndex, coefficient)
+            Next
+            Solver.SetBounds(constraintIndex, 0, 1)
+        Next
 
         ''Capacity Constraints
         'For Each capacity As Capacity In IC5CreateObjects.CapacityList

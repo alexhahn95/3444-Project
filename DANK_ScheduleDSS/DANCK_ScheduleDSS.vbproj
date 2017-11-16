@@ -89,6 +89,7 @@
     <Compile Include="DataEntry.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Enrollment.vb" />
     <Compile Include="Fall2017ClassesDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -96,6 +97,7 @@
     </Compile>
     <Compile Include="Optimization.vb" />
     <Compile Include="Overlap.vb" />
+    <Compile Include="Period.vb" />
     <Compile Include="RequestedHours.vb" />
     <Compile Include="Results.Designer.vb">
       <DependentUpon>Results.vb</DependentUpon>
@@ -103,6 +105,7 @@
     <Compile Include="Results.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Section.vb" />
     <Compile Include="TheTeam.Designer.vb">
       <DependentUpon>TheTeam.vb</DependentUpon>
     </Compile>

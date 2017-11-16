@@ -33,7 +33,7 @@ Public Class Optimization
             constraintKey = "Satisfaction Constraint: " & section.Section
             Solver.AddRow(constraintKey, constraintIndex)
             For Each course As Course In CreateObjects.CourseList
-                coefficient = CreateObjects.SectionList(0).Section
+                coefficient = section.Section
                 dvKey = course.CRN
                 dvIndex = Solver.GetIndexFromKey(dvKey)
                 Solver.SetCoefficient(constraintIndex, dvIndex, coefficient)
@@ -53,6 +53,12 @@ Public Class Optimization
             Next
             Solver.SetBounds(constraintIndex, 0, 1)
         Next
+
+        'Objective function mothafuckas
+        Dim objKey As String = "Objective Function"
+        Dim objIndex As Integer
+        Solver.AddRow(objKey, objIndex)
+
 
         ''Define the objective
         'Dim objKey As String = "Objective Function"

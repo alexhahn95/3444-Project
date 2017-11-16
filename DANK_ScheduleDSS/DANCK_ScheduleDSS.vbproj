@@ -97,9 +97,7 @@
     </Compile>
     <Compile Include="Goal.vb" />
     <Compile Include="Optimization.vb" />
-    <Compile Include="Overlap.vb" />
     <Compile Include="Period.vb" />
-    <Compile Include="RequestedHours.vb" />
     <Compile Include="Results.Designer.vb">
       <DependentUpon>Results.vb</DependentUpon>
     </Compile>
@@ -113,6 +111,7 @@
     <Compile Include="TheTeam.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Total.vb" />
     <Compile Include="Weight.vb" />
     <Compile Include="Welcome.vb">
       <SubType>Form</SubType>

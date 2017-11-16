@@ -6,6 +6,7 @@
     Public SectionList As New List(Of Section)
     Public PeriodList As New List(Of Period)
     Public DeviationContainerList As New List(Of DeviationContainer)
+    Public TotalsList As New List(Of Total)
     'Public GoalList As New List(Of Goal)
 
     Public Database As New Database
@@ -33,6 +34,7 @@
             }
             CourseList.Add(Course)
             rowNum = rowNum + 1
+
         Next
 
         'Creates Sections
@@ -64,11 +66,6 @@
                 .Goal = 5
             }
             DeviationContainerList.Add(deviationContainerInstance)
-
-            'Dim goalInstance As New Goal() With {
-            '    .Section = section,
-            '    .GoalValue = 5
-            '}
         Next
 
 

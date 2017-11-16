@@ -33,7 +33,7 @@ Public Class Optimization
             constraintKey = "Satisfaction Constraint: " & section.Section
             Solver.AddRow(constraintKey, constraintIndex)
             For Each course As Course In CreateObjects.CourseList
-                coefficient = section.Section
+                coefficient = If
                 dvKey = course.CRN
                 dvIndex = Solver.GetIndexFromKey(dvKey)
                 Solver.SetCoefficient(constraintIndex, dvIndex, coefficient)
@@ -54,11 +54,19 @@ Public Class Optimization
             Solver.SetBounds(constraintIndex, 0, 1)
         Next
 
+        'Create Deviations, removed pos/neg devation functinality for now
+        For Each section As Section In CreateObjects.SectionList
+            constraintKey = "Deviation Constraint: " & section.Section
+            Solver.AddRow(constraintKey, constraintIndex)
+            MessageBox.Show(Solver.GetIndexFromKey("Satisfaction Constraint: morning"))
+            'coefficient = Math.Abs()
+        Next
+
         'Objective function mothafuckas
         Dim objKey As String = "Objective Function"
         Dim objIndex As Integer
         Solver.AddRow(objKey, objIndex)
-
+        For Each
 
         ''Define the objective
         'Dim objKey As String = "Objective Function"

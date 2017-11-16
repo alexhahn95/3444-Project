@@ -89,11 +89,13 @@
     <Compile Include="DataEntry.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="DeviationContainer.vb" />
     <Compile Include="Fall2017ClassesDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Fall2017ClassesDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Goal.vb" />
     <Compile Include="Optimization.vb" />
     <Compile Include="Overlap.vb" />
     <Compile Include="Period.vb" />

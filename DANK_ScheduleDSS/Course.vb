@@ -9,8 +9,10 @@
     Public Property Begin As String
     Public Property EndInst As String
     Public Property Location As String
-    Public Property Period As Integer
+    Private Property Period As Integer
     Public Property Enrollment As Integer
+    Public Property SectionDays As Section
+    Public Property SectionTimeOfDay As Section
 
     Public Property EveningHours As Integer
     Public Property MorningHours As Integer
@@ -66,7 +68,20 @@
                 Throw New Exception
         End Select
 
+        SectionDays = New Section
+        SectionTimeOfDay = New Section
 
+        If EveningHours = 1 Then
+            SectionTimeOfDay.SectionTimeOfDay = Section.TimeOfDayEnum.Evening
+        Else
+            SectionTimeOfDay.SectionTimeOfDay = Section.TimeOfDayEnum.Morning
+        End If
+
+        If MonWedFri = 1 Then
+            SectionDays.SectionDay = Section.DayEnum.MonWedFri
+        Else
+            SectionDays.SectionDay = Section.DayEnum.TuesThurs
+        End If
 
     End Sub
 

@@ -23,21 +23,15 @@ Public Class Optimization
             Solver.SetBounds(dvIndex, 0, 1)
         Next
 
-        'Create satisfaction constraints
-        'Dim coefficient As Single
-        'Dim constraintKey As String
-        'Dim constraintIndex As Integer
+        'Declare variables used for constraints
+        Dim coefficient As Single
+        Dim constraintKey As String
+        Dim constraintIndex As Integer
 
         'constraintKey = "Satisfaction"
         'For Each course As Course In CreateObjects.CourseList
 
         'Next
-
-
-        'Create satisfaction constraints
-        Dim coefficient As Single
-        Dim constraintKey As String
-        Dim constraintIndex As Integer
 
         'Create Overlap constraints
         For Each period As Period In CreateObjects.PeriodList

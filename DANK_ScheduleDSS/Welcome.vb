@@ -5,8 +5,6 @@ Public Class frmWelcome
         'My.Forms.frmHomeScreen.Show()
         'My.Forms.frmWelcome.Close()
 
-        MessageBox.Show("handled")
-
         Dim opt = New Optimization
         opt.BuildModel()
     End Sub

@@ -7,8 +7,5 @@ Public Class frmWelcome
 
         Dim opt = New Optimization
         opt.BuildModel()
-        Dim h As Integer = 5
-
-        MessageBox.Show(h)
     End Sub
 End Class

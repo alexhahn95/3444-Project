@@ -30,17 +30,15 @@ Public Class Optimization
         Dim constraintIndex As Integer
 
         'Overlap constraints
-        For Each period As Period In CreateObjects.PeriodList
-            constraintKey = "Overlap Constraint: " & period.Period
+        For period = 1 To CreateObjects.PeriodList.Count
+            constraintKey = "Overlap Constraint: " & CreateObjects.PeriodList.ElementAt(period - 1).Period
+            MessageBox.Show(constraintKey)
             Solver.AddRow(constraintKey, constraintIndex)
-            For Each course As Course In CreateObjects.CourseList
-                If course.Period = period.Period Then
-                    coefficient = 1
-                Else
-                    coefficient = 0
-                End If
-                dvKey = course.CRN
+            For course = 1 To CreateObjects.CourseList.Count
+                coefficient = CreateObjects.CourseOfferings(period - 1, course - 1)
+                dvKey = CreateObjects.CourseList.ElementAt(course - 1).CRN
                 dvIndex = Solver.GetIndexFromKey(dvKey)
+                'Solver.SetIntegrality(dvIndex, True)
                 Solver.SetCoefficient(constraintIndex, dvIndex, coefficient)
             Next
             Solver.SetBounds(constraintIndex, 0, 1)
@@ -49,7 +47,7 @@ Public Class Optimization
         'Required Classes Constraint
         constraintKey = "Enrollment Constraint"
         For Each course As Course In CreateObjects.CourseList
-            coefficient = course.Enrollment
+            'coefficient = course.Enrollment
             dvKey = course.CRN
             dvIndex = Solver.GetIndexFromKey(dvKey)
             Solver.SetCoefficient(constraintIndex, dvIndex, coefficient)

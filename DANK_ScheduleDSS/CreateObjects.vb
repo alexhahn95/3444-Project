@@ -5,9 +5,7 @@
     Public WeightList As New List(Of Weight)
     Public SectionList As New List(Of Section)
     Public PeriodList As New List(Of Period)
-    Public DeviationContainerList As New List(Of DeviationContainer)
-    Public TotalsList As New List(Of Total)
-    'Public GoalList As New List(Of Goal)
+    Public CourseOfferings(,) As Integer
 
     Public Database As New Database
     Public ConnectionString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\Fall2017Classes.accdb"
@@ -57,19 +55,8 @@
             PeriodList.Add(period)
         Next
 
-        'Creates DeviationContainers and goals
-        For Each section As Section In SectionList
-            Dim deviationContainerInstance As New DeviationContainer() With {
-                .Section = section,
-                .Performance = 0,
-                .Deviation = 0,
-                .Goal = 5
-            }
-            DeviationContainerList.Add(deviationContainerInstance)
-        Next
-
-
-
+        'Initializes Course Offerings Paramater 2D array
+        CourseOfferings = New Integer(19, CourseList.Count) {}
 
 
     End Sub

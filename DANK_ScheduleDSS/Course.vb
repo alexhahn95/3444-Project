@@ -10,7 +10,6 @@
     Public Property EndInst As String
     Public Property Location As String
     Public Property Period As Integer
-    Public Property Enrollment As Integer
     Public Property TotalsList As New List(Of Total)
 
     Dim Generator As Random
@@ -20,12 +19,11 @@
         Generator = New Random
         Period = Generator.Next(1, 20)
 
-
         'Currently not built out yet b/c not using real period data ALH,
         'need to parse out start/end time strings and go from there
 
         'Determine Morning or Evening and which period class is in
-        'Very bad ugly code!!!! ALH
+        'Very bad ugly code!!!! Needs refactoring ALH
 
         Dim morningTotal As New Total With {.Hours = 0, .Name = "Morning Total"}
         Dim eveningTotal As New Total With {.Hours = 0, .Name = "Evening Total"}
@@ -73,9 +71,5 @@
         TotalsList.Add(tuesThursTotal)
         TotalsList.Add(monWedFriTotal)
         TotalsList.Add(monWedTotal)
-
-
-
     End Sub
-
 End Class

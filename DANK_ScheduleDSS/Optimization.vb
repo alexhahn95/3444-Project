@@ -23,17 +23,22 @@ Public Class Optimization
             Solver.SetBounds(dvIndex, 0, 1)
         Next
 
+
         'Declare variables used for constraints
         Dim coefficient As Single
         Dim constraintKey As String
         Dim constraintIndex As Integer
 
-        'Create Overlap constraints
+        'Overlap constraints
         For Each period As Period In CreateObjects.PeriodList
             constraintKey = "Overlap Constraint: " & period.Period
             Solver.AddRow(constraintKey, constraintIndex)
             For Each course As Course In CreateObjects.CourseList
-                coefficient = course.Enrollment
+                If course.Period = period.Period Then
+                    coefficient = 1
+                Else
+                    coefficient = 0
+                End If
                 dvKey = course.CRN
                 dvIndex = Solver.GetIndexFromKey(dvKey)
                 Solver.SetCoefficient(constraintIndex, dvIndex, coefficient)
@@ -41,7 +46,17 @@ Public Class Optimization
             Solver.SetBounds(constraintIndex, 0, 1)
         Next
 
-        'Objective function mothafuckas
+        'Required Classes Constraint
+        constraintKey = "Enrollment Constraint"
+        For Each course As Course In CreateObjects.CourseList
+            coefficient = course.Enrollment
+            dvKey = course.CRN
+            dvIndex = Solver.GetIndexFromKey(dvKey)
+            Solver.SetCoefficient(constraintIndex, dvIndex, coefficient)
+        Next
+        Solver.SetBounds(constraintIndex, 2, Rational.PositiveInfinity)
+
+        'Objective function
         Dim objKey As String = "Objective Function"
         Dim objIndex As Integer
         Solver.AddRow(objKey, objIndex)
@@ -62,7 +77,8 @@ Public Class Optimization
             .MixedIntegerGapTolerance = 0.01
         }
         Solver.Solve(solverParam)
-        Solver.GetValue(dvIndex)
+        MessageBox.Show(Solver.GetValue(dvIndex).ToDouble)
+
 
     End Sub
 End Class

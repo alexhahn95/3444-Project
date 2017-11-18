@@ -9,7 +9,7 @@
     Public Property Begin As String
     Public Property EndInst As String
     Public Property Location As String
-    Private Property Period As Integer
+    Public Property Period As Integer
     Public Property Enrollment As Integer
     Public Property TotalsList As New List(Of Total)
 

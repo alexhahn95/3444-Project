@@ -6,11 +6,19 @@ Public Class Optimization
 
     Dim CreateObjects As New CreateObjects
     Dim Solver As SimplexSolver
+
+    'These need to change to be set by the user and maybe change locations
+    Public Property AmountRequestedCourses As Integer = 5
+
+
+
     Public Sub BuildModel()
 
         Solver = New SimplexSolver
 
         CreateObjects.CreateObjects()
+
+        Dim GoalAmounts = New Integer() {3, 4, 5, 3, 2}
 
         'Define the decision variables
         Dim dvKey As String
@@ -22,7 +30,6 @@ Public Class Optimization
             Solver.SetIntegrality(dvIndex, True)
             Solver.SetBounds(dvIndex, 0, 1)
         Next
-
 
         'Constraint variables
         Dim coefficient As Single
@@ -46,28 +53,31 @@ Public Class Optimization
         'Course enrollment constraint
         constraintKey = "Enrollment Constraint"
         For Each course As Course In CreateObjects.CourseList
-            'coefficient = course.Enrollment
+            coefficient = 1
             dvKey = course.CRN
             dvIndex = Solver.GetIndexFromKey(dvKey)
             Solver.SetCoefficient(constraintIndex, dvIndex, coefficient)
         Next
-        Solver.SetBounds(constraintIndex, 2, Rational.PositiveInfinity)
-
-
+        Solver.SetBounds(constraintIndex, AmountRequestedCourses, AmountRequestedCourses)
 
         'Objective function
         Dim objKey As String = "Objective Function"
         Dim objIndex As Integer
         Solver.AddRow(objKey, objIndex)
-        Dim i As Integer = 0
-        For Each section As Section In CreateObjects.SectionList
+        For section = 0 To CreateObjects.Sections.Count - 1
             For Each course As Course In CreateObjects.CourseList
-                coefficient = course.TotalsList(i).Hours
+                If course.Totals(section) > GoalAmounts(section) Then
+                    coefficient = course.Totals(section) - GoalAmounts(section)
+                ElseIf course.Totals(section) < GoalAmounts(section) Then
+                    coefficient = GoalAmounts(section) - course.Totals(section)
+                Else
+                    coefficient = 0
+                End If
                 dvKey = course.CRN
                 dvIndex = Solver.GetIndexFromKey(dvKey)
                 Solver.SetCoefficient(objIndex, dvIndex, coefficient)
             Next
-            i = i + 1
+            section = section + 1
         Next
 
         Solver.AddGoal(objIndex, 0, True)

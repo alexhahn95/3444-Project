@@ -94,7 +94,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Fall2017ClassesDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Goal.vb" />
     <Compile Include="Optimization.vb" />
     <Compile Include="Results.Designer.vb">
       <DependentUpon>Results.vb</DependentUpon>
@@ -102,14 +101,12 @@
     <Compile Include="Results.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Section.vb" />
     <Compile Include="TheTeam.Designer.vb">
       <DependentUpon>TheTeam.vb</DependentUpon>
     </Compile>
     <Compile Include="TheTeam.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Total.vb" />
     <Compile Include="Weight.vb" />
     <Compile Include="Welcome.vb">
       <SubType>Form</SubType>

@@ -3,7 +3,7 @@
     'TODO: Update comments
     Public Property CourseList As New List(Of Course)
     Public Property WeightList As New List(Of Weight)
-    Public Property SectionList As New List(Of Section)
+    Public Sections() As String
     Public CourseOfferings(,) As Integer
     'This will change when the amount of periods goes from 20 to 168
     Public Property PeriodCount = 20
@@ -33,25 +33,14 @@
             }
             CourseList.Add(Course)
             rowNum = rowNum + 1
-
         Next
 
         'Creates Sections
         'TODO change to enum implementation
-        Dim evening As New Section() With {.Section = "evening"}
-        Dim morning As New Section() With {.Section = "morning"}
-        Dim tuesThurs As New Section() With {.Section = "tuesThurs"}
-        Dim monWedFri As New Section() With {.Section = "monWedFri"}
-        Dim monWed As New Section() With {.Section = "monWed"}
-
-        SectionList.Add(evening)
-        SectionList.Add(morning)
-        SectionList.Add(tuesThurs)
-        SectionList.Add(monWedFri)
-        SectionList.Add(monWed)
+        Sections = New String() {"Evening", "Morning", "TuesThurs", "MonWedFri", "MonWed"}
 
         'Initializes Course Offerings Paramater 2D array
-        CourseOfferings = New Integer(PeriodCount, CourseList.Count) {}
+        CourseOfferings = New Integer(PeriodCount - 1, CourseList.Count - 1) {}
 
 
     End Sub

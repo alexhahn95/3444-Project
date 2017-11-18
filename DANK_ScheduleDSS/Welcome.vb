@@ -7,5 +7,6 @@ Public Class frmWelcome
 
         Dim opt = New Optimization
         opt.BuildModel()
+        Me.Close()
     End Sub
 End Class

@@ -9,79 +9,72 @@
     Public Property Begin As String
     Public Property EndInst As String
     Public Property Location As String
-    Private Property Period As Integer
+    Public Property Period As Integer
     Public Property Enrollment As Integer
-    Public Property SectionDays As Section
-    Public Property SectionTimeOfDay As Section
+    Public Property TotalsList As New List(Of Total)
 
-    Public Property EveningHours As Integer
-    Public Property MorningHours As Integer
-    Public Property TuesThurs As Integer
-    Public Property MonWedFri As Integer
-    Public Property MonWed As Integer
+    Dim Generator As Random
 
     Public Sub New()
-        Dim Generator As Random = New Random()
-        Me.Period = Generator.Next(1, 20)
-        Me.Enrollment = 0
 
-        EveningHours = 0
-        MorningHours = 0
-        TuesThurs = 0
-        MonWedFri = 0
-        MonWed = 0 'Currently not built out yet b/c not using real period data ALH
+        Generator = New Random
+        Period = Generator.Next(1, 20)
+
+
+        'Currently not built out yet b/c not using real period data ALH,
+        'need to parse out start/end time strings and go from there
 
         'Determine Morning or Evening and which period class is in
         'Very bad ugly code!!!! ALH
+
+        Dim morningTotal As New Total With {.Hours = 0, .Name = "Morning Total"}
+        Dim eveningTotal As New Total With {.Hours = 0, .Name = "Evening Total"}
+        Dim tuesThursTotal As New Total With {.Hours = 0, .Name = "TuesThurs Total"}
+        Dim monWedTotal As New Total With {.Hours = 0, .Name = "MonWed Total"}
+        Dim monWedFriTotal As New Total With {.Hours = 0, .Name = "MonWedFri Total"}
+
         Select Case Period
             Case 1 To 2 'Monday Morning
-                MorningHours = 1
-                MonWedFri = 1
+                morningTotal.Hours = 1
+                monWedFriTotal.Hours = 1
             Case 3 To 4 'Monday Evening
-                EveningHours = 1
-                MonWedFri = 1
+                eveningTotal.Hours = 1
+                monWedFriTotal.Hours = 1
             Case 5 To 6 'Tues Morning
-                MorningHours = 1
-                TuesThurs = 1
-            Case 7 To 8 'Tues Evening etc...
-                EveningHours = 1
-                TuesThurs = 1
-            Case 9 To 10
-                MorningHours = 1
-                MonWedFri = 1
-            Case 11 To 12
-                EveningHours = 1
-                MonWedFri = 1
-            Case 13 To 14
-                MorningHours = 1
-                TuesThurs = 1
-            Case 15 To 16
-                EveningHours = 1
-                TuesThurs = 1
-            Case 17 To 18
-                MorningHours = 1
-                MonWedFri = 1
-            Case 19 To 20
-                EveningHours = 1
-                MonWedFri = 1
+                morningTotal.Hours = 1
+                tuesThursTotal.Hours = 1
+            Case 7 To 8 'Tues Evening
+                eveningTotal.Hours = 1
+                tuesThursTotal.Hours = 1
+            Case 9 To 10 'Wed Morning
+                morningTotal.Hours = 1
+                monWedFriTotal.Hours = 1
+            Case 11 To 12 'Wed Evening
+                eveningTotal.Hours = 1
+                monWedFriTotal.Hours = 1
+            Case 13 To 14 'Thurs Morn
+                morningTotal.Hours = 1
+                tuesThursTotal.Hours = 1
+            Case 15 To 16 'Thurs Evening
+                eveningTotal.Hours = 1
+                tuesThursTotal.Hours = 1
+            Case 17 To 18 'Fri Morn
+                morningTotal.Hours = 1
+                monWedFriTotal.Hours = 1
+            Case 19 To 20 'Fri Evening
+                eveningTotal.Hours = 1
+                monWedFriTotal.Hours = 1
             Case Else
                 Throw New Exception
         End Select
 
-        SectionDays = New Section
-        SectionTimeOfDay = New Section
+        TotalsList.Add(eveningTotal)
+        TotalsList.Add(morningTotal)
+        TotalsList.Add(tuesThursTotal)
+        TotalsList.Add(monWedFriTotal)
+        TotalsList.Add(monWedTotal)
 
-        If EveningHours = 1 Then
-            SectionTimeOfDay.SectionTimeOfDay = Section.TimeOfDayEnum.Evening
-        Else
-            SectionTimeOfDay.SectionTimeOfDay = Section.TimeOfDayEnum.Morning
-        End If
 
-        If MonWedFri = 1 Then
-            SectionDays.SectionDay = Section.DayEnum.MonWedFri
-        Else
-            SectionDays.SectionDay = Section.DayEnum.TuesThurs
-        End If
 
     End Sub
 

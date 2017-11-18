@@ -17,8 +17,7 @@
     Public Sub New()
 
         Generator = New Random
-        Period = 1
-        'Generator.Next(1, 20)
+        Period = Generator.Next(1, 20)
 
         'Currently not built out yet b/c not using real period data ALH,
         'need to parse out start/end time strings and go from there

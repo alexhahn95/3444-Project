@@ -10,8 +10,6 @@ Public Class Optimization
     'These need to change to be set by the user and maybe change locations
     Public Property AmountRequestedCourses As Integer = 5
 
-
-
     Public Sub BuildModel()
 
         Solver = New SimplexSolver
@@ -44,7 +42,6 @@ Public Class Optimization
                 coefficient = CreateObjects.CourseOfferings(period - 1, course - 1)
                 dvKey = CreateObjects.CourseList.ElementAt(course - 1).CRN
                 dvIndex = Solver.GetIndexFromKey(dvKey)
-                'Solver.SetIntegrality(dvIndex, True)
                 Solver.SetCoefficient(constraintIndex, dvIndex, coefficient)
             Next
             Solver.SetBounds(constraintIndex, 0, 1)
@@ -52,6 +49,7 @@ Public Class Optimization
 
         'Course enrollment constraint
         constraintKey = "Enrollment Constraint"
+        Solver.AddRow(constraintKey, constraintIndex)
         For Each course As Course In CreateObjects.CourseList
             coefficient = 1
             dvKey = course.CRN
@@ -86,8 +84,10 @@ Public Class Optimization
             .MixedIntegerGapTolerance = 0.01
         }
         Solver.Solve(solverParam)
-        MessageBox.Show(Solver.GetValue(dvIndex).ToDouble)
-
-
+        For i = 0 To Solver.VariableIndices.Count - 1
+            If Solver.GetValue(i) = 1 Then
+                MessageBox.Show(i)
+            End If
+        Next
     End Sub
 End Class

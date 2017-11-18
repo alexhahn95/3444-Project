@@ -1,11 +1,12 @@
 ﻿Public Class CreateObjects
 
     'TODO: Update comments
-    Public CourseList As New List(Of Course)
-    Public WeightList As New List(Of Weight)
-    Public SectionList As New List(Of Section)
-    Public PeriodList As New List(Of Period)
+    Public Property CourseList As New List(Of Course)
+    Public Property WeightList As New List(Of Weight)
+    Public Property SectionList As New List(Of Section)
     Public CourseOfferings(,) As Integer
+    'This will change when the amount of periods goes from 20 to 168
+    Public Property PeriodCount = 20
 
     Public Database As New Database
     Public ConnectionString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\Fall2017Classes.accdb"
@@ -36,6 +37,7 @@
         Next
 
         'Creates Sections
+        'TODO change to enum implementation
         Dim evening As New Section() With {.Section = "evening"}
         Dim morning As New Section() With {.Section = "morning"}
         Dim tuesThurs As New Section() With {.Section = "tuesThurs"}
@@ -48,15 +50,8 @@
         SectionList.Add(monWedFri)
         SectionList.Add(monWed)
 
-        'Creates Periods
-        Dim period
-        For i As Integer = 1 To 20
-            period = New Period With {.Period = i}
-            PeriodList.Add(period)
-        Next
-
         'Initializes Course Offerings Paramater 2D array
-        CourseOfferings = New Integer(19, CourseList.Count) {}
+        CourseOfferings = New Integer(PeriodCount, CourseList.Count) {}
 
 
     End Sub

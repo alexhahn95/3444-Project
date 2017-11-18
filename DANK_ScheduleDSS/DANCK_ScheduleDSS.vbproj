@@ -96,7 +96,6 @@
     </Compile>
     <Compile Include="Goal.vb" />
     <Compile Include="Optimization.vb" />
-    <Compile Include="Period.vb" />
     <Compile Include="Results.Designer.vb">
       <DependentUpon>Results.vb</DependentUpon>
     </Compile>

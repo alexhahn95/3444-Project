@@ -24,15 +24,14 @@ Public Class Optimization
         Next
 
 
-        'Declare variables used for constraints
+        'Constraint variables
         Dim coefficient As Single
         Dim constraintKey As String
         Dim constraintIndex As Integer
 
-        'Overlap constraints
-        For period = 1 To CreateObjects.PeriodList.Count
-            constraintKey = "Overlap Constraint: " & CreateObjects.PeriodList.ElementAt(period - 1).Period
-            MessageBox.Show(constraintKey)
+        'Overlap binary constraint
+        For period = 1 To CreateObjects.PeriodCount
+            constraintKey = "Overlap Constraint: " & period
             Solver.AddRow(constraintKey, constraintIndex)
             For course = 1 To CreateObjects.CourseList.Count
                 coefficient = CreateObjects.CourseOfferings(period - 1, course - 1)
@@ -44,7 +43,7 @@ Public Class Optimization
             Solver.SetBounds(constraintIndex, 0, 1)
         Next
 
-        'Required Classes Constraint
+        'Course enrollment constraint
         constraintKey = "Enrollment Constraint"
         For Each course As Course In CreateObjects.CourseList
             'coefficient = course.Enrollment
@@ -53,6 +52,8 @@ Public Class Optimization
             Solver.SetCoefficient(constraintIndex, dvIndex, coefficient)
         Next
         Solver.SetBounds(constraintIndex, 2, Rational.PositiveInfinity)
+
+
 
         'Objective function
         Dim objKey As String = "Objective Function"

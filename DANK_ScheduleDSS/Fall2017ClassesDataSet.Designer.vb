@@ -299,7 +299,7 @@ Partial Public Class Fall2017ClassesDataSet
         
         Private columnInstructor As Global.System.Data.DataColumn
         
-        Private _columnDays__ As Global.System.Data.DataColumn
+        Private columnDays As Global.System.Data.DataColumn
         
         Private columnBegin As Global.System.Data.DataColumn
         
@@ -410,9 +410,9 @@ Partial Public Class Fall2017ClassesDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property _Days__Column() As Global.System.Data.DataColumn
+        Public ReadOnly Property DaysColumn() As Global.System.Data.DataColumn
             Get
-                Return Me._columnDays__
+                Return Me.columnDays
             End Get
         End Property
         
@@ -485,9 +485,9 @@ Partial Public Class Fall2017ClassesDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Function AddClassesRow(ByVal _CRN__ As Double, ByVal Department As String, ByVal Course_Number As Double, ByVal Title As String, ByVal _Type__ As String, ByVal Cr_Hrs As Double, ByVal Capacity As Double, ByVal Instructor As String, ByVal _Days__ As String, ByVal Begin As String, ByVal _End As String, ByVal _Location__ As String, ByVal Exam As String) As ClassesRow
+        Public Overloads Function AddClassesRow(ByVal _CRN__ As Double, ByVal Department As String, ByVal Course_Number As Double, ByVal Title As String, ByVal _Type__ As String, ByVal Cr_Hrs As Double, ByVal Capacity As Double, ByVal Instructor As String, ByVal Days As String, ByVal Begin As String, ByVal _End As String, ByVal _Location__ As String, ByVal Exam As String) As ClassesRow
             Dim rowClassesRow As ClassesRow = CType(Me.NewRow,ClassesRow)
-            Dim columnValuesArray() As Object = New Object() {_CRN__, Department, Course_Number, Title, _Type__, Cr_Hrs, Capacity, Instructor, _Days__, Begin, _End, _Location__, Exam}
+            Dim columnValuesArray() As Object = New Object() {_CRN__, Department, Course_Number, Title, _Type__, Cr_Hrs, Capacity, Instructor, Days, Begin, _End, _Location__, Exam}
             rowClassesRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowClassesRow)
             Return rowClassesRow
@@ -518,7 +518,7 @@ Partial Public Class Fall2017ClassesDataSet
             Me.columnCr_Hrs = MyBase.Columns("Cr Hrs")
             Me.columnCapacity = MyBase.Columns("Capacity")
             Me.columnInstructor = MyBase.Columns("Instructor")
-            Me._columnDays__ = MyBase.Columns("Days ?")
+            Me.columnDays = MyBase.Columns("Days")
             Me.columnBegin = MyBase.Columns("Begin")
             Me.columnEnd = MyBase.Columns("End")
             Me._columnLocation__ = MyBase.Columns("Location ?")
@@ -548,10 +548,8 @@ Partial Public Class Fall2017ClassesDataSet
             MyBase.Columns.Add(Me.columnCapacity)
             Me.columnInstructor = New Global.System.Data.DataColumn("Instructor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnInstructor)
-            Me._columnDays__ = New Global.System.Data.DataColumn("Days ?", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            Me._columnDays__.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnDays__")
-            Me._columnDays__.ExtendedProperties.Add("Generator_UserColumnName", "Days ?")
-            MyBase.Columns.Add(Me._columnDays__)
+            Me.columnDays = New Global.System.Data.DataColumn("Days", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnDays)
             Me.columnBegin = New Global.System.Data.DataColumn("Begin", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnBegin)
             Me.columnEnd = New Global.System.Data.DataColumn("End", GetType(String), Nothing, Global.System.Data.MappingType.Element)
@@ -569,7 +567,7 @@ Partial Public Class Fall2017ClassesDataSet
             Me.columnTitle.MaxLength = 255
             Me._columnType__.MaxLength = 255
             Me.columnInstructor.MaxLength = 255
-            Me._columnDays__.MaxLength = 255
+            Me.columnDays.MaxLength = 255
             Me.columnBegin.MaxLength = 255
             Me.columnEnd.MaxLength = 255
             Me._columnLocation__.MaxLength = 255
@@ -840,16 +838,16 @@ Partial Public Class Fall2017ClassesDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property _Days__() As String
+        Public Property Days() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableClasses._Days__Column),String)
+                    Return CType(Me(Me.tableClasses.DaysColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Days ?' in table 'Classes' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Days' in table 'Classes' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableClasses._Days__Column) = value
+                Me(Me.tableClasses.DaysColumn) = value
             End Set
         End Property
         
@@ -1011,14 +1009,14 @@ Partial Public Class Fall2017ClassesDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function Is_Days__Null() As Boolean
-            Return Me.IsNull(Me.tableClasses._Days__Column)
+        Public Function IsDaysNull() As Boolean
+            Return Me.IsNull(Me.tableClasses.DaysColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub Set_Days__Null()
-            Me(Me.tableClasses._Days__Column) = Global.System.Convert.DBNull
+        Public Sub SetDaysNull()
+            Me(Me.tableClasses.DaysColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1244,7 +1242,7 @@ Namespace Fall2017ClassesDataSetTableAdapters
             tableMapping.ColumnMappings.Add("Cr Hrs", "Cr Hrs")
             tableMapping.ColumnMappings.Add("Capacity", "Capacity")
             tableMapping.ColumnMappings.Add("Instructor", "Instructor")
-            tableMapping.ColumnMappings.Add("Days ?", "Days ?")
+            tableMapping.ColumnMappings.Add("Days", "Days")
             tableMapping.ColumnMappings.Add("Begin", "Begin")
             tableMapping.ColumnMappings.Add("End", "End")
             tableMapping.ColumnMappings.Add("Location ?", "Location ?")
@@ -1253,8 +1251,8 @@ Namespace Fall2017ClassesDataSetTableAdapters
             Me._adapter.InsertCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
             Me._adapter.InsertCommand.CommandText = "INSERT INTO `Classes` (`CRN ?`, `Department`, `Course Number`, `Title`, `Type ?`,"& _ 
-                " `Cr Hrs`, `Capacity`, `Instructor`, `Days ?`, `Begin`, `End`, `Location ?`, `Ex"& _ 
-                "am`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+                " `Cr Hrs`, `Capacity`, `Instructor`, `Days`, `Begin`, `End`, `Location ?`, `Exam"& _ 
+                "`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("CRN_?", Global.System.Data.OleDb.OleDbType.[Double], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CRN ?", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Department", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Department", Global.System.Data.DataRowVersion.Current, false, Nothing))
@@ -1264,7 +1262,7 @@ Namespace Fall2017ClassesDataSetTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Cr_Hrs", Global.System.Data.OleDb.OleDbType.[Double], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Cr Hrs", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Capacity", Global.System.Data.OleDb.OleDbType.[Double], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Capacity", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Instructor", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Instructor", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Days_?", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Days ?", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Days", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Days", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Begin", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Begin", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("End", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "End", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Location_?", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Location ?", Global.System.Data.DataRowVersion.Current, false, Nothing))
@@ -1285,7 +1283,7 @@ Namespace Fall2017ClassesDataSetTableAdapters
             Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT [CRN ?], Department, [Course Number], Title, [Type ?], [Cr Hrs], Capacity,"& _ 
-                " Instructor, [Days ?], [Begin], [End], [Location ?], Exam FROM Classes"
+                " Instructor, Days, [Begin], [End], [Location ?], Exam FROM Classes"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -1345,7 +1343,7 @@ Namespace Fall2017ClassesDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal _CRN__ As Global.System.Nullable(Of Double), ByVal Department As String, ByVal Course_Number As Global.System.Nullable(Of Double), ByVal Title As String, ByVal _Type__ As String, ByVal Cr_Hrs As Global.System.Nullable(Of Double), ByVal Capacity As Global.System.Nullable(Of Double), ByVal Instructor As String, ByVal _Days__ As String, ByVal Begin As String, ByVal _End As String, ByVal _Location__ As String, ByVal Exam As String) As Integer
+        Public Overloads Overridable Function Insert(ByVal _CRN__ As Global.System.Nullable(Of Double), ByVal Department As String, ByVal Course_Number As Global.System.Nullable(Of Double), ByVal Title As String, ByVal _Type__ As String, ByVal Cr_Hrs As Global.System.Nullable(Of Double), ByVal Capacity As Global.System.Nullable(Of Double), ByVal Instructor As String, ByVal Days As String, ByVal Begin As String, ByVal _End As String, ByVal _Location__ As String, ByVal Exam As String) As Integer
             If (_CRN__.HasValue = true) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = CType(_CRN__.Value,Double)
             Else
@@ -1386,10 +1384,10 @@ Namespace Fall2017ClassesDataSetTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(7).Value = CType(Instructor,String)
             End If
-            If (_Days__ Is Nothing) Then
+            If (Days Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(8).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(8).Value = CType(_Days__,String)
+                Me.Adapter.InsertCommand.Parameters(8).Value = CType(Days,String)
             End If
             If (Begin Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(9).Value = Global.System.DBNull.Value

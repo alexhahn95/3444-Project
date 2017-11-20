@@ -50,6 +50,9 @@
     <ApplicationIcon>appLogo.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Itenso.TimePeriod, Version=2.1.1.0, Culture=neutral, PublicKeyToken=8cb6db75b4e81486, processorArchitecture=MSIL">
+      <HintPath>packages\TimePeriodLibrary.NET.2.1.1\lib\net46\Itenso.TimePeriod.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Solver.Foundation, Version=3.0.2.10889, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Microsoft.Solver.Foundation\v4.0_3.0.2.10889__31bf3856ad364e35\Microsoft.Solver.Foundation.dll</HintPath>
@@ -92,6 +95,9 @@
     <Compile Include="Fall2017ClassesDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>Fall2017ClassesDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Fall2017ClassesDataSet.vb">
       <DependentUpon>Fall2017ClassesDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Optimization.vb" />
@@ -182,6 +188,7 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="appLogo.ico" />

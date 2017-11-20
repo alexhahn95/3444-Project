@@ -1,12 +1,13 @@
-﻿Public Class CreateObjects
+﻿Imports System.Text.RegularExpressions
+
+Public Class CreateObjects
 
     'TODO: Update comments
     Public Property CourseList As New List(Of Course)
     Public Property WeightList As New List(Of Weight)
     Public Sections() As String
     Public CourseOfferings(,) As Integer
-    'This will change when the amount of periods goes from 20 to 168
-    Public Property PeriodCount = 20
+    Public Property PeriodCount = 839
 
     Public Database As New Database
     Public ConnectionString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\Fall2017Classes.accdb"
@@ -16,7 +17,7 @@
     Public Sub CreateObjects()
         'First, we get the table in the dataset updated
         Dim tableName As String = "Classes"
-        ProjSQL = "SELECT * FROM " & tableName
+        ProjSQL = "SELECT * FROM " & tableName & " WHERE Days = 'T R' OR Days = 'M W' OR Days = 'M W F'"
         Database.RunSql(ConnectionString, ProjSQL, DataSet, tableName)
 
         'Next we transfer data from the table to objects
@@ -26,11 +27,13 @@
                 .Department = DataSet.Tables(tableName).Rows(rowNum)("Department"),
                 .Title = DataSet.Tables(tableName).Rows(rowNum)("Title"),
                 .Instructor = DataSet.Tables(tableName).Rows(rowNum)("Instructor"),
-                .Days = DataSet.Tables(tableName).Rows(rowNum)("Days ?"),
+                .Days = DataSet.Tables(tableName).Rows(rowNum)("Days"),
                 .Begin = DataSet.Tables(tableName).Rows(rowNum)("Begin"),
                 .EndInst = DataSet.Tables(tableName).Rows(rowNum)("End"),
-                .Location = DataSet.Tables(tableName).Rows(rowNum)("Location ?")
+                .Location = DataSet.Tables(tableName).Rows(rowNum)("Location ?"),
+                .CourseNumber = DataSet.Tables(tableName).Rows(rowNum)("Course Number")
             }
+
             CourseList.Add(Course)
             rowNum = rowNum + 1
         Next
@@ -42,6 +45,29 @@
         'Initializes Course Offerings Paramater 2D array
         CourseOfferings = New Integer(PeriodCount - 1, CourseList.Count - 1) {}
 
+        Dim PM As Regex
+        Dim AM As Regex
+        Dim startIndex As Integer
+        Dim endIndex As Integer
+        Dim time As String()
+        For Each course As Course In CourseList
+            PM = New Regex("([PM])\w+")
+            AM = New Regex("([AM])\w+")
+            If PM.Matches(course.Begin).Count > 0 Then
+                MessageBox.Show("begin: " & course.Begin)
+                time = PM.Replace(course.Begin, "").Split(":")
+                startIndex = (time(0) * 20 + time(1) * 5) - 1
+                MessageBox.Show("startIndex: " & startIndex)
+                'MessageBox.Show("result" & course.Begin)
+            ElseIf AM.Matches(course.Begin).Count > 0 Then
+                'MessageBox.Show("AM")
+            Else
+                Throw New Exception()
+            End If
+
+        Next
+        MessageBox.Show("Success")
+
 
     End Sub
 
@@ -52,4 +78,4 @@
 
 End Class
 
-'.CourseName = DataSet.Tables(tableName).Rows(rowNum)("Course"),
+

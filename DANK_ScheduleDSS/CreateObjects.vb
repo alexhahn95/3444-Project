@@ -23,7 +23,7 @@ Public Class CreateObjects
         'Next we transfer data from the table to objects
         For rowNum As Integer = 0 To DataSet.Tables(tableName).Rows.Count - 1
             Dim Course As New Course With {
-                .CRN = DataSet.Tables(tableName).Rows(rowNum)("CRN ?"),
+                .CRN = DataSet.Tables(tableName).Rows(rowNum)("CRN"),
                 .Department = DataSet.Tables(tableName).Rows(rowNum)("Department"),
                 .Title = DataSet.Tables(tableName).Rows(rowNum)("Title"),
                 .Instructor = DataSet.Tables(tableName).Rows(rowNum)("Instructor"),
@@ -53,17 +53,44 @@ Public Class CreateObjects
         For Each course As Course In CourseList
             PM = New Regex("([PM])\w+")
             AM = New Regex("([AM])\w+")
+            'Consider refactor
             If PM.Matches(course.Begin).Count > 0 Then
-                MessageBox.Show("begin: " & course.Begin)
                 time = PM.Replace(course.Begin, "").Split(":")
-                startIndex = (time(0) * 20 + time(1) * 5) - 1
-                MessageBox.Show("startIndex: " & startIndex)
+                If time(0) <> 12 Then
+                    time(0) = time(0) + 12
+                End If
+                startIndex = ((time(0) - 8) * 12 + time(1) / 5)
                 'MessageBox.Show("result" & course.Begin)
             ElseIf AM.Matches(course.Begin).Count > 0 Then
-                'MessageBox.Show("AM")
+                time = AM.Replace(course.Begin, "").Split(":")
+                startIndex = ((time(0) - 8) * 12 + time(1) / 5)
             Else
                 Throw New Exception()
             End If
+
+            If course.CRN = 20034 Then
+                Dim h As Integer = 5
+            End If
+            If PM.Matches(course.EndInst).Count > 0 Then
+                time = PM.Replace(course.EndInst, "").Split(":")
+                If time(0) <> 12 Then
+                    time(0) = time(0) + 12
+                End If
+                endIndex = ((time(0) - 8) * 12 + time(1) / 5)
+                'MessageBox.Show("result" & course.Begin)
+            ElseIf AM.Matches(course.EndInst).Count > 0 Then
+                time = AM.Replace(course.EndInst, "").Split(":")
+                endIndex = ((time(0) - 8) * 12 + time(1) / 5)
+            Else
+                Throw New Exception()
+            End If
+
+            If course.CRN = 20034 Then
+                MessageBox.Show("Beginning Index: " & startIndex)
+                MessageBox.Show("End Index: " & endIndex)
+            End If
+
+
 
         Next
         MessageBox.Show("Success")

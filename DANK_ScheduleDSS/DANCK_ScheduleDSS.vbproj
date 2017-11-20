@@ -97,9 +97,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Fall2017ClassesDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Fall2017ClassesDataSet.vb">
-      <DependentUpon>Fall2017ClassesDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Optimization.vb" />
     <Compile Include="Results.Designer.vb">
       <DependentUpon>Results.vb</DependentUpon>

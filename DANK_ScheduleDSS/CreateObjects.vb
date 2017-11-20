@@ -42,13 +42,14 @@ Public Class CreateObjects
         Sections = New String() {"Evening", "Morning", "TuesThurs", "MonWedFri", "MonWed"}
 
         'Initializes Course Offerings Paramater 2D array
-        CourseOfferings = New Integer(PeriodCount - 1, CourseList.Count - 1) {}
+        CourseOfferings = New Integer(CourseList.Count - 1, PeriodCount - 1) {}
 
         Dim PM As Regex
         Dim AM As Regex
         Dim startIndex As Integer
         Dim endIndex As Integer
         Dim time As String()
+        Dim iter As Integer = 0 'Iterates over course indicies for CourseOffering array assignments 
         For Each course As Course In CourseList
             PM = New Regex("([PM])\w+")
             AM = New Regex("([AM])\w+")
@@ -59,7 +60,6 @@ Public Class CreateObjects
                     time(0) = time(0) + 12
                 End If
                 startIndex = ((time(0) - 8) * 12 + time(1) / 5)
-                'MessageBox.Show("result" & course.Begin)
             ElseIf AM.Matches(course.Begin).Count > 0 Then
                 time = AM.Replace(course.Begin, "").Split(":")
                 startIndex = ((time(0) - 8) * 12 + time(1) / 5)
@@ -73,7 +73,6 @@ Public Class CreateObjects
                     time(0) = time(0) + 12
                 End If
                 endIndex = ((time(0) - 8) * 12 + time(1) / 5)
-                'MessageBox.Show("result" & course.Begin)
             ElseIf AM.Matches(course.EndInst).Count > 0 Then
                 time = AM.Replace(course.EndInst, "").Split(":")
                 endIndex = ((time(0) - 8) * 12 + time(1) / 5)
@@ -81,9 +80,14 @@ Public Class CreateObjects
                 Throw New Exception()
             End If
 
-            For i = 0 To CourseList.Count
+            For i = 0 To 168
+                If i >= startIndex And i < endIndex Then
+                    CourseOfferings(iter, i) = 1
+                End If
 
             Next
+
+            iter = iter + 1
 
 
         Next

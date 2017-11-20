@@ -39,7 +39,7 @@ Public Class Optimization
             constraintKey = "Overlap Constraint: " & period
             Solver.AddRow(constraintKey, constraintIndex)
             For course = 1 To CreateObjects.CourseList.Count
-                coefficient = CreateObjects.CourseOfferings(period - 1, course - 1)
+                coefficient = CreateObjects.CourseOfferings(course - 1, period - 1)
                 dvKey = CreateObjects.CourseList.ElementAt(course - 1).CRN
                 dvIndex = Solver.GetIndexFromKey(dvKey)
                 Solver.SetCoefficient(constraintIndex, dvIndex, coefficient)

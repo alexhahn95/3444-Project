@@ -35,7 +35,6 @@ Public Class CreateObjects
             }
 
             CourseList.Add(Course)
-            rowNum = rowNum + 1
         Next
 
         'Creates Sections
@@ -68,9 +67,6 @@ Public Class CreateObjects
                 Throw New Exception()
             End If
 
-            If course.CRN = 20034 Then
-                Dim h As Integer = 5
-            End If
             If PM.Matches(course.EndInst).Count > 0 Then
                 time = PM.Replace(course.EndInst, "").Split(":")
                 If time(0) <> 12 Then
@@ -85,15 +81,12 @@ Public Class CreateObjects
                 Throw New Exception()
             End If
 
-            If course.CRN = 20034 Then
-                MessageBox.Show("Beginning Index: " & startIndex)
-                MessageBox.Show("End Index: " & endIndex)
-            End If
+            For i = 0 To CourseList.Count
 
+            Next
 
 
         Next
-        MessageBox.Show("Success")
 
 
     End Sub

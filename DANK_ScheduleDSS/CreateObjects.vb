@@ -14,29 +14,18 @@ Public Class CreateObjects
     Public ProjSQL As String
     Public DataSet As New DataSet
     Public DayAmtOfIndicies As Integer = 169
+    Public tableName As String = "Classes"
+
 
     Public Sub CreateObjects()
-        'First, we get the table in the dataset updated
-        Dim tableName As String = "Classes"
-        ProjSQL = "SELECT * FROM " & tableName & " WHERE Days = 'T R' OR Days = 'M W' OR Days = 'M W F'"
-        Database.RunSql(ConnectionString, ProjSQL, DataSet, tableName)
+
+        PopulateDataSet("CS", 2114)
+        ActuallyCreateObjects()
 
         'Next we transfer data from the table to objects
-        For rowNum As Integer = 0 To DataSet.Tables(tableName).Rows.Count - 1
-            Dim Course As New Course With {
-                .CRN = DataSet.Tables(tableName).Rows(rowNum)("CRN"),
-                .Department = DataSet.Tables(tableName).Rows(rowNum)("Department"),
-                .Title = DataSet.Tables(tableName).Rows(rowNum)("Title"),
-                .Instructor = DataSet.Tables(tableName).Rows(rowNum)("Instructor"),
-                .Days = DataSet.Tables(tableName).Rows(rowNum)("Days"),
-                .Begin = DataSet.Tables(tableName).Rows(rowNum)("Begin"),
-                .EndInst = DataSet.Tables(tableName).Rows(rowNum)("End"),
-                .Location = DataSet.Tables(tableName).Rows(rowNum)("Location ?"),
-                .CourseNumber = DataSet.Tables(tableName).Rows(rowNum)("Course Number")
-            }
 
-            CourseList.Add(Course)
-        Next
+        ProjSQL = "SELECT * FROM " & tableName & " WHERE Department = 'CS'"
+        Database.RunSql(ConnectionString, ProjSQL, DataSet, tableName)
 
         'Creates Sections
         'TODO change to enum implementation
@@ -135,9 +124,31 @@ Public Class CreateObjects
 
     End Sub
 
-    Public Sub Query()
-        'TODO This is for creating queries for certian criteria on the client
+    'Rename? LOL
+    Public Sub ActuallyCreateObjects()
+        For rowNum As Integer = 0 To DataSet.Tables(tableName).Rows.Count - 1
+            Dim Course As New Course With {
+                .CRN = DataSet.Tables(Me.tableName).Rows(rowNum)("CRN"),
+                .Department = DataSet.Tables(Me.tableName).Rows(rowNum)("Department"),
+                .Title = DataSet.Tables(Me.tableName).Rows(rowNum)("Title"),
+                .Instructor = DataSet.Tables(Me.tableName).Rows(rowNum)("Instructor"),
+                .Days = DataSet.Tables(Me.tableName).Rows(rowNum)("Days"),
+                .Begin = DataSet.Tables(Me.tableName).Rows(rowNum)("Begin"),
+                .EndInst = DataSet.Tables(Me.tableName).Rows(rowNum)("End"),
+                .Location = DataSet.Tables(Me.tableName).Rows(rowNum)("Location ?"),
+                .CourseNumber = DataSet.Tables(Me.tableName).Rows(rowNum)("CourseNumber")
+            }
 
+            CourseList.Add(Course)
+        Next
+    End Sub
+
+    Public Sub PopulateDataSet(Department As String, CourseNumber As Integer)
+        ProjSQL = "SELECT * FROM " & tableName & " WHERE Department = "
+        Dim FormattedDepartment As String = "'" & Department & "'" & " AND CourseNumber = " & CourseNumber
+        ProjSQL = ProjSQL + FormattedDepartment
+
+        Database.RunSql(ConnectionString, ProjSQL, DataSet, tableName)
     End Sub
 
 End Class

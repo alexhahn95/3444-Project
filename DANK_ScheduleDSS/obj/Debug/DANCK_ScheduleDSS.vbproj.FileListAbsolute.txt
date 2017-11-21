@@ -17,4 +17,3 @@ C:\Users\Alex-PC\Documents\DANK_ScheduleDSS\DANK_ScheduleDSS\obj\Debug\DANKSolut
 C:\Users\Alex-PC\Documents\DANK_ScheduleDSS\DANK_ScheduleDSS\obj\Debug\DANKSolutions_ClassScheduleDSS.pdb
 C:\Users\Alex-PC\Documents\DANK_ScheduleDSS\DANK_ScheduleDSS\obj\Debug\DANCK_ScheduleDSS.vbprojResolveAssemblyReference.cache
 C:\Users\Alex-PC\Documents\DANK_ScheduleDSS\DANK_ScheduleDSS\bin\Debug\Microsoft.Solver.Foundation.dll
-C:\Users\Alex-PC\Documents\DANK_ScheduleDSS\DANK_ScheduleDSS\bin\Debug\Microsoft.Solver.Foundation.xml

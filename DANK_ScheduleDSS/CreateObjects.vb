@@ -7,12 +7,13 @@ Public Class CreateObjects
     Public Property WeightList As New List(Of Weight)
     Public Sections() As String
     Public CourseOfferings(,) As Integer
-    Public Property PeriodCount = 839
+    Public Property PeriodCount As Integer = 839
 
     Public Database As New Database
     Public ConnectionString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\Fall2017Classes.accdb"
     Public ProjSQL As String
     Public DataSet As New DataSet
+    Public DayAmtOfIndicies As Integer = 169
 
     Public Sub CreateObjects()
         'First, we get the table in the dataset updated
@@ -44,6 +45,7 @@ Public Class CreateObjects
         'Initializes Course Offerings Paramater 2D array
         CourseOfferings = New Integer(CourseList.Count - 1, PeriodCount - 1) {}
 
+        'WORST CODE ALEX HAS EVER WRITTEN. SO FUCKING UGLY. WHY DID I EVEN READ THAT CLEAN CODE BOOK???
         Dim PM As Regex
         Dim AM As Regex
         Dim startIndex As Integer
@@ -79,6 +81,44 @@ Public Class CreateObjects
             Else
                 Throw New Exception()
             End If
+
+            Select Case course.Days
+                Case "T R"
+                    For i = 0 To 168
+                        If i >= startIndex And i < endIndex Then
+                            CourseOfferings(iter, i + DayAmtOfIndicies) = 1
+                        End If
+
+                        If i >= startIndex And i < endIndex Then
+                            CourseOfferings(iter, i + DayAmtOfIndicies + DayAmtOfIndicies + DayAmtOfIndicies) = 1
+                        End If
+                    Next
+                Case "M W"
+                    For i = 0 To 168
+                        If i >= startIndex And i < endIndex Then
+                            CourseOfferings(iter, i) = 1
+                        End If
+
+                        If i >= startIndex And i < endIndex Then
+                            CourseOfferings(iter, i + DayAmtOfIndicies + DayAmtOfIndicies) = 1
+                        End If
+                    Next
+                Case "M W F"
+                    For i = 0 To 168
+                        If i >= startIndex And i < endIndex Then
+                            CourseOfferings(iter, i) = 1
+                        End If
+
+                        If i >= startIndex And i < endIndex Then
+                            CourseOfferings(iter, i + DayAmtOfIndicies + DayAmtOfIndicies) = 1
+                        End If
+
+                        If i >= startIndex And i < endIndex Then
+                            CourseOfferings(iter, i + DayAmtOfIndicies + DayAmtOfIndicies + DayAmtOfIndicies + DayAmtOfIndicies) = 1
+                        End If
+                    Next
+
+            End Select
 
             For i = 0 To 168
                 If i >= startIndex And i < endIndex Then

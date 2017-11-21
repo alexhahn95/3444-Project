@@ -8,7 +8,7 @@ Public Class Optimization
     Dim Solver As SimplexSolver
 
     'These need to change to be set by the user and maybe change locations
-    Public Property AmountRequestedCourses As Integer = 5
+    Public Property AmountRequestedCourses As Integer = 2
 
     Public Sub BuildModel()
 
@@ -16,7 +16,8 @@ Public Class Optimization
 
         CreateObjects.CreateObjects()
 
-        Dim GoalAmounts = New Integer() {3, 4, 5, 3, 2}
+        'In order: Evening, Morning, TR, MW, MWF 
+        Dim GoalAmounts = New Integer() {3, 0, 0, 0, 0}
 
         'Define the decision variables
         Dim dvKey As String

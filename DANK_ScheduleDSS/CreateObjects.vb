@@ -19,13 +19,10 @@ Public Class CreateObjects
 
     Public Sub CreateObjects()
 
-        PopulateDataSet("CS", 2114)
+        PopulateDataSet("BIT", 3424)
+        PopulateDataSet("BIT", 3444)
+        PopulateDataSet("ACIS", 3504)
         ActuallyCreateObjects()
-
-        'Next we transfer data from the table to objects
-
-        ProjSQL = "SELECT * FROM " & tableName & " WHERE Department = 'CS'"
-        Database.RunSql(ConnectionString, ProjSQL, DataSet, tableName)
 
         'Creates Sections
         'TODO change to enum implementation

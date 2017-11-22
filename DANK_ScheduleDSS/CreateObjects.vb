@@ -19,7 +19,7 @@ Public Class CreateObjects
     'Literally Cancer
     Public Sub CreateObjects()
 
-        PopulateDataSet("ECON", 3104)
+        PopulateDataSet("ECON")
         'PopulateDataSet("BIT", 3444)
         'PopulateDataSet("BIT", 2406)
         'PopulateDataSet("CS", 2505)
@@ -33,7 +33,7 @@ Public Class CreateObjects
         'Initializes Course Offerings Paramater 2D array
         CourseOfferings = New Integer(CourseList.Count - 1, PeriodCount - 1) {}
 
-        'WORST CODE ALEX HAS EVER WRITTEN. SO FUCKING UGLY. WHY DID I EVEN READ THAT CLEAN CODE BOOK???
+        'WORST CODE ALEX HAS EVER WRITTEN. SO UGLY. WHY DID I EVEN READ THAT CLEAN CODE BOOK???
         Dim PM As Regex
         Dim AM As Regex
         Dim startIndex As Integer

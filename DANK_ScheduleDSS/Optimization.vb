@@ -8,7 +8,7 @@ Public Class Optimization
     Dim Solver As SimplexSolver
 
     'These need to change to be set by the user and maybe change locations
-    Public Property AmountRequestedCourses As Integer = 2
+    Public Property AmountRequestedCourses As Integer = 1
 
     Public Sub BuildModel()
 
@@ -17,7 +17,7 @@ Public Class Optimization
         CreateObjects.CreateObjects()
 
         'In order: Evening, Morning, TR, MW, MWF 
-        Dim GoalAmounts = New Integer() {3, 0, 0, 0, 0}
+        Dim GoalAmounts = New Integer() {70, 0, 0, 0, 0}
 
         'Define the decision variables
         Dim dvKey As String
@@ -35,18 +35,19 @@ Public Class Optimization
         Dim constraintKey As String
         Dim constraintIndex As Integer
 
-        'Overlap binary constraint
-        For period = 1 To CreateObjects.PeriodCount
-            constraintKey = "Overlap Constraint: " & period
+        For period = 0 To CreateObjects.PeriodCount - 1
+            constraintKey = "Overlap Constraint: 0"
             Solver.AddRow(constraintKey, constraintIndex)
-            For course = 1 To CreateObjects.CourseList.Count
-                coefficient = CreateObjects.CourseOfferings(course - 1, period - 1)
-                dvKey = CreateObjects.CourseList.ElementAt(course - 1).CRN
+            Dim iter As Integer = 0
+            For Each course As Course In CreateObjects.CourseList
+                coefficient = CreateObjects.CourseOfferings(iter, period)
+                iter = iter + 1
+                dvKey = course.CRN
                 dvIndex = Solver.GetIndexFromKey(dvKey)
                 Solver.SetCoefficient(constraintIndex, dvIndex, coefficient)
             Next
-            Solver.SetBounds(constraintIndex, 0, 1)
         Next
+
 
         'Course enrollment constraint
         constraintKey = "Enrollment Constraint"
@@ -59,36 +60,26 @@ Public Class Optimization
         Next
         Solver.SetBounds(constraintIndex, AmountRequestedCourses, AmountRequestedCourses)
 
-        'Objective function
+        'Objective Function
         Dim objKey As String = "Objective Function"
         Dim objIndex As Integer
         Solver.AddRow(objKey, objIndex)
         For section = 0 To CreateObjects.Sections.Count - 1
             For Each course As Course In CreateObjects.CourseList
-                If course.Totals(section) > GoalAmounts(section) Then
-                    coefficient = course.Totals(section) - GoalAmounts(section)
-                ElseIf course.Totals(section) < GoalAmounts(section) Then
-                    coefficient = GoalAmounts(section) - course.Totals(section)
-                Else
-                    coefficient = 0
-                End If
+                coefficient = course.Totals(section) - GoalAmounts(section)
                 dvKey = course.CRN
                 dvIndex = Solver.GetIndexFromKey(dvKey)
                 Solver.SetCoefficient(objIndex, dvIndex, coefficient)
             Next
-            section = section + 1
+
         Next
 
         Solver.AddGoal(objIndex, 0, True)
+        Solver.Solve(New SimplexSolverParams())
+        MessageBox.Show("Obj function: " & Solver.GetValue(objIndex).ToDouble)
 
-        Dim solverParam As New SimplexSolverParams With {
-            .MixedIntegerGapTolerance = 0.01
-        }
-        Solver.Solve(solverParam)
         For i = 0 To Solver.VariableIndices.Count - 1
-            If Solver.GetValue(i) = 1 Then
-                MessageBox.Show(i)
-            End If
+            MessageBox.Show(Solver.GetKeyFromIndex(i) & ": " & Solver.GetValue(i).ToDouble)
         Next
     End Sub
 End Class

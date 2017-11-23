@@ -4,7 +4,7 @@ Imports Microsoft.SolverFoundation.Solvers
 
 Public Class Optimization
 
-    Dim CreateObjects As New ObjectCreator
+    Dim ObjectCreator As New ObjectCreator
     Dim Solver As SimplexSolver
 
     'These need to change to be set by the user and maybe change locations
@@ -14,7 +14,7 @@ Public Class Optimization
 
         Solver = New SimplexSolver
 
-        CreateObjects.CreateObjects()
+        ObjectCreator.CreateObjects()
 
         'In order: Evening, Morning, TR, MW, MWF 
         Dim GoalAmounts = New Integer() {1, 1, 1, 1, 1}
@@ -23,7 +23,7 @@ Public Class Optimization
         Dim dvKey As String
         Dim dvIndex As Integer
 
-        For Each course As Course In CreateObjects.CourseList
+        For Each course As Course In ObjectCreator.CourseList
             dvKey = course.CRN
             Solver.AddVariable(dvKey, dvIndex)
             Solver.SetIntegrality(dvIndex, True)
@@ -35,12 +35,12 @@ Public Class Optimization
         Dim constraintKey As String
         Dim constraintIndex As Integer
 
-        For period = 0 To CreateObjects.PeriodCount - 1
+        For period = 0 To ObjectCreator.PeriodCount - 1
             constraintKey = "Overlap Constraint: " & period
             Solver.AddRow(constraintKey, constraintIndex)
             Dim iter As Integer = 0
-            For Each course As Course In CreateObjects.CourseList
-                coefficient = CreateObjects.CourseOfferings(iter, period)
+            For Each course As Course In ObjectCreator.CourseList
+                coefficient = ObjectCreator.CourseOfferings(iter, period)
                 iter = iter + 1
                 dvKey = course.CRN
                 dvIndex = Solver.GetIndexFromKey(dvKey)
@@ -49,11 +49,10 @@ Public Class Optimization
             Solver.SetBounds(constraintIndex, 0, 1)
         Next
 
-
         'Course enrollment constraint
         constraintKey = "Enrollment Constraint"
         Solver.AddRow(constraintKey, constraintIndex)
-        For Each course As Course In CreateObjects.CourseList
+        For Each course As Course In ObjectCreator.CourseList
             coefficient = 1
             dvKey = course.CRN
             dvIndex = Solver.GetIndexFromKey(dvKey)
@@ -67,8 +66,8 @@ Public Class Optimization
         Dim coefficients(,) As Integer
         coefficients = New Integer(1, 4) {} 'Used for debugging purposes
         Solver.AddRow(objKey, objIndex)
-        For section = 0 To CreateObjects.Sections.Count - 1
-            For Each course As Course In CreateObjects.CourseList
+        For section = 0 To ObjectCreator.Sections.Count - 1
+            For Each course As Course In ObjectCreator.CourseList
                 coefficient = Math.Abs(course.Totals(section) - GoalAmounts(section))
                 dvKey = course.CRN
                 dvIndex = Solver.GetIndexFromKey(dvKey)

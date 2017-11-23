@@ -9,4 +9,5 @@ Public Class frmWelcome
         opt.BuildModel()
         Me.Close()
     End Sub
+
 End Class

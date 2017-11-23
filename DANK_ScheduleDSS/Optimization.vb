@@ -8,7 +8,7 @@ Public Class Optimization
     Dim Solver As SimplexSolver
 
     'These need to change to be set by the user and maybe change locations
-    Public Property AmountRequestedCourses As Integer = 5
+    Public Property AmountRequestedCourses As Integer = 1
 
     Public Sub BuildModel()
 
@@ -17,7 +17,7 @@ Public Class Optimization
         CreateObjects.CreateObjects()
 
         'In order: Evening, Morning, TR, MW, MWF 
-        Dim GoalAmounts = New Integer() {1, 1, 1, 1, 150}
+        Dim GoalAmounts = New Integer() {1, 1, 1, 1, 1}
 
         'Define the decision variables
         Dim dvKey As String
@@ -64,10 +64,12 @@ Public Class Optimization
         'Objective Function
         Dim objKey As String = "Objective Function"
         Dim objIndex As Integer
+        Dim coefficients(,) As Integer
+        coefficients = New Integer(1, 4) {} 'Used for debugging purposes
         Solver.AddRow(objKey, objIndex)
         For section = 0 To CreateObjects.Sections.Count - 1
             For Each course As Course In CreateObjects.CourseList
-                coefficient = course.Totals(section) - GoalAmounts(section)
+                coefficient = Math.Abs(course.Totals(section) - GoalAmounts(section))
                 dvKey = course.CRN
                 dvIndex = Solver.GetIndexFromKey(dvKey)
                 Solver.SetCoefficient(objIndex, dvIndex, coefficient)
@@ -76,19 +78,18 @@ Public Class Optimization
 
         Solver.AddGoal(objIndex, 0, True)
 
-        Dim mySolverParms As New SimplexSolverParams With {
-            .MixedIntegerGapTolerance = 1,
-            .VariableFeasibilityTolerance = 0.00001,
-            .MaxPivotCount = 1000
-        }
+        Dim mySolverParms As New SimplexSolverParams
+        'With {
+        '.MixedIntegerGapTolerance = 1,
+        '.VariableFeasibilityTolerance = 0.00001,
+        '.MaxPivotCount = 1000
+        '}
 
         Solver.Solve(mySolverParms)
         MessageBox.Show("Obj function: " & Solver.GetValue(objIndex).ToString)
 
         For i = 0 To Solver.VariableIndices.Count - 1
-            If Solver.GetValue(i).ToDouble = 1 Then
-                MessageBox.Show(Solver.GetKeyFromIndex(i) & ": " & Solver.GetValue(i).ToDouble)
-            End If
+            MessageBox.Show(Solver.GetKeyFromIndex(i) & ": " & Solver.GetValue(i).ToDouble)
 
         Next
     End Sub

@@ -16,10 +16,9 @@ Public Class CreateObjects
     Public DayAmtOfIndicies As Integer = 169
     Public tableName As String = "Classes"
 
-    'Literally Cancer
     Public Sub CreateObjects()
 
-        PopulateDataSet("ECON")
+        PopulateDataSet("ECON", 3104)
         'PopulateDataSet("BIT", 3444)
         'PopulateDataSet("BIT", 2406)
         'PopulateDataSet("CS", 2505)
@@ -39,36 +38,11 @@ Public Class CreateObjects
         Dim startIndex As Integer
         Dim endIndex As Integer
         Dim time As String()
-        Dim iter As Integer = 0 'Iterates over course indicies for CourseOffering array assignments 
-        For Each course As Course In CourseList
-            PM = New Regex("([PM])\w+")
-            AM = New Regex("([AM])\w+")
-            'Consider refactor
-            If PM.Matches(course.Begin).Count > 0 Then
-                time = PM.Replace(course.Begin, "").Split(":")
-                If time(0) <> 12 Then
-                    time(0) = time(0) + 12
-                End If
-                startIndex = ((time(0) - 8) * 12 + time(1) / 5)
-            ElseIf AM.Matches(course.Begin).Count > 0 Then
-                time = AM.Replace(course.Begin, "").Split(":")
-                startIndex = ((time(0) - 8) * 12 + time(1) / 5)
-            Else
-                Throw New Exception()
-            End If
+        Dim iter As Integer = 0 'Iterates over course indicies for CourseOffering array assignments
 
-            If PM.Matches(course.EndInst).Count > 0 Then
-                time = PM.Replace(course.EndInst, "").Split(":")
-                If time(0) <> 12 Then
-                    time(0) = time(0) + 12
-                End If
-                endIndex = ((time(0) - 8) * 12 + time(1) / 5)
-            ElseIf AM.Matches(course.EndInst).Count > 0 Then
-                time = AM.Replace(course.EndInst, "").Split(":")
-                endIndex = ((time(0) - 8) * 12 + time(1) / 5)
-            Else
-                Throw New Exception()
-            End If
+
+        For Each course As Course In CourseList
+            course.CalculateStartAndEndIndicies1()
 
             Select Case course.Days
                 Case "T R"
@@ -170,7 +144,7 @@ Public Class CreateObjects
 
             iter = iter + 1
 
-            Next
+        Next
 
     End Sub
 
@@ -183,8 +157,8 @@ Public Class CreateObjects
                 .Title = DataSet.Tables(Me.tableName).Rows(rowNum)("Title"),
                 .Instructor = DataSet.Tables(Me.tableName).Rows(rowNum)("Instructor"),
                 .Days = DataSet.Tables(Me.tableName).Rows(rowNum)("Days"),
-                .Begin = DataSet.Tables(Me.tableName).Rows(rowNum)("Begin"),
-                .EndInst = DataSet.Tables(Me.tableName).Rows(rowNum)("End"),
+                .BeginTime = DataSet.Tables(Me.tableName).Rows(rowNum)("Begin"),
+                .EndTime = DataSet.Tables(Me.tableName).Rows(rowNum)("End"),
                 .Location = DataSet.Tables(Me.tableName).Rows(rowNum)("Location"),
                 .CourseNumber = DataSet.Tables(Me.tableName).Rows(rowNum)("CourseNumber")
             }

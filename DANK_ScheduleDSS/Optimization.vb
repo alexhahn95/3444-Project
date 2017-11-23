@@ -4,7 +4,7 @@ Imports Microsoft.SolverFoundation.Solvers
 
 Public Class Optimization
 
-    Dim CreateObjects As New CreateObjects
+    Dim CreateObjects As New ObjectCreator
     Dim Solver As SimplexSolver
 
     'These need to change to be set by the user and maybe change locations

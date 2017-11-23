@@ -10,6 +10,7 @@ Public Class Course
     Public Property Days As String
     Public Property BeginTime As String
     Public Property EndTime As String
+    Public Property Location As String
 
     Private DayAmtOfIndicies As Integer = 169
 
@@ -18,9 +19,9 @@ Public Class Course
     Private startIndex As Integer
     Private endIndex As Integer
 
-    Dim PM As Regex
-    Dim AM As Regex
-    Public Property Location As String
+    Private PM As Regex
+    Private AM As Regex
+
     Public Totals() As Integer
 
     Dim Generator As Random
@@ -29,7 +30,7 @@ Public Class Course
         Totals = New Integer() {0, 0, 0, 0, 0}
     End Sub
 
-    Public Sub CalculateStartAndEndIndicies()
+    Public Sub UpdateStartAndEndIndicies()
         PM = New Regex("([PM])\w+")
         AM = New Regex("([AM])\w+")
 
@@ -59,7 +60,8 @@ Public Class Course
 
     Public Sub UpdateCourseOfferings(ByRef CourseOfferings(,) As Integer, CourseIndex As Integer)
         UpdateCourseOfferingsDaysOfWeek(CourseOfferings, CourseIndex)
-        UpdateCourseOfferingsTimeOfDay()
+        UpdateCourseTotalsDaysOfWeek()
+        UpdateCourseTotalsTimeOfDay(CourseOfferings, CourseIndex)
     End Sub
 
     Private Sub UpdateCourseOfferingsDaysOfWeek(ByRef CourseOfferings(,) As Integer, CourseIndex As Integer)
@@ -74,6 +76,8 @@ Public Class Course
                 DaysOfWeekHelper(CourseOfferings, CourseIndex, 0)
                 DaysOfWeekHelper(CourseOfferings, CourseIndex, 2)
                 DaysOfWeekHelper(CourseOfferings, CourseIndex, 4)
+            Case Else
+                Throw New Exception()
         End Select
     End Sub
 
@@ -85,7 +89,71 @@ Public Class Course
         Next
     End Sub
 
-    Private Sub UpdateCourseOfferingsTimeOfDay()
+    Public Sub UpdateCourseTotalsDaysOfWeek()
+        Select Case Days
+            Case "T R"
+                Totals(2) = 2 * (endIndex - startIndex)
+            Case "M W F"
+                Totals(3) = 3 * (endIndex - startIndex)
+            Case "M W"
+                Totals(4) = 2 * (endIndex - startIndex)
+            Case Else
+                Throw New Exception()
+        End Select
+    End Sub
+
+    'Consider refactor?
+    Private Sub UpdateCourseTotalsTimeOfDay(ByRef CourseOfferings(,) As Integer, CourseIndex As Integer)
+
+        'Monday Morning
+        For i = 0 To 47
+            Totals(1) = CourseOfferings(CourseIndex, i) + Totals(1)
+        Next
+
+        'Monday Evening
+        For i = 48 To 168
+            Totals(0) = CourseOfferings(CourseIndex, i) + Totals(0)
+        Next
+
+        'Tuesday Morning
+        For i = 169 To 216
+            Totals(1) = CourseOfferings(CourseIndex, i) + Totals(1)
+        Next
+
+        'Tuesday Evening
+        For i = 217 To 337
+            Totals(0) = CourseOfferings(CourseIndex, i) + Totals(0)
+        Next
+
+        'Wednesday Morning
+        For i = 338 To 385
+            Totals(1) = CourseOfferings(CourseIndex, i) + Totals(1)
+        Next
+
+        'Wednesday Evening
+        For i = 386 To 506
+            Totals(0) = CourseOfferings(CourseIndex, i) + Totals(0)
+        Next
+
+        'Thursday Morning
+        For i = 507 To 554
+            Totals(1) = CourseOfferings(CourseIndex, i) + Totals(1)
+        Next
+
+        'Thursday Evening
+        For i = 555 To 675
+            Totals(0) = CourseOfferings(CourseIndex, i) + Totals(0)
+        Next
+
+        'Friday Morning
+        For i = 676 To 723
+            Totals(1) = CourseOfferings(CourseIndex, i) + Totals(1)
+        Next
+
+        'Friday Evening
+        For i = 724 To 844
+            Totals(0) = CourseOfferings(CourseIndex, i) + Totals(0)
+        Next
 
     End Sub
 

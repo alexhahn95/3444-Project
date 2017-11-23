@@ -11,6 +11,8 @@ Public Class Course
     Public Property BeginTime As String
     Public Property EndTime As String
 
+    Private DayAmtOfIndicies As Integer = 169
+
     Public Property StartAndEndIndicies As String()
 
     Private startIndex As Integer
@@ -24,58 +26,19 @@ Public Class Course
     Dim Generator As Random
 
     Public Sub New()
-
-        'Generator = New Random
-        'Period = Generator.Next(1, 20)
-
-
-
-        'Currently not built out yet b/c not using real period data ALH,
-        'need to parse out start/end time strings and go from there
-
-        'Determine Morning or Evening and which period class is in
-        'Very bad ugly code!!!! Needs refactoring ALH
-
-        'In order: Evening, Morning, TuesThurs, MonWedFri, MonWed
         Totals = New Integer() {0, 0, 0, 0, 0}
     End Sub
 
-    Public Sub CalculateStartAndEndIndicies1()
+    Public Sub CalculateStartAndEndIndicies()
         PM = New Regex("([PM])\w+")
         AM = New Regex("([AM])\w+")
 
-        'If PM.Matches(BeginTime).Count > 0 Then
-        '    TimeArray = PM.Replace(BeginTime, "").Split(":")
-        '    If TimeArray(0) <> 12 Then
-        '        TimeArray(0) = TimeArray(0) + 12
-        '    End If
-        '    startIndex = ((TimeArray(0) - 8) * 12 + TimeArray(1) / 5)
-        'ElseIf AM.Matches(BeginTime).Count > 0 Then
-        '    TimeArray = AM.Replace(BeginTime, "").Split(":")
-        '    startIndex = ((TimeArray(0) - 8) * 12 + TimeArray(1) / 5)
-        'Else
-        '    Throw New Exception()
-        'End If
-
-        'If PM.Matches(EndTime).Count > 0 Then
-        '    TimeArray = PM.Replace(EndTime, "").Split(":")
-        '    If TimeArray(0) <> 12 Then
-        '        TimeArray(0) = TimeArray(0) + 12
-        '    End If
-        '    endINdex = ((TimeArray(0) - 8) * 12 + TimeArray(1) / 5)
-        'ElseIf AM.Matches(EndTime).Count > 0 Then
-        '    TimeArray = AM.Replace(EndTime, "").Split(":")
-        '    endINdex = ((TimeArray(0) - 8) * 12 + TimeArray(1) / 5)
-        'Else
-        '    Throw New Exception()
-        'End If
-
-        CalculateStartAndEndIndicies2(BeginTime, startIndex)
-        CalculateStartAndEndIndicies2(EndTime, endIndex)
+        IndiciesHelper(BeginTime, startIndex)
+        IndiciesHelper(EndTime, endIndex)
 
     End Sub
 
-    Public Sub CalculateStartAndEndIndicies2(BeginOrEndTime As String, ByRef Index As Integer)
+    Private Sub IndiciesHelper(BeginOrEndTime As String, ByRef Index As Integer)
         Dim TimeArray() As String
 
         If PM.Matches(BeginOrEndTime).Count > 0 Then
@@ -92,6 +55,37 @@ Public Class Course
             Throw New Exception()
         End If
 
+    End Sub
+
+    Public Sub UpdateCourseOfferings(ByRef CourseOfferings(,) As Integer, CourseIndex As Integer)
+        UpdateCourseOfferingsDaysOfWeek(CourseOfferings, CourseIndex)
+        UpdateCourseOfferingsTimeOfDay()
+    End Sub
+
+    Private Sub UpdateCourseOfferingsDaysOfWeek(ByRef CourseOfferings(,) As Integer, CourseIndex As Integer)
+        Select Case Days
+            Case "T R"
+                DaysOfWeekHelper(CourseOfferings, CourseIndex, 1)
+                DaysOfWeekHelper(CourseOfferings, CourseIndex, 3)
+            Case "M W"
+                DaysOfWeekHelper(CourseOfferings, CourseIndex, 0)
+                DaysOfWeekHelper(CourseOfferings, CourseIndex, 2)
+            Case "M W F"
+                DaysOfWeekHelper(CourseOfferings, CourseIndex, 0)
+                DaysOfWeekHelper(CourseOfferings, CourseIndex, 2)
+                DaysOfWeekHelper(CourseOfferings, CourseIndex, 4)
+        End Select
+    End Sub
+
+    Private Sub DaysOfWeekHelper(ByRef CourseOfferings(,) As Integer, CourseIndex As Integer, Day As Integer)
+        For i = 0 To 168
+            If i >= startIndex And i < endIndex Then
+                CourseOfferings(CourseIndex, i + DayAmtOfIndicies * Day) = 1
+            End If
+        Next
+    End Sub
+
+    Private Sub UpdateCourseOfferingsTimeOfDay()
 
     End Sub
 

@@ -1,6 +1,4 @@
-﻿Imports System.Text.RegularExpressions
-
-Public Class CreateObjects
+﻿Public Class CreateObjects
 
     'TODO: Update comments
     Public Property CourseList As New List(Of Course)
@@ -13,7 +11,7 @@ Public Class CreateObjects
     Public ConnectionString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\Fall2017Classes.accdb"
     Public ProjSQL As String
     Public DataSet As New DataSet
-    Public DayAmtOfIndicies As Integer = 169
+
     Public tableName As String = "Classes"
 
     Public Sub CreateObjects()
@@ -33,54 +31,15 @@ Public Class CreateObjects
         CourseOfferings = New Integer(CourseList.Count - 1, PeriodCount - 1) {}
 
         'WORST CODE ALEX HAS EVER WRITTEN. SO UGLY. WHY DID I EVEN READ THAT CLEAN CODE BOOK???
-        Dim PM As Regex
-        Dim AM As Regex
         Dim startIndex As Integer
         Dim endIndex As Integer
-        Dim time As String()
-        Dim iter As Integer = 0 'Iterates over course indicies for CourseOffering array assignments
+        Dim CourseIndex As Integer = 0 'Iterates over course indicies for CourseOffering array assignments
 
 
         For Each course As Course In CourseList
-            course.CalculateStartAndEndIndicies1()
+            course.CalculateStartAndEndIndicies()
+            course.UpdateCourseOfferings(CourseOfferings, CourseIndex)
 
-            Select Case course.Days
-                Case "T R"
-                    For i = 0 To 168
-                        If i >= startIndex And i < endIndex Then
-                            CourseOfferings(iter, i + DayAmtOfIndicies) = 1
-                        End If
-
-                        If i >= startIndex And i < endIndex Then
-                            CourseOfferings(iter, i + DayAmtOfIndicies + DayAmtOfIndicies + DayAmtOfIndicies) = 1
-                        End If
-                    Next
-                Case "M W"
-                    For i = 0 To 168
-                        If i >= startIndex And i < endIndex Then
-                            CourseOfferings(iter, i) = 1
-                        End If
-
-                        If i >= startIndex And i < endIndex Then
-                            CourseOfferings(iter, i + DayAmtOfIndicies + DayAmtOfIndicies) = 1
-                        End If
-                    Next
-                Case "M W F"
-                    For i = 0 To 168
-                        If i >= startIndex And i < endIndex Then
-                            CourseOfferings(iter, i) = 1
-                        End If
-
-                        If i >= startIndex And i < endIndex Then
-                            CourseOfferings(iter, i + DayAmtOfIndicies + DayAmtOfIndicies) = 1
-                        End If
-
-                        If i >= startIndex And i < endIndex Then
-                            CourseOfferings(iter, i + DayAmtOfIndicies + DayAmtOfIndicies + DayAmtOfIndicies + DayAmtOfIndicies) = 1
-                        End If
-                    Next
-
-            End Select
 
             Select Case course.Days
                 Case "T R"
@@ -94,55 +53,55 @@ Public Class CreateObjects
             'TIME OF DAY TOTALS
             'Monday Morning
             For i = 0 To 47
-                course.Totals(1) = CourseOfferings(iter, i) + course.Totals(1)
+                course.Totals(1) = CourseOfferings(CourseIndex, i) + course.Totals(1)
             Next
 
             'Monday Evening
             For i = 48 To 168
-                course.Totals(0) = CourseOfferings(iter, i) + course.Totals(0)
+                course.Totals(0) = CourseOfferings(CourseIndex, i) + course.Totals(0)
             Next
 
             'Tuesday Morning
             For i = 169 To 216
-                course.Totals(1) = CourseOfferings(iter, i) + course.Totals(1)
+                course.Totals(1) = CourseOfferings(CourseIndex, i) + course.Totals(1)
             Next
 
             'Tuesday Evening
             For i = 217 To 337
-                course.Totals(0) = CourseOfferings(iter, i) + course.Totals(0)
+                course.Totals(0) = CourseOfferings(CourseIndex, i) + course.Totals(0)
             Next
 
             'Wednesday Morning
             For i = 338 To 385
-                course.Totals(1) = CourseOfferings(iter, i) + course.Totals(1)
+                course.Totals(1) = CourseOfferings(CourseIndex, i) + course.Totals(1)
             Next
 
             'Wednesday Evening
             For i = 386 To 506
-                course.Totals(0) = CourseOfferings(iter, i) + course.Totals(0)
+                course.Totals(0) = CourseOfferings(CourseIndex, i) + course.Totals(0)
             Next
 
             'Thursday Morning
             For i = 507 To 554
-                course.Totals(1) = CourseOfferings(iter, i) + course.Totals(1)
+                course.Totals(1) = CourseOfferings(CourseIndex, i) + course.Totals(1)
             Next
 
             'Thursday Evening
             For i = 555 To 675
-                course.Totals(0) = CourseOfferings(iter, i) + course.Totals(0)
+                course.Totals(0) = CourseOfferings(CourseIndex, i) + course.Totals(0)
             Next
 
             'Friday Morning
             For i = 676 To 723
-                course.Totals(1) = CourseOfferings(iter, i) + course.Totals(1)
+                course.Totals(1) = CourseOfferings(CourseIndex, i) + course.Totals(1)
             Next
 
             'Friday Evening
             For i = 724 To 844
-                course.Totals(0) = CourseOfferings(iter, i) + course.Totals(0)
+                course.Totals(0) = CourseOfferings(CourseIndex, i) + course.Totals(0)
             Next
 
-            iter = iter + 1
+            CourseIndex = CourseIndex + 1
 
         Next
 

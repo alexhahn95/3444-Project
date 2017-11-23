@@ -17,10 +17,11 @@
     Public Sub CreateObjects()
 
         PopulateDataSet("ECON", 3104)
-        'PopulateDataSet("BIT", 3444)
-        'PopulateDataSet("BIT", 2406)
-        'PopulateDataSet("CS", 2505)
-        'PopulateDataSet("MATH", 2534)
+        PopulateDataSet("BIT", 3444)
+        PopulateDataSet("BIT", 2406)
+        PopulateDataSet("CS", 2505)
+        PopulateDataSet("MATH", 2534)
+
         PopulateCourseList()
 
         'Creates Sections
@@ -30,7 +31,7 @@
         'Initializes Course Offerings Paramater 2D array
         CourseOfferings = New Integer(CourseList.Count - 1, PeriodCount - 1) {}
 
-        'Updates values for totals in a paticular 
+        'Updates values for totals in the CourseList
         For CourseIndex = 0 To CourseList.Count - 1
             CourseList.ElementAt(CourseIndex).UpdateCourseOfferings(CourseOfferings, CourseIndex)
         Next
@@ -58,9 +59,8 @@
 
     Public Sub PopulateDataSet(Department As String, CourseNumber As Integer)
         ProjSQL = "SELECT * FROM " & tableName & " WHERE Department = "
-        Dim FormattedDepartment As String = "'" & Department & "'" & " AND CourseNumber = " & CourseNumber
-        ProjSQL = ProjSQL + FormattedDepartment
-
+        Dim FormattedDepartmentAndCourse As String = "'" & Department & "'" & " AND CourseNumber = " & CourseNumber
+        ProjSQL = ProjSQL + FormattedDepartmentAndCourse
         Database.RunSql(ConnectionString, ProjSQL, DataSet, tableName)
     End Sub
 
@@ -68,7 +68,6 @@
         ProjSQL = "SELECT * FROM " & tableName & " WHERE Department = "
         Dim FormattedDepartment As String = "'" & Department & "'"
         ProjSQL = ProjSQL + FormattedDepartment
-
         Database.RunSql(ConnectionString, ProjSQL, DataSet, tableName)
     End Sub
 

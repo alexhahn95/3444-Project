@@ -17,7 +17,7 @@ Public Class Optimization
         ObjectCreator.CreateObjects()
 
         'In order: Evening, Morning, TR, MW, MWF 
-        Dim GoalAmounts = New Integer() {1, 1, 1, 1, 1}
+        Dim GoalAmounts = New Integer() {50, 30, 5, 70, 10}
 
         'Define the decision variables
         Dim dvKey As String
@@ -35,6 +35,7 @@ Public Class Optimization
         Dim constraintKey As String
         Dim constraintIndex As Integer
 
+        'Overlap binary constraint
         For period = 0 To ObjectCreator.PeriodCount - 1
             constraintKey = "Overlap Constraint: " & period
             Solver.AddRow(constraintKey, constraintIndex)

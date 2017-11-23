@@ -84,7 +84,7 @@
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
     <Compile Include="Course.vb" />
-    <Compile Include="CreateObjects.vb" />
+    <Compile Include="ObjectCreator.vb" />
     <Compile Include="Database.vb" />
     <Compile Include="DataEntry.Designer.vb">
       <DependentUpon>DataEntry.vb</DependentUpon>

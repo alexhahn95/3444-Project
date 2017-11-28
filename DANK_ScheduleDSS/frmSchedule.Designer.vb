@@ -22,6 +22,7 @@ Partial Class frmSchedule
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.tabPage = New System.Windows.Forms.TabPage()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
@@ -39,10 +40,21 @@ Partial Class frmSchedule
         Me.txtMW = New System.Windows.Forms.TextBox()
         Me.txtMWF = New System.Windows.Forms.TextBox()
         Me.btnCalculate = New System.Windows.Forms.Button()
+        Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.Fall2017ClassesDataSet = New DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet()
+        Me.Fall2017ClassesDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ClassesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ClassesTableAdapter = New DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSetTableAdapters.ClassesTableAdapter()
+        Me.dgv = New System.Windows.Forms.DataGridView()
         Me.TabControl1.SuspendLayout()
         Me.tabPage.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.TabPage1.SuspendLayout()
+        Me.TabPage3.SuspendLayout()
+        CType(Me.Fall2017ClassesDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Fall2017ClassesDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ClassesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgv, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -50,6 +62,7 @@ Partial Class frmSchedule
         Me.TabControl1.Controls.Add(Me.tabPage)
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Controls.Add(Me.TabPage1)
+        Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.Location = New System.Drawing.Point(51, 30)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
@@ -204,6 +217,45 @@ Partial Class frmSchedule
         Me.btnCalculate.Text = "Calculate"
         Me.btnCalculate.UseVisualStyleBackColor = True
         '
+        'TabPage3
+        '
+        Me.TabPage3.Controls.Add(Me.dgv)
+        Me.TabPage3.Location = New System.Drawing.Point(8, 39)
+        Me.TabPage3.Name = "TabPage3"
+        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage3.Size = New System.Drawing.Size(728, 465)
+        Me.TabPage3.TabIndex = 3
+        Me.TabPage3.Text = "TabPage3"
+        Me.TabPage3.UseVisualStyleBackColor = True
+        '
+        'Fall2017ClassesDataSet
+        '
+        Me.Fall2017ClassesDataSet.DataSetName = "Fall2017ClassesDataSet"
+        Me.Fall2017ClassesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'Fall2017ClassesDataSetBindingSource
+        '
+        Me.Fall2017ClassesDataSetBindingSource.DataSource = Me.Fall2017ClassesDataSet
+        Me.Fall2017ClassesDataSetBindingSource.Position = 0
+        '
+        'ClassesBindingSource
+        '
+        Me.ClassesBindingSource.DataMember = "Classes"
+        Me.ClassesBindingSource.DataSource = Me.Fall2017ClassesDataSetBindingSource
+        '
+        'ClassesTableAdapter
+        '
+        Me.ClassesTableAdapter.ClearBeforeFill = True
+        '
+        'dgv
+        '
+        Me.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv.Location = New System.Drawing.Point(38, 18)
+        Me.dgv.Name = "dgv"
+        Me.dgv.RowTemplate.Height = 33
+        Me.dgv.Size = New System.Drawing.Size(646, 418)
+        Me.dgv.TabIndex = 0
+        '
         'frmSchedule
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
@@ -218,6 +270,11 @@ Partial Class frmSchedule
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
         Me.TabPage1.ResumeLayout(False)
+        Me.TabPage3.ResumeLayout(False)
+        CType(Me.Fall2017ClassesDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Fall2017ClassesDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ClassesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgv, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -239,4 +296,10 @@ Partial Class frmSchedule
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents btnCalculate As Button
+    Friend WithEvents TabPage3 As TabPage
+    Friend WithEvents Fall2017ClassesDataSetBindingSource As BindingSource
+    Friend WithEvents Fall2017ClassesDataSet As Fall2017ClassesDataSet
+    Friend WithEvents ClassesBindingSource As BindingSource
+    Friend WithEvents ClassesTableAdapter As Fall2017ClassesDataSetTableAdapters.ClassesTableAdapter
+    Friend WithEvents dgv As DataGridView
 End Class

@@ -5,8 +5,6 @@ C:\Users\Alex-PC\Documents\DANK_ScheduleDSS\DANK_ScheduleDSS\bin\Debug\DANKSolut
 C:\Users\Alex-PC\Documents\DANK_ScheduleDSS\DANK_ScheduleDSS\bin\Debug\DANKSolutions_ClassScheduleDSS.xml
 C:\Users\Alex-PC\Documents\DANK_ScheduleDSS\DANK_ScheduleDSS\bin\Debug\Itenso.TimePeriod.dll
 C:\Users\Alex-PC\Documents\DANK_ScheduleDSS\DANK_ScheduleDSS\bin\Debug\Microsoft.Solver.Foundation.dll
-C:\Users\Alex-PC\Documents\DANK_ScheduleDSS\DANK_ScheduleDSS\obj\Debug\DANKSolutions_ClassScheduleDSS.frmDataEntry.resources
-C:\Users\Alex-PC\Documents\DANK_ScheduleDSS\DANK_ScheduleDSS\obj\Debug\DANKSolutions_ClassScheduleDSS.Results.resources
 C:\Users\Alex-PC\Documents\DANK_ScheduleDSS\DANK_ScheduleDSS\obj\Debug\DANKSolutions_ClassScheduleDSS.frmTeam.resources
 C:\Users\Alex-PC\Documents\DANK_ScheduleDSS\DANK_ScheduleDSS\obj\Debug\DANKSolutions_ClassScheduleDSS.frmWelcome.resources
 C:\Users\Alex-PC\Documents\DANK_ScheduleDSS\DANK_ScheduleDSS\obj\Debug\DANKSolutions_ClassScheduleDSS.frmHomeScreen.resources
@@ -17,3 +15,5 @@ C:\Users\Alex-PC\Documents\DANK_ScheduleDSS\DANK_ScheduleDSS\obj\Debug\DANKSolut
 C:\Users\Alex-PC\Documents\DANK_ScheduleDSS\DANK_ScheduleDSS\obj\Debug\DANKSolutions_ClassScheduleDSS.xml
 C:\Users\Alex-PC\Documents\DANK_ScheduleDSS\DANK_ScheduleDSS\obj\Debug\DANKSolutions_ClassScheduleDSS.pdb
 C:\Users\Alex-PC\Documents\DANK_ScheduleDSS\DANK_ScheduleDSS\obj\Debug\DANCK_ScheduleDSS.vbprojResolveAssemblyReference.cache
+C:\Users\Alex-PC\Documents\DANK_ScheduleDSS\DANK_ScheduleDSS\obj\Debug\DANKSolutions_ClassScheduleDSS.frmResults.resources
+C:\Users\Alex-PC\Documents\DANK_ScheduleDSS\DANK_ScheduleDSS\obj\Debug\DANKSolutions_ClassScheduleDSS.frmSchedule.resources

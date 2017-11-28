@@ -1,6 +1,5 @@
 ﻿Public Class ObjectCreator
 
-    'TODO: Update comments
     Public Property CourseList As New List(Of Course)
     Public Property WeightList As New List(Of Weight)
     Public Sections() As String
@@ -16,16 +15,13 @@
 
     Public Sub CreateObjects()
 
-        PopulateDataSet("ECON", 3104)
-        PopulateDataSet("BIT", 3444)
-        PopulateDataSet("BIT", 2406)
-        PopulateDataSet("CS", 2505)
-        PopulateDataSet("MATH", 2534)
+        'Also populates CourseList
+        PopulateDataSet("ACIS")
+        PopulateDataSet("BIT", 2405)
 
         PopulateCourseList()
 
         'Creates Sections
-        'TODO change to enum implementation
         Sections = New String() {"Evening", "Morning", "TuesThurs", "MonWedFri", "MonWed"}
 
         'Initializes Course Offerings Paramater 2D array
@@ -41,15 +37,15 @@
     Public Sub PopulateCourseList()
         For rowNum As Integer = 0 To DataSet.Tables(tableName).Rows.Count - 1
             Dim Course As New Course With {
-                .CRN = DataSet.Tables(Me.tableName).Rows(rowNum)("CRN"),
-                .Department = DataSet.Tables(Me.tableName).Rows(rowNum)("Department"),
-                .Title = DataSet.Tables(Me.tableName).Rows(rowNum)("Title"),
-                .Instructor = DataSet.Tables(Me.tableName).Rows(rowNum)("Instructor"),
-                .Days = DataSet.Tables(Me.tableName).Rows(rowNum)("Days"),
-                .BeginTime = DataSet.Tables(Me.tableName).Rows(rowNum)("Begin"),
-                .EndTime = DataSet.Tables(Me.tableName).Rows(rowNum)("End"),
-                .Location = DataSet.Tables(Me.tableName).Rows(rowNum)("Location"),
-                .CourseNumber = DataSet.Tables(Me.tableName).Rows(rowNum)("CourseNumber")
+                .CRN = DataSet.Tables(tableName).Rows(rowNum)("CRN"),
+                .Department = DataSet.Tables(tableName).Rows(rowNum)("Department"),
+                .Title = DataSet.Tables(tableName).Rows(rowNum)("Title"),
+                .Instructor = DataSet.Tables(tableName).Rows(rowNum)("Instructor"),
+                .Days = DataSet.Tables(tableName).Rows(rowNum)("Days"),
+                .BeginTime = DataSet.Tables(tableName).Rows(rowNum)("Begin"),
+                .EndTime = DataSet.Tables(tableName).Rows(rowNum)("End"),
+                .Location = DataSet.Tables(tableName).Rows(rowNum)("Location"),
+                .CourseNumber = DataSet.Tables(tableName).Rows(rowNum)("CourseNumber")
             }
 
             Course.UpdateStartAndEndIndicies()

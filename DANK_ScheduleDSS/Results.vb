@@ -1,3 +1,3 @@
-﻿Public Class Results
+﻿Public Class frmResults
 
 End Class

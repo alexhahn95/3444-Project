@@ -77,7 +77,7 @@ Public Class Course
                 DaysOfWeekHelper(CourseOfferings, CourseIndex, 2)
                 DaysOfWeekHelper(CourseOfferings, CourseIndex, 4)
             Case Else
-                Throw New Exception()
+                Throw New Exception(message:="Invalid Days")
         End Select
     End Sub
 
@@ -98,13 +98,11 @@ Public Class Course
             Case "M W"
                 Totals(4) = 2 * (endIndex - startIndex)
             Case Else
-                Throw New Exception()
+                Throw New Exception(message:="Invalid Days")
         End Select
     End Sub
 
-    'Consider refactor?
     Private Sub UpdateCourseTotalsTimeOfDay(ByRef CourseOfferings(,) As Integer, CourseIndex As Integer)
-
         'Monday Morning
         For i = 0 To 47
             Totals(1) = CourseOfferings(CourseIndex, i) + Totals(1)
@@ -156,5 +154,9 @@ Public Class Course
         Next
 
     End Sub
+
+    Public Function Clone()
+        Return Me.MemberwiseClone()
+    End Function
 
 End Class

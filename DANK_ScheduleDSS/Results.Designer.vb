@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Results
+Partial Class frmResults
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -103,13 +103,13 @@ Partial Class Results
         Me.lblFriday.TabIndex = 4
         Me.lblFriday.Text = "Friday"
         '
-        'Results
+        'frmResults
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1286, 881)
         Me.Controls.Add(Me.tblResults)
-        Me.Name = "Results"
+        Me.Name = "frmResults"
         Me.Text = "Results"
         Me.tblResults.ResumeLayout(False)
         Me.tblResults.PerformLayout()

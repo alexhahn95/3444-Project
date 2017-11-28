@@ -22,32 +22,36 @@ Partial Class frmHomeScreen
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.lblTeam = New System.Windows.Forms.Label()
+        Me.lblSchedule = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.btnViewTeam = New System.Windows.Forms.Button()
         Me.btnSetSchedule = New System.Windows.Forms.Button()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.lblResults = New System.Windows.Forms.Label()
         Me.btnResultsView = New System.Windows.Forms.Button()
+        Me.btnModel = New System.Windows.Forms.Button()
+        Me.lblModel = New System.Windows.Forms.Label()
+        Me.btnInstructions = New System.Windows.Forms.Button()
+        Me.lblInstructions = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
-        'Label1
+        'lblTeam
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(63, 92)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(154, 25)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "View the Team"
+        Me.lblTeam.AutoSize = True
+        Me.lblTeam.Location = New System.Drawing.Point(63, 92)
+        Me.lblTeam.Name = "lblTeam"
+        Me.lblTeam.Size = New System.Drawing.Size(154, 25)
+        Me.lblTeam.TabIndex = 0
+        Me.lblTeam.Text = "View the Team"
         '
-        'Label2
+        'lblSchedule
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(63, 177)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(192, 25)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Set Your Schedule"
+        Me.lblSchedule.AutoSize = True
+        Me.lblSchedule.Location = New System.Drawing.Point(63, 177)
+        Me.lblSchedule.Name = "lblSchedule"
+        Me.lblSchedule.Size = New System.Drawing.Size(192, 25)
+        Me.lblSchedule.TabIndex = 1
+        Me.lblSchedule.Text = "Set Your Schedule"
         '
         'Label3
         '
@@ -75,14 +79,14 @@ Partial Class frmHomeScreen
         Me.btnSetSchedule.Text = "View"
         Me.btnSetSchedule.UseVisualStyleBackColor = True
         '
-        'Label4
+        'lblResults
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(63, 262)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(136, 25)
-        Me.Label4.TabIndex = 5
-        Me.Label4.Text = "View Results"
+        Me.lblResults.AutoSize = True
+        Me.lblResults.Location = New System.Drawing.Point(63, 262)
+        Me.lblResults.Name = "lblResults"
+        Me.lblResults.Size = New System.Drawing.Size(136, 25)
+        Me.lblResults.TabIndex = 5
+        Me.lblResults.Text = "View Results"
         '
         'btnResultsView
         '
@@ -93,18 +97,58 @@ Partial Class frmHomeScreen
         Me.btnResultsView.Text = "View"
         Me.btnResultsView.UseVisualStyleBackColor = True
         '
+        'btnModel
+        '
+        Me.btnModel.Location = New System.Drawing.Point(413, 341)
+        Me.btnModel.Name = "btnModel"
+        Me.btnModel.Size = New System.Drawing.Size(95, 45)
+        Me.btnModel.TabIndex = 8
+        Me.btnModel.Text = "View"
+        Me.btnModel.UseVisualStyleBackColor = True
+        '
+        'lblModel
+        '
+        Me.lblModel.AutoSize = True
+        Me.lblModel.Location = New System.Drawing.Point(63, 341)
+        Me.lblModel.Name = "lblModel"
+        Me.lblModel.Size = New System.Drawing.Size(245, 25)
+        Me.lblModel.TabIndex = 7
+        Me.lblModel.Text = "View Mathmatical Model"
+        '
+        'btnInstructions
+        '
+        Me.btnInstructions.Location = New System.Drawing.Point(413, 407)
+        Me.btnInstructions.Name = "btnInstructions"
+        Me.btnInstructions.Size = New System.Drawing.Size(95, 45)
+        Me.btnInstructions.TabIndex = 10
+        Me.btnInstructions.Text = "View"
+        Me.btnInstructions.UseVisualStyleBackColor = True
+        '
+        'lblInstructions
+        '
+        Me.lblInstructions.AutoSize = True
+        Me.lblInstructions.Location = New System.Drawing.Point(63, 407)
+        Me.lblInstructions.Name = "lblInstructions"
+        Me.lblInstructions.Size = New System.Drawing.Size(122, 25)
+        Me.lblInstructions.TabIndex = 9
+        Me.lblInstructions.Text = "Instructions"
+        '
         'frmHomeScreen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(742, 571)
+        Me.Controls.Add(Me.btnInstructions)
+        Me.Controls.Add(Me.lblInstructions)
+        Me.Controls.Add(Me.btnModel)
+        Me.Controls.Add(Me.lblModel)
         Me.Controls.Add(Me.btnResultsView)
-        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.lblResults)
         Me.Controls.Add(Me.btnSetSchedule)
         Me.Controls.Add(Me.btnViewTeam)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.lblSchedule)
+        Me.Controls.Add(Me.lblTeam)
         Me.Name = "frmHomeScreen"
         Me.Text = "Home"
         Me.ResumeLayout(False)
@@ -112,11 +156,15 @@ Partial Class frmHomeScreen
 
     End Sub
 
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
+    Friend WithEvents lblTeam As Label
+    Friend WithEvents lblSchedule As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents btnViewTeam As Button
     Friend WithEvents btnSetSchedule As Button
-    Friend WithEvents Label4 As Label
+    Friend WithEvents lblResults As Label
     Friend WithEvents btnResultsView As Button
+    Friend WithEvents btnModel As Button
+    Friend WithEvents lblModel As Label
+    Friend WithEvents btnInstructions As Button
+    Friend WithEvents lblInstructions As Label
 End Class

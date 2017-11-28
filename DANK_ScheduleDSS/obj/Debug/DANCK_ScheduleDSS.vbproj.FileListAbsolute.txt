@@ -18,3 +18,5 @@ C:\Users\Alex-PC\Documents\DANK_ScheduleDSS\DANK_ScheduleDSS\obj\Debug\DANCK_Sch
 C:\Users\Alex-PC\Documents\DANK_ScheduleDSS\DANK_ScheduleDSS\obj\Debug\DANKSolutions_ClassScheduleDSS.exe
 C:\Users\Alex-PC\Documents\DANK_ScheduleDSS\DANK_ScheduleDSS\obj\Debug\DANKSolutions_ClassScheduleDSS.xml
 C:\Users\Alex-PC\Documents\DANK_ScheduleDSS\DANK_ScheduleDSS\obj\Debug\DANKSolutions_ClassScheduleDSS.pdb
+C:\Users\Alex-PC\Documents\DANK_ScheduleDSS\DANK_ScheduleDSS\obj\Debug\DANKSolutions_ClassScheduleDSS.frmModel.resources
+C:\Users\Alex-PC\Documents\DANK_ScheduleDSS\DANK_ScheduleDSS\obj\Debug\DANKSolutions_ClassScheduleDSS.frmInstructions.resources

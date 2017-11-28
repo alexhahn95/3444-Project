@@ -10,4 +10,12 @@
     Private Sub btnSetSchedule_Click(sender As Object, e As EventArgs) Handles btnSetSchedule.Click
         My.Forms.frmSchedule.Show()
     End Sub
+
+    Private Sub btnModel_Click(sender As Object, e As EventArgs) Handles btnModel.Click
+        My.Forms.frmModel.Show()
+    End Sub
+
+    Private Sub btnInstructions_Click(sender As Object, e As EventArgs) Handles btnInstructions.Click
+        My.Forms.frmInstructions.Show()
+    End Sub
 End Class

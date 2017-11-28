@@ -155,8 +155,9 @@ Public Class Course
 
     End Sub
 
-    Public Function Clone()
-        Return Me.MemberwiseClone()
+    Public Function ToStringy()
+        Dim sp As String = " " 'space
+        Return CRN.ToString + sp + Department + sp + CourseNumber.ToString + sp + Title + sp + Instructor + sp + Days + sp + BeginTime + sp + EndTime + sp + Location
     End Function
 
 End Class

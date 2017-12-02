@@ -23,12 +23,9 @@ Partial Class frmWelcome
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmWelcome))
         Dim UsernameLabel As System.Windows.Forms.Label
         Dim PasswordLabel As System.Windows.Forms.Label
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmWelcome))
-        Me.lblWelcome = New System.Windows.Forms.Label()
-        Me.lblInstructions = New System.Windows.Forms.Label()
-        Me.btnLogin = New System.Windows.Forms.Button()
         Me.UsersDataSet = New DANKSolutions_ClassScheduleDSS.UsersDataSet()
         Me.UsersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.UsersTableAdapter = New DANKSolutions_ClassScheduleDSS.UsersDataSetTableAdapters.UsersTableAdapter()
@@ -46,60 +43,20 @@ Partial Class frmWelcome
         Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.UsersBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
-        Me.UsernameTextBox = New System.Windows.Forms.TextBox()
+        Me.grpLogin = New System.Windows.Forms.GroupBox()
+        Me.btnLogin = New System.Windows.Forms.Button()
         Me.PasswordTextBox = New System.Windows.Forms.TextBox()
+        Me.UsernameTextBox = New System.Windows.Forms.TextBox()
+        Me.lblInstructions = New System.Windows.Forms.Label()
+        Me.lblWelcome = New System.Windows.Forms.Label()
         UsernameLabel = New System.Windows.Forms.Label()
         PasswordLabel = New System.Windows.Forms.Label()
         CType(Me.UsersDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UsersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UsersBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.UsersBindingNavigator.SuspendLayout()
+        Me.grpLogin.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'UsernameLabel
-        '
-        UsernameLabel.AutoSize = True
-        UsernameLabel.Location = New System.Drawing.Point(279, 229)
-        UsernameLabel.Name = "UsernameLabel"
-        UsernameLabel.Size = New System.Drawing.Size(116, 25)
-        UsernameLabel.TabIndex = 7
-        UsernameLabel.Text = "Username:"
-        '
-        'PasswordLabel
-        '
-        PasswordLabel.AutoSize = True
-        PasswordLabel.Location = New System.Drawing.Point(279, 266)
-        PasswordLabel.Name = "PasswordLabel"
-        PasswordLabel.Size = New System.Drawing.Size(112, 25)
-        PasswordLabel.TabIndex = 9
-        PasswordLabel.Text = "Password:"
-        '
-        'lblWelcome
-        '
-        Me.lblWelcome.AutoSize = True
-        Me.lblWelcome.Location = New System.Drawing.Point(235, 56)
-        Me.lblWelcome.Name = "lblWelcome"
-        Me.lblWelcome.Size = New System.Drawing.Size(361, 25)
-        Me.lblWelcome.TabIndex = 0
-        Me.lblWelcome.Text = "WELCOME TO DANCK SOLUTIONS"
-        '
-        'lblInstructions
-        '
-        Me.lblInstructions.AutoSize = True
-        Me.lblInstructions.Location = New System.Drawing.Point(165, 130)
-        Me.lblInstructions.Name = "lblInstructions"
-        Me.lblInstructions.Size = New System.Drawing.Size(534, 25)
-        Me.lblInstructions.TabIndex = 1
-        Me.lblInstructions.Text = "Please enter your username and password to continue"
-        '
-        'btnLogin
-        '
-        Me.btnLogin.Location = New System.Drawing.Point(367, 408)
-        Me.btnLogin.Name = "btnLogin"
-        Me.btnLogin.Size = New System.Drawing.Size(105, 45)
-        Me.btnLogin.TabIndex = 6
-        Me.btnLogin.Text = "Log In"
-        Me.btnLogin.UseVisualStyleBackColor = True
         '
         'UsersDataSet
         '
@@ -136,7 +93,7 @@ Partial Class frmWelcome
         Me.UsersBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
         Me.UsersBindingNavigator.Name = "UsersBindingNavigator"
         Me.UsersBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.UsersBindingNavigator.Size = New System.Drawing.Size(844, 39)
+        Me.UsersBindingNavigator.Size = New System.Drawing.Size(953, 39)
         Me.UsersBindingNavigator.TabIndex = 7
         Me.UsersBindingNavigator.Text = "BindingNavigator1"
         Me.UsersBindingNavigator.Visible = False
@@ -153,7 +110,7 @@ Partial Class frmWelcome
         'BindingNavigatorCountItem
         '
         Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(71, 36)
+        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(45, 36)
         Me.BindingNavigatorCountItem.Text = "of {0}"
         Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
         '
@@ -194,7 +151,7 @@ Partial Class frmWelcome
         Me.BindingNavigatorPositionItem.AccessibleName = "Position"
         Me.BindingNavigatorPositionItem.AutoSize = False
         Me.BindingNavigatorPositionItem.Name = "BindingNavigatorPositionItem"
-        Me.BindingNavigatorPositionItem.Size = New System.Drawing.Size(50, 39)
+        Me.BindingNavigatorPositionItem.Size = New System.Drawing.Size(35, 27)
         Me.BindingNavigatorPositionItem.Text = "0"
         Me.BindingNavigatorPositionItem.ToolTipText = "Current position"
         '
@@ -234,36 +191,113 @@ Partial Class frmWelcome
         Me.UsersBindingNavigatorSaveItem.Size = New System.Drawing.Size(36, 36)
         Me.UsersBindingNavigatorSaveItem.Text = "Save Data"
         '
-        'UsernameTextBox
+        'grpLogin
         '
-        Me.UsernameTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsersBindingSource, "Username", True))
-        Me.UsernameTextBox.Location = New System.Drawing.Point(401, 226)
-        Me.UsernameTextBox.Name = "UsernameTextBox"
-        Me.UsernameTextBox.Size = New System.Drawing.Size(100, 31)
-        Me.UsernameTextBox.TabIndex = 8
+        Me.grpLogin.BackColor = System.Drawing.Color.Gainsboro
+        Me.grpLogin.Controls.Add(UsernameLabel)
+        Me.grpLogin.Controls.Add(Me.PasswordTextBox)
+        Me.grpLogin.Controls.Add(Me.lblInstructions)
+        Me.grpLogin.Controls.Add(Me.btnLogin)
+        Me.grpLogin.Controls.Add(Me.UsernameTextBox)
+        Me.grpLogin.Controls.Add(PasswordLabel)
+        Me.grpLogin.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.grpLogin.Location = New System.Drawing.Point(185, 169)
+        Me.grpLogin.Name = "grpLogin"
+        Me.grpLogin.Size = New System.Drawing.Size(595, 267)
+        Me.grpLogin.TabIndex = 11
+        Me.grpLogin.TabStop = False
+        '
+        'btnLogin
+        '
+        Me.btnLogin.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLogin.Location = New System.Drawing.Point(232, 203)
+        Me.btnLogin.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnLogin.Name = "btnLogin"
+        Me.btnLogin.Size = New System.Drawing.Size(108, 36)
+        Me.btnLogin.TabIndex = 6
+        Me.btnLogin.Text = "Log In"
+        Me.btnLogin.UseVisualStyleBackColor = True
         '
         'PasswordTextBox
         '
         Me.PasswordTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsersBindingSource, "Password", True))
-        Me.PasswordTextBox.Location = New System.Drawing.Point(401, 263)
+        Me.PasswordTextBox.Location = New System.Drawing.Point(249, 142)
+        Me.PasswordTextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.PasswordTextBox.Name = "PasswordTextBox"
         Me.PasswordTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.PasswordTextBox.Size = New System.Drawing.Size(100, 31)
+        Me.PasswordTextBox.Size = New System.Drawing.Size(130, 30)
         Me.PasswordTextBox.TabIndex = 10
+        '
+        'UsernameTextBox
+        '
+        Me.UsernameTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsersBindingSource, "Username", True))
+        Me.UsernameTextBox.Location = New System.Drawing.Point(249, 108)
+        Me.UsernameTextBox.Margin = New System.Windows.Forms.Padding(2)
+        Me.UsernameTextBox.Name = "UsernameTextBox"
+        Me.UsernameTextBox.Size = New System.Drawing.Size(130, 30)
+        Me.UsernameTextBox.TabIndex = 8
+        '
+        'UsernameLabel
+        '
+        UsernameLabel.AutoSize = True
+        UsernameLabel.BackColor = System.Drawing.Color.Transparent
+        UsernameLabel.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        UsernameLabel.Location = New System.Drawing.Point(134, 106)
+        UsernameLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        UsernameLabel.Name = "UsernameLabel"
+        UsernameLabel.Size = New System.Drawing.Size(105, 23)
+        UsernameLabel.TabIndex = 7
+        UsernameLabel.Text = "Username:"
+        '
+        'PasswordLabel
+        '
+        PasswordLabel.AutoSize = True
+        PasswordLabel.BackColor = System.Drawing.Color.Transparent
+        PasswordLabel.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        PasswordLabel.Location = New System.Drawing.Point(135, 142)
+        PasswordLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        PasswordLabel.Name = "PasswordLabel"
+        PasswordLabel.Size = New System.Drawing.Size(104, 23)
+        PasswordLabel.TabIndex = 9
+        PasswordLabel.Text = "Password:"
+        '
+        'lblInstructions
+        '
+        Me.lblInstructions.AutoSize = True
+        Me.lblInstructions.BackColor = System.Drawing.Color.Transparent
+        Me.lblInstructions.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblInstructions.Location = New System.Drawing.Point(53, 55)
+        Me.lblInstructions.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblInstructions.Name = "lblInstructions"
+        Me.lblInstructions.Size = New System.Drawing.Size(488, 23)
+        Me.lblInstructions.TabIndex = 1
+        Me.lblInstructions.Text = "Please enter your username and password to continue"
+        '
+        'lblWelcome
+        '
+        Me.lblWelcome.AutoSize = True
+        Me.lblWelcome.BackColor = System.Drawing.Color.Transparent
+        Me.lblWelcome.Font = New System.Drawing.Font("Arial", 28.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblWelcome.ForeColor = System.Drawing.Color.Transparent
+        Me.lblWelcome.Location = New System.Drawing.Point(60, 43)
+        Me.lblWelcome.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblWelcome.Name = "lblWelcome"
+        Me.lblWelcome.Size = New System.Drawing.Size(833, 56)
+        Me.lblWelcome.TabIndex = 0
+        Me.lblWelcome.Text = "WELCOME TO DANCK SOLUTIONS"
         '
         'frmWelcome
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(844, 553)
-        Me.Controls.Add(UsernameLabel)
-        Me.Controls.Add(Me.UsernameTextBox)
-        Me.Controls.Add(PasswordLabel)
-        Me.Controls.Add(Me.PasswordTextBox)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ClientSize = New System.Drawing.Size(953, 603)
+        Me.Controls.Add(Me.grpLogin)
         Me.Controls.Add(Me.UsersBindingNavigator)
-        Me.Controls.Add(Me.btnLogin)
-        Me.Controls.Add(Me.lblInstructions)
         Me.Controls.Add(Me.lblWelcome)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "frmWelcome"
         Me.Text = "Welcome"
         CType(Me.UsersDataSet, System.ComponentModel.ISupportInitialize).EndInit()
@@ -271,14 +305,12 @@ Partial Class frmWelcome
         CType(Me.UsersBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
         Me.UsersBindingNavigator.ResumeLayout(False)
         Me.UsersBindingNavigator.PerformLayout()
+        Me.grpLogin.ResumeLayout(False)
+        Me.grpLogin.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents lblWelcome As Label
-    Friend WithEvents lblInstructions As Label
-    Friend WithEvents btnLogin As Button
     Friend WithEvents UsersDataSet As UsersDataSet
     Friend WithEvents UsersBindingSource As BindingSource
     Friend WithEvents UsersTableAdapter As UsersDataSetTableAdapters.UsersTableAdapter
@@ -296,6 +328,10 @@ Partial Class frmWelcome
     Friend WithEvents BindingNavigatorMoveLastItem As ToolStripButton
     Friend WithEvents BindingNavigatorSeparator2 As ToolStripSeparator
     Friend WithEvents UsersBindingNavigatorSaveItem As ToolStripButton
-    Friend WithEvents UsernameTextBox As TextBox
+    Friend WithEvents grpLogin As GroupBox
+    Friend WithEvents btnLogin As Button
     Friend WithEvents PasswordTextBox As TextBox
+    Friend WithEvents UsernameTextBox As TextBox
+    Friend WithEvents lblInstructions As Label
+    Friend WithEvents lblWelcome As Label
 End Class

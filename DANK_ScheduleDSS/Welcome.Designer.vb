@@ -63,9 +63,10 @@ Partial Class frmWelcome
         UsernameLabel.AutoSize = True
         UsernameLabel.BackColor = System.Drawing.Color.Transparent
         UsernameLabel.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        UsernameLabel.Location = New System.Drawing.Point(201, 166)
+        UsernameLabel.Location = New System.Drawing.Point(134, 106)
+        UsernameLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         UsernameLabel.Name = "UsernameLabel"
-        UsernameLabel.Size = New System.Drawing.Size(170, 36)
+        UsernameLabel.Size = New System.Drawing.Size(105, 23)
         UsernameLabel.TabIndex = 7
         UsernameLabel.Text = "Username:"
         '
@@ -74,9 +75,10 @@ Partial Class frmWelcome
         PasswordLabel.AutoSize = True
         PasswordLabel.BackColor = System.Drawing.Color.Transparent
         PasswordLabel.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        PasswordLabel.Location = New System.Drawing.Point(202, 222)
+        PasswordLabel.Location = New System.Drawing.Point(135, 142)
+        PasswordLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         PasswordLabel.Name = "PasswordLabel"
-        PasswordLabel.Size = New System.Drawing.Size(162, 36)
+        PasswordLabel.Size = New System.Drawing.Size(104, 23)
         PasswordLabel.TabIndex = 9
         PasswordLabel.Text = "Password:"
         '
@@ -114,9 +116,8 @@ Partial Class frmWelcome
         Me.UsersBindingNavigator.MoveNextItem = Me.BindingNavigatorMoveNextItem
         Me.UsersBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
         Me.UsersBindingNavigator.Name = "UsersBindingNavigator"
-        Me.UsersBindingNavigator.Padding = New System.Windows.Forms.Padding(0, 0, 2, 0)
         Me.UsersBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.UsersBindingNavigator.Size = New System.Drawing.Size(1430, 61)
+        Me.UsersBindingNavigator.Size = New System.Drawing.Size(953, 39)
         Me.UsersBindingNavigator.TabIndex = 7
         Me.UsersBindingNavigator.Text = "BindingNavigator1"
         Me.UsersBindingNavigator.Visible = False
@@ -127,13 +128,13 @@ Partial Class frmWelcome
         Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
         Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(36, 58)
+        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(36, 36)
         Me.BindingNavigatorAddNewItem.Text = "Add new"
         '
         'BindingNavigatorCountItem
         '
         Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(71, 58)
+        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(45, 36)
         Me.BindingNavigatorCountItem.Text = "of {0}"
         Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
         '
@@ -143,7 +144,7 @@ Partial Class frmWelcome
         Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
         Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(36, 58)
+        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(36, 36)
         Me.BindingNavigatorDeleteItem.Text = "Delete"
         '
         'BindingNavigatorMoveFirstItem
@@ -152,7 +153,7 @@ Partial Class frmWelcome
         Me.BindingNavigatorMoveFirstItem.Image = CType(resources.GetObject("BindingNavigatorMoveFirstItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveFirstItem.Name = "BindingNavigatorMoveFirstItem"
         Me.BindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveFirstItem.Size = New System.Drawing.Size(36, 58)
+        Me.BindingNavigatorMoveFirstItem.Size = New System.Drawing.Size(36, 36)
         Me.BindingNavigatorMoveFirstItem.Text = "Move first"
         '
         'BindingNavigatorMovePreviousItem
@@ -161,27 +162,27 @@ Partial Class frmWelcome
         Me.BindingNavigatorMovePreviousItem.Image = CType(resources.GetObject("BindingNavigatorMovePreviousItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMovePreviousItem.Name = "BindingNavigatorMovePreviousItem"
         Me.BindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(36, 58)
+        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(36, 36)
         Me.BindingNavigatorMovePreviousItem.Text = "Move previous"
         '
         'BindingNavigatorSeparator
         '
         Me.BindingNavigatorSeparator.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 61)
+        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 39)
         '
         'BindingNavigatorPositionItem
         '
         Me.BindingNavigatorPositionItem.AccessibleName = "Position"
         Me.BindingNavigatorPositionItem.AutoSize = False
         Me.BindingNavigatorPositionItem.Name = "BindingNavigatorPositionItem"
-        Me.BindingNavigatorPositionItem.Size = New System.Drawing.Size(50, 39)
+        Me.BindingNavigatorPositionItem.Size = New System.Drawing.Size(35, 27)
         Me.BindingNavigatorPositionItem.Text = "0"
         Me.BindingNavigatorPositionItem.ToolTipText = "Current position"
         '
         'BindingNavigatorSeparator1
         '
         Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator1"
-        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 61)
+        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 39)
         '
         'BindingNavigatorMoveNextItem
         '
@@ -189,7 +190,7 @@ Partial Class frmWelcome
         Me.BindingNavigatorMoveNextItem.Image = CType(resources.GetObject("BindingNavigatorMoveNextItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveNextItem.Name = "BindingNavigatorMoveNextItem"
         Me.BindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(36, 58)
+        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(36, 36)
         Me.BindingNavigatorMoveNextItem.Text = "Move next"
         '
         'BindingNavigatorMoveLastItem
@@ -198,20 +199,20 @@ Partial Class frmWelcome
         Me.BindingNavigatorMoveLastItem.Image = CType(resources.GetObject("BindingNavigatorMoveLastItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveLastItem.Name = "BindingNavigatorMoveLastItem"
         Me.BindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(36, 58)
+        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(36, 36)
         Me.BindingNavigatorMoveLastItem.Text = "Move last"
         '
         'BindingNavigatorSeparator2
         '
         Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
-        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 61)
+        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 39)
         '
         'UsersBindingNavigatorSaveItem
         '
         Me.UsersBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
         Me.UsersBindingNavigatorSaveItem.Image = CType(resources.GetObject("UsersBindingNavigatorSaveItem.Image"), System.Drawing.Image)
         Me.UsersBindingNavigatorSaveItem.Name = "UsersBindingNavigatorSaveItem"
-        Me.UsersBindingNavigatorSaveItem.Size = New System.Drawing.Size(36, 58)
+        Me.UsersBindingNavigatorSaveItem.Size = New System.Drawing.Size(36, 36)
         Me.UsersBindingNavigatorSaveItem.Text = "Save Data"
         '
         'grpLogin
@@ -224,21 +225,20 @@ Partial Class frmWelcome
         Me.grpLogin.Controls.Add(Me.UsernameTextBox)
         Me.grpLogin.Controls.Add(PasswordLabel)
         Me.grpLogin.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.grpLogin.Location = New System.Drawing.Point(278, 264)
-        Me.grpLogin.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.grpLogin.Location = New System.Drawing.Point(185, 169)
         Me.grpLogin.Name = "grpLogin"
-        Me.grpLogin.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.grpLogin.Size = New System.Drawing.Size(892, 417)
+        Me.grpLogin.Size = New System.Drawing.Size(595, 267)
         Me.grpLogin.TabIndex = 11
         Me.grpLogin.TabStop = False
         '
         'PasswordTextBox
         '
         Me.PasswordTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsersBindingSource, "Password", True))
-        Me.PasswordTextBox.Location = New System.Drawing.Point(374, 222)
+        Me.PasswordTextBox.Location = New System.Drawing.Point(249, 142)
+        Me.PasswordTextBox.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.PasswordTextBox.Name = "PasswordTextBox"
         Me.PasswordTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.PasswordTextBox.Size = New System.Drawing.Size(193, 44)
+        Me.PasswordTextBox.Size = New System.Drawing.Size(130, 30)
         Me.PasswordTextBox.TabIndex = 10
         '
         'lblInstructions
@@ -246,18 +246,20 @@ Partial Class frmWelcome
         Me.lblInstructions.AutoSize = True
         Me.lblInstructions.BackColor = System.Drawing.Color.Transparent
         Me.lblInstructions.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblInstructions.Location = New System.Drawing.Point(80, 86)
+        Me.lblInstructions.Location = New System.Drawing.Point(53, 55)
+        Me.lblInstructions.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblInstructions.Name = "lblInstructions"
-        Me.lblInstructions.Size = New System.Drawing.Size(779, 36)
+        Me.lblInstructions.Size = New System.Drawing.Size(488, 23)
         Me.lblInstructions.TabIndex = 1
         Me.lblInstructions.Text = "Please enter your username and password to continue"
         '
         'btnLogin
         '
         Me.btnLogin.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnLogin.Location = New System.Drawing.Point(348, 317)
+        Me.btnLogin.Location = New System.Drawing.Point(232, 203)
+        Me.btnLogin.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnLogin.Name = "btnLogin"
-        Me.btnLogin.Size = New System.Drawing.Size(162, 56)
+        Me.btnLogin.Size = New System.Drawing.Size(108, 36)
         Me.btnLogin.TabIndex = 6
         Me.btnLogin.Text = "Log In"
         Me.btnLogin.UseVisualStyleBackColor = True
@@ -265,9 +267,10 @@ Partial Class frmWelcome
         'UsernameTextBox
         '
         Me.UsernameTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsersBindingSource, "Username", True))
-        Me.UsernameTextBox.Location = New System.Drawing.Point(374, 169)
+        Me.UsernameTextBox.Location = New System.Drawing.Point(249, 108)
+        Me.UsernameTextBox.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.UsernameTextBox.Name = "UsernameTextBox"
-        Me.UsernameTextBox.Size = New System.Drawing.Size(193, 44)
+        Me.UsernameTextBox.Size = New System.Drawing.Size(130, 30)
         Me.UsernameTextBox.TabIndex = 8
         '
         'lblWelcome
@@ -276,23 +279,25 @@ Partial Class frmWelcome
         Me.lblWelcome.BackColor = System.Drawing.Color.Transparent
         Me.lblWelcome.Font = New System.Drawing.Font("Arial", 28.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblWelcome.ForeColor = System.Drawing.Color.Transparent
-        Me.lblWelcome.Location = New System.Drawing.Point(90, 67)
+        Me.lblWelcome.Location = New System.Drawing.Point(60, 43)
+        Me.lblWelcome.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblWelcome.Name = "lblWelcome"
-        Me.lblWelcome.Size = New System.Drawing.Size(1319, 88)
+        Me.lblWelcome.Size = New System.Drawing.Size(833, 56)
         Me.lblWelcome.TabIndex = 0
         Me.lblWelcome.Text = "WELCOME TO DANCK SOLUTIONS"
         '
         'frmWelcome
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(1430, 942)
+        Me.ClientSize = New System.Drawing.Size(953, 603)
         Me.Controls.Add(Me.grpLogin)
         Me.Controls.Add(Me.UsersBindingNavigator)
         Me.Controls.Add(Me.lblWelcome)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "frmWelcome"
         Me.Text = "Welcome"
         CType(Me.UsersDataSet, System.ComponentModel.ISupportInitialize).EndInit()

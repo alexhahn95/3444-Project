@@ -11,11 +11,11 @@
         My.Forms.frmSchedule.Show()
     End Sub
 
-    Private Sub btnModel_Click(sender As Object, e As EventArgs) Handles btnModel.Click
-        My.Forms.frmModel.Show()
-    End Sub
-
     Private Sub btnInstructions_Click(sender As Object, e As EventArgs) Handles btnInstructions.Click
         My.Forms.frmInstructions.Show()
+    End Sub
+
+    Private Sub frmHomeScreen_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class

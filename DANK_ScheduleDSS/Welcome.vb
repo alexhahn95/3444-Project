@@ -6,7 +6,7 @@ Public Class frmWelcome
         If login Is Nothing Then
             MsgBox("Check Username or Password")
         Else
-
+            My.Forms.frmHomeScreen.Show()
             My.Forms.frmWelcome.Close()
         End If
     End Sub
@@ -16,9 +16,5 @@ Public Class frmWelcome
         Me.UsersBindingSource.EndEdit()
         Me.TableAdapterManager.UpdateAll(Me.UsersDataSet)
 
-    End Sub
-
-    Private Sub frmWelcome_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        My.Forms.frmHomeScreen.Show()
     End Sub
 End Class

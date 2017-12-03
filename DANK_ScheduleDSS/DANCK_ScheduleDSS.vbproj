@@ -102,12 +102,6 @@
     <Compile Include="Instructions.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Model.Designer.vb">
-      <DependentUpon>Model.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Model.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="ObjectCreator.vb" />
     <Compile Include="Database.vb" />
     <Compile Include="Optimization.vb" />
@@ -164,9 +158,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Instructions.resx">
       <DependentUpon>Instructions.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Model.resx">
-      <DependentUpon>Model.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Results.resx">
       <DependentUpon>Results.vb</DependentUpon>

@@ -23,12 +23,14 @@ Partial Class frmSchedule
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmSchedule))
         Me.ClassesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Fall2017ClassesDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Fall2017ClassesDataSet = New DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.btnCalculate = New System.Windows.Forms.Button()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.txtMWF = New System.Windows.Forms.TextBox()
         Me.txtMW = New System.Windows.Forms.TextBox()
         Me.txtTR = New System.Windows.Forms.TextBox()
@@ -42,12 +44,12 @@ Partial Class frmSchedule
         Me.tabPage = New System.Windows.Forms.TabPage()
         Me.DataGridView = New System.Windows.Forms.DataGridView()
         Me.Selected = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.TabControl = New System.Windows.Forms.TabControl()
-        Me.ClassesTableAdapter = New DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSetTableAdapters.ClassesTableAdapter()
-        Me.CourseAbstractionBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.CourseAbstractionTableAdapter = New DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSetTableAdapters.CourseAbstractionTableAdapter()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CourseAbstractionBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TabControl = New System.Windows.Forms.TabControl()
+        Me.ClassesTableAdapter = New DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSetTableAdapters.ClassesTableAdapter()
+        Me.CourseAbstractionTableAdapter = New DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSetTableAdapters.CourseAbstractionTableAdapter()
         CType(Me.ClassesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Fall2017ClassesDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Fall2017ClassesDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -55,8 +57,8 @@ Partial Class frmSchedule
         Me.TabPage2.SuspendLayout()
         Me.tabPage.SuspendLayout()
         CType(Me.DataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabControl.SuspendLayout()
         CType(Me.CourseAbstractionBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabControl.SuspendLayout()
         Me.SuspendLayout()
         '
         'ClassesBindingSource
@@ -76,26 +78,31 @@ Partial Class frmSchedule
         '
         'TabPage1
         '
+        Me.TabPage1.BackColor = System.Drawing.Color.Gainsboro
         Me.TabPage1.Controls.Add(Me.btnCalculate)
-        Me.TabPage1.Location = New System.Drawing.Point(8, 39)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 25)
+        Me.TabPage1.Margin = New System.Windows.Forms.Padding(2)
         Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(850, 845)
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(2)
+        Me.TabPage1.Size = New System.Drawing.Size(900, 542)
         Me.TabPage1.TabIndex = 2
         Me.TabPage1.Text = "Calculate"
-        Me.TabPage1.UseVisualStyleBackColor = True
         '
         'btnCalculate
         '
-        Me.btnCalculate.Location = New System.Drawing.Point(94, 121)
+        Me.btnCalculate.Font = New System.Drawing.Font("Arial", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCalculate.Location = New System.Drawing.Point(276, 212)
+        Me.btnCalculate.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCalculate.Name = "btnCalculate"
-        Me.btnCalculate.Size = New System.Drawing.Size(523, 185)
+        Me.btnCalculate.Size = New System.Drawing.Size(349, 118)
         Me.btnCalculate.TabIndex = 0
         Me.btnCalculate.Text = "Calculate"
         Me.btnCalculate.UseVisualStyleBackColor = True
         '
         'TabPage2
         '
+        Me.TabPage2.BackColor = System.Drawing.Color.Gainsboro
+        Me.TabPage2.Controls.Add(Me.Label1)
         Me.TabPage2.Controls.Add(Me.txtMWF)
         Me.TabPage2.Controls.Add(Me.txtMW)
         Me.TabPage2.Controls.Add(Me.txtTR)
@@ -106,101 +113,133 @@ Partial Class frmSchedule
         Me.TabPage2.Controls.Add(Me.Label4)
         Me.TabPage2.Controls.Add(Me.Label3)
         Me.TabPage2.Controls.Add(Me.Label2)
-        Me.TabPage2.Location = New System.Drawing.Point(8, 39)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 25)
+        Me.TabPage2.Margin = New System.Windows.Forms.Padding(2)
         Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(850, 845)
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(2)
+        Me.TabPage2.Size = New System.Drawing.Size(900, 542)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Weekly Goals"
-        Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(25, 399)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(859, 69)
+        Me.Label1.TabIndex = 10
+        Me.Label1.Text = resources.GetString("Label1.Text")
         '
         'txtMWF
         '
-        Me.txtMWF.Location = New System.Drawing.Point(412, 346)
+        Me.txtMWF.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtMWF.Location = New System.Drawing.Point(518, 282)
+        Me.txtMWF.Margin = New System.Windows.Forms.Padding(2)
         Me.txtMWF.Name = "txtMWF"
-        Me.txtMWF.Size = New System.Drawing.Size(196, 31)
+        Me.txtMWF.Size = New System.Drawing.Size(132, 30)
         Me.txtMWF.TabIndex = 9
         '
         'txtMW
         '
-        Me.txtMW.Location = New System.Drawing.Point(412, 273)
+        Me.txtMW.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtMW.Location = New System.Drawing.Point(518, 235)
+        Me.txtMW.Margin = New System.Windows.Forms.Padding(2)
         Me.txtMW.Name = "txtMW"
-        Me.txtMW.Size = New System.Drawing.Size(196, 31)
+        Me.txtMW.Size = New System.Drawing.Size(132, 30)
         Me.txtMW.TabIndex = 8
         '
         'txtTR
         '
-        Me.txtTR.Location = New System.Drawing.Point(412, 196)
+        Me.txtTR.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTR.Location = New System.Drawing.Point(518, 188)
+        Me.txtTR.Margin = New System.Windows.Forms.Padding(2)
         Me.txtTR.Name = "txtTR"
-        Me.txtTR.Size = New System.Drawing.Size(196, 31)
+        Me.txtTR.Size = New System.Drawing.Size(132, 30)
         Me.txtTR.TabIndex = 7
         '
         'txtMorning
         '
-        Me.txtMorning.Location = New System.Drawing.Point(412, 123)
+        Me.txtMorning.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtMorning.Location = New System.Drawing.Point(518, 141)
+        Me.txtMorning.Margin = New System.Windows.Forms.Padding(2)
         Me.txtMorning.Name = "txtMorning"
-        Me.txtMorning.Size = New System.Drawing.Size(196, 31)
+        Me.txtMorning.Size = New System.Drawing.Size(132, 30)
         Me.txtMorning.TabIndex = 6
         '
         'txtEvening
         '
-        Me.txtEvening.Location = New System.Drawing.Point(412, 51)
+        Me.txtEvening.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtEvening.Location = New System.Drawing.Point(518, 94)
+        Me.txtEvening.Margin = New System.Windows.Forms.Padding(2)
         Me.txtEvening.Name = "txtEvening"
-        Me.txtEvening.Size = New System.Drawing.Size(196, 31)
+        Me.txtEvening.Size = New System.Drawing.Size(132, 30)
         Me.txtEvening.TabIndex = 1
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(46, 346)
+        Me.Label6.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(181, 289)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(326, 25)
+        Me.Label6.Size = New System.Drawing.Size(299, 23)
         Me.Label6.TabIndex = 5
         Me.Label6.Text = "Monday/Wednesday/Friday Goal"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(46, 264)
+        Me.Label5.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(181, 242)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(260, 25)
+        Me.Label5.Size = New System.Drawing.Size(238, 23)
         Me.Label5.TabIndex = 4
         Me.Label5.Text = "Monday/Wednesday Goal"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(46, 196)
+        Me.Label4.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(181, 195)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(242, 25)
+        Me.Label4.Size = New System.Drawing.Size(219, 23)
         Me.Label4.TabIndex = 3
         Me.Label4.Text = "Tuesday/Thursday Goal"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(46, 126)
+        Me.Label3.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(181, 148)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(227, 25)
+        Me.Label3.Size = New System.Drawing.Size(207, 23)
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "Morning Courses Goal"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(46, 51)
+        Me.Label2.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(181, 101)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(227, 25)
+        Me.Label2.Size = New System.Drawing.Size(205, 23)
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "Evening Courses Goal"
         '
         'tabPage
         '
         Me.tabPage.Controls.Add(Me.DataGridView)
-        Me.tabPage.Location = New System.Drawing.Point(8, 39)
+        Me.tabPage.Location = New System.Drawing.Point(4, 25)
+        Me.tabPage.Margin = New System.Windows.Forms.Padding(2)
         Me.tabPage.Name = "tabPage"
-        Me.tabPage.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabPage.Size = New System.Drawing.Size(850, 845)
+        Me.tabPage.Padding = New System.Windows.Forms.Padding(2)
+        Me.tabPage.Size = New System.Drawing.Size(900, 542)
         Me.tabPage.TabIndex = 0
         Me.tabPage.Text = "Requested Courses"
         Me.tabPage.UseVisualStyleBackColor = True
@@ -208,43 +247,21 @@ Partial Class frmSchedule
         'DataGridView
         '
         Me.DataGridView.AutoGenerateColumns = False
+        Me.DataGridView.BackgroundColor = System.Drawing.Color.Gainsboro
         Me.DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Selected, Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2})
         Me.DataGridView.DataSource = Me.CourseAbstractionBindingSource
-        Me.DataGridView.Location = New System.Drawing.Point(6, 6)
+        Me.DataGridView.Location = New System.Drawing.Point(4, 4)
+        Me.DataGridView.Margin = New System.Windows.Forms.Padding(2)
         Me.DataGridView.Name = "DataGridView"
         Me.DataGridView.RowTemplate.Height = 33
-        Me.DataGridView.Size = New System.Drawing.Size(810, 806)
+        Me.DataGridView.Size = New System.Drawing.Size(913, 552)
         Me.DataGridView.TabIndex = 0
         '
         'Selected
         '
         Me.Selected.HeaderText = "Selected"
         Me.Selected.Name = "Selected"
-        '
-        'TabControl
-        '
-        Me.TabControl.Controls.Add(Me.tabPage)
-        Me.TabControl.Controls.Add(Me.TabPage2)
-        Me.TabControl.Controls.Add(Me.TabPage1)
-        Me.TabControl.Location = New System.Drawing.Point(51, 30)
-        Me.TabControl.Name = "TabControl"
-        Me.TabControl.SelectedIndex = 0
-        Me.TabControl.Size = New System.Drawing.Size(866, 892)
-        Me.TabControl.TabIndex = 0
-        '
-        'ClassesTableAdapter
-        '
-        Me.ClassesTableAdapter.ClearBeforeFill = True
-        '
-        'CourseAbstractionBindingSource
-        '
-        Me.CourseAbstractionBindingSource.DataMember = "CourseAbstraction"
-        Me.CourseAbstractionBindingSource.DataSource = Me.Fall2017ClassesDataSetBindingSource
-        '
-        'CourseAbstractionTableAdapter
-        '
-        Me.CourseAbstractionTableAdapter.ClearBeforeFill = True
         '
         'DataGridViewTextBoxColumn1
         '
@@ -258,12 +275,40 @@ Partial Class frmSchedule
         Me.DataGridViewTextBoxColumn2.HeaderText = "CourseNumber"
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
         '
+        'CourseAbstractionBindingSource
+        '
+        Me.CourseAbstractionBindingSource.DataMember = "CourseAbstraction"
+        Me.CourseAbstractionBindingSource.DataSource = Me.Fall2017ClassesDataSetBindingSource
+        '
+        'TabControl
+        '
+        Me.TabControl.Controls.Add(Me.tabPage)
+        Me.TabControl.Controls.Add(Me.TabPage2)
+        Me.TabControl.Controls.Add(Me.TabPage1)
+        Me.TabControl.Location = New System.Drawing.Point(21, 11)
+        Me.TabControl.Margin = New System.Windows.Forms.Padding(2)
+        Me.TabControl.Name = "TabControl"
+        Me.TabControl.SelectedIndex = 0
+        Me.TabControl.Size = New System.Drawing.Size(908, 571)
+        Me.TabControl.TabIndex = 0
+        '
+        'ClassesTableAdapter
+        '
+        Me.ClassesTableAdapter.ClearBeforeFill = True
+        '
+        'CourseAbstractionTableAdapter
+        '
+        Me.CourseAbstractionTableAdapter.ClearBeforeFill = True
+        '
         'frmSchedule
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1040, 991)
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ClientSize = New System.Drawing.Size(953, 603)
         Me.Controls.Add(Me.TabControl)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "frmSchedule"
         Me.Text = "Set Schedule"
         CType(Me.ClassesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -274,8 +319,8 @@ Partial Class frmSchedule
         Me.TabPage2.PerformLayout()
         Me.tabPage.ResumeLayout(False)
         CType(Me.DataGridView, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TabControl.ResumeLayout(False)
         CType(Me.CourseAbstractionBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabControl.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -306,4 +351,5 @@ Partial Class frmSchedule
     Friend WithEvents CourseAbstractionTableAdapter As Fall2017ClassesDataSetTableAdapters.CourseAbstractionTableAdapter
     Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+    Friend WithEvents Label1 As Label
 End Class

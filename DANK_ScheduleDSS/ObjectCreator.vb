@@ -25,8 +25,8 @@
         'submission.
 
         'Also populates CourseList
-        PopulateDataSet("ACIS")
-        PopulateDataSet("BIT", 2405)
+        'PopulateDataSet("ACIS")
+        'PopulateDataSet("BIT", 2405)
         'PopulateDataSet("CS")
         'PopulateDataSet("ECON")
         'PopulateDataSet("ENGL")

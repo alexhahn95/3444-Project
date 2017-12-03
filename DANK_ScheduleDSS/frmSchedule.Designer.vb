@@ -23,54 +23,56 @@ Partial Class frmSchedule
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.Fall2017ClassesDataSet = New DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet()
-        Me.Fall2017ClassesDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ClassesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.ClassesTableAdapter = New DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSetTableAdapters.ClassesTableAdapter()
+        Me.Fall2017ClassesDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Fall2017ClassesDataSet = New DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.btnCalculate = New System.Windows.Forms.Button()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.txtEvening = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.txtMorning = New System.Windows.Forms.TextBox()
-        Me.txtTR = New System.Windows.Forms.TextBox()
-        Me.txtMW = New System.Windows.Forms.TextBox()
         Me.txtMWF = New System.Windows.Forms.TextBox()
+        Me.txtMW = New System.Windows.Forms.TextBox()
+        Me.txtTR = New System.Windows.Forms.TextBox()
+        Me.txtMorning = New System.Windows.Forms.TextBox()
+        Me.txtEvening = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.tabPage = New System.Windows.Forms.TabPage()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtRequestedCourses = New System.Windows.Forms.TextBox()
-        Me.TabControl1 = New System.Windows.Forms.TabControl()
-        CType(Me.Fall2017ClassesDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Fall2017ClassesDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.DataGridView = New System.Windows.Forms.DataGridView()
+        Me.DepartmentDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CourseNumberDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Selected = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.DistinctBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TabControl = New System.Windows.Forms.TabControl()
+        Me.ClassesTableAdapter = New DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSetTableAdapters.ClassesTableAdapter()
+        Me.DistinctTableAdapter = New DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSetTableAdapters.DistinctTableAdapter()
         CType(Me.ClassesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Fall2017ClassesDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Fall2017ClassesDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.tabPage.SuspendLayout()
-        Me.TabControl1.SuspendLayout()
+        CType(Me.DataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DistinctBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabControl.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'Fall2017ClassesDataSet
-        '
-        Me.Fall2017ClassesDataSet.DataSetName = "Fall2017ClassesDataSet"
-        Me.Fall2017ClassesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'Fall2017ClassesDataSetBindingSource
-        '
-        Me.Fall2017ClassesDataSetBindingSource.DataSource = Me.Fall2017ClassesDataSet
-        Me.Fall2017ClassesDataSetBindingSource.Position = 0
         '
         'ClassesBindingSource
         '
         Me.ClassesBindingSource.DataMember = "Classes"
         Me.ClassesBindingSource.DataSource = Me.Fall2017ClassesDataSetBindingSource
         '
-        'ClassesTableAdapter
+        'Fall2017ClassesDataSetBindingSource
         '
-        Me.ClassesTableAdapter.ClearBeforeFill = True
+        Me.Fall2017ClassesDataSetBindingSource.DataSource = Me.Fall2017ClassesDataSet
+        Me.Fall2017ClassesDataSetBindingSource.Position = 0
+        '
+        'Fall2017ClassesDataSet
+        '
+        Me.Fall2017ClassesDataSet.DataSetName = "Fall2017ClassesDataSet"
+        Me.Fall2017ClassesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'TabPage1
         '
@@ -112,14 +114,33 @@ Partial Class frmSchedule
         Me.TabPage2.Text = "Weekly Goals"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
-        'Label2
+        'txtMWF
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(46, 51)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(227, 25)
-        Me.Label2.TabIndex = 0
-        Me.Label2.Text = "Evening Courses Goal"
+        Me.txtMWF.Location = New System.Drawing.Point(412, 346)
+        Me.txtMWF.Name = "txtMWF"
+        Me.txtMWF.Size = New System.Drawing.Size(196, 31)
+        Me.txtMWF.TabIndex = 9
+        '
+        'txtMW
+        '
+        Me.txtMW.Location = New System.Drawing.Point(412, 273)
+        Me.txtMW.Name = "txtMW"
+        Me.txtMW.Size = New System.Drawing.Size(196, 31)
+        Me.txtMW.TabIndex = 8
+        '
+        'txtTR
+        '
+        Me.txtTR.Location = New System.Drawing.Point(412, 196)
+        Me.txtTR.Name = "txtTR"
+        Me.txtTR.Size = New System.Drawing.Size(196, 31)
+        Me.txtTR.TabIndex = 7
+        '
+        'txtMorning
+        '
+        Me.txtMorning.Location = New System.Drawing.Point(412, 123)
+        Me.txtMorning.Name = "txtMorning"
+        Me.txtMorning.Size = New System.Drawing.Size(196, 31)
+        Me.txtMorning.TabIndex = 6
         '
         'txtEvening
         '
@@ -127,33 +148,6 @@ Partial Class frmSchedule
         Me.txtEvening.Name = "txtEvening"
         Me.txtEvening.Size = New System.Drawing.Size(196, 31)
         Me.txtEvening.TabIndex = 1
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(46, 126)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(227, 25)
-        Me.Label3.TabIndex = 2
-        Me.Label3.Text = "Morning Courses Goal"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(46, 196)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(242, 25)
-        Me.Label4.TabIndex = 3
-        Me.Label4.Text = "Tuesday/Thursday Goal"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(46, 264)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(260, 25)
-        Me.Label5.TabIndex = 4
-        Me.Label5.Text = "Monday/Wednesday Goal"
         '
         'Label6
         '
@@ -164,90 +158,124 @@ Partial Class frmSchedule
         Me.Label6.TabIndex = 5
         Me.Label6.Text = "Monday/Wednesday/Friday Goal"
         '
-        'txtMorning
+        'Label5
         '
-        Me.txtMorning.Location = New System.Drawing.Point(412, 123)
-        Me.txtMorning.Name = "txtMorning"
-        Me.txtMorning.Size = New System.Drawing.Size(196, 31)
-        Me.txtMorning.TabIndex = 6
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(46, 264)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(260, 25)
+        Me.Label5.TabIndex = 4
+        Me.Label5.Text = "Monday/Wednesday Goal"
         '
-        'txtTR
+        'Label4
         '
-        Me.txtTR.Location = New System.Drawing.Point(412, 196)
-        Me.txtTR.Name = "txtTR"
-        Me.txtTR.Size = New System.Drawing.Size(196, 31)
-        Me.txtTR.TabIndex = 7
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(46, 196)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(242, 25)
+        Me.Label4.TabIndex = 3
+        Me.Label4.Text = "Tuesday/Thursday Goal"
         '
-        'txtMW
+        'Label3
         '
-        Me.txtMW.Location = New System.Drawing.Point(412, 273)
-        Me.txtMW.Name = "txtMW"
-        Me.txtMW.Size = New System.Drawing.Size(196, 31)
-        Me.txtMW.TabIndex = 8
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(46, 126)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(227, 25)
+        Me.Label3.TabIndex = 2
+        Me.Label3.Text = "Morning Courses Goal"
         '
-        'txtMWF
+        'Label2
         '
-        Me.txtMWF.Location = New System.Drawing.Point(412, 346)
-        Me.txtMWF.Name = "txtMWF"
-        Me.txtMWF.Size = New System.Drawing.Size(196, 31)
-        Me.txtMWF.TabIndex = 9
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(46, 51)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(227, 25)
+        Me.Label2.TabIndex = 0
+        Me.Label2.Text = "Evening Courses Goal"
         '
         'tabPage
         '
-        Me.tabPage.Controls.Add(Me.txtRequestedCourses)
-        Me.tabPage.Controls.Add(Me.Label1)
+        Me.tabPage.Controls.Add(Me.DataGridView)
         Me.tabPage.Location = New System.Drawing.Point(8, 39)
         Me.tabPage.Name = "tabPage"
         Me.tabPage.Padding = New System.Windows.Forms.Padding(3)
         Me.tabPage.Size = New System.Drawing.Size(728, 465)
         Me.tabPage.TabIndex = 0
-        Me.tabPage.Text = "Amount of Courses Requested"
+        Me.tabPage.Text = "Requested Courses"
         Me.tabPage.UseVisualStyleBackColor = True
         '
-        'Label1
+        'DataGridView
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(30, 43)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(293, 25)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Amount of requested courses"
+        Me.DataGridView.AutoGenerateColumns = False
+        Me.DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DepartmentDataGridViewTextBoxColumn, Me.CourseNumberDataGridViewTextBoxColumn, Me.Selected})
+        Me.DataGridView.DataSource = Me.DistinctBindingSource
+        Me.DataGridView.Location = New System.Drawing.Point(32, 33)
+        Me.DataGridView.Name = "DataGridView"
+        Me.DataGridView.RowTemplate.Height = 33
+        Me.DataGridView.Size = New System.Drawing.Size(632, 384)
+        Me.DataGridView.TabIndex = 0
         '
-        'txtRequestedCourses
+        'DepartmentDataGridViewTextBoxColumn
         '
-        Me.txtRequestedCourses.Location = New System.Drawing.Point(388, 37)
-        Me.txtRequestedCourses.Name = "txtRequestedCourses"
-        Me.txtRequestedCourses.Size = New System.Drawing.Size(138, 31)
-        Me.txtRequestedCourses.TabIndex = 1
+        Me.DepartmentDataGridViewTextBoxColumn.DataPropertyName = "Department"
+        Me.DepartmentDataGridViewTextBoxColumn.HeaderText = "Department"
+        Me.DepartmentDataGridViewTextBoxColumn.Name = "DepartmentDataGridViewTextBoxColumn"
         '
-        'TabControl1
+        'CourseNumberDataGridViewTextBoxColumn
         '
-        Me.TabControl1.Controls.Add(Me.tabPage)
-        Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Controls.Add(Me.TabPage1)
-        Me.TabControl1.Location = New System.Drawing.Point(51, 30)
-        Me.TabControl1.Name = "TabControl1"
-        Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(744, 512)
-        Me.TabControl1.TabIndex = 0
+        Me.CourseNumberDataGridViewTextBoxColumn.DataPropertyName = "CourseNumber"
+        Me.CourseNumberDataGridViewTextBoxColumn.HeaderText = "CourseNumber"
+        Me.CourseNumberDataGridViewTextBoxColumn.Name = "CourseNumberDataGridViewTextBoxColumn"
+        '
+        'Selected
+        '
+        Me.Selected.HeaderText = "Selected"
+        Me.Selected.Name = "Selected"
+        '
+        'DistinctBindingSource
+        '
+        Me.DistinctBindingSource.DataMember = "Distinct"
+        Me.DistinctBindingSource.DataSource = Me.Fall2017ClassesDataSetBindingSource
+        '
+        'TabControl
+        '
+        Me.TabControl.Controls.Add(Me.tabPage)
+        Me.TabControl.Controls.Add(Me.TabPage2)
+        Me.TabControl.Controls.Add(Me.TabPage1)
+        Me.TabControl.Location = New System.Drawing.Point(51, 30)
+        Me.TabControl.Name = "TabControl"
+        Me.TabControl.SelectedIndex = 0
+        Me.TabControl.Size = New System.Drawing.Size(744, 512)
+        Me.TabControl.TabIndex = 0
+        '
+        'ClassesTableAdapter
+        '
+        Me.ClassesTableAdapter.ClearBeforeFill = True
+        '
+        'DistinctTableAdapter
+        '
+        Me.DistinctTableAdapter.ClearBeforeFill = True
         '
         'frmSchedule
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(876, 609)
-        Me.Controls.Add(Me.TabControl1)
+        Me.Controls.Add(Me.TabControl)
         Me.Name = "frmSchedule"
         Me.Text = "Set Schedule"
-        CType(Me.Fall2017ClassesDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Fall2017ClassesDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ClassesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Fall2017ClassesDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Fall2017ClassesDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
         Me.tabPage.ResumeLayout(False)
-        Me.tabPage.PerformLayout()
-        Me.TabControl1.ResumeLayout(False)
+        CType(Me.DataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DistinctBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabControl.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -269,7 +297,11 @@ Partial Class frmSchedule
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents tabPage As TabPage
-    Friend WithEvents txtRequestedCourses As TextBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents TabControl1 As TabControl
+    Friend WithEvents TabControl As TabControl
+    Friend WithEvents DataGridView As DataGridView
+    Friend WithEvents DistinctBindingSource As BindingSource
+    Friend WithEvents DistinctTableAdapter As Fall2017ClassesDataSetTableAdapters.DistinctTableAdapter
+    Friend WithEvents DepartmentDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CourseNumberDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents Selected As DataGridViewCheckBoxColumn
 End Class

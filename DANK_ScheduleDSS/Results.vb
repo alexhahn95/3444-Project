@@ -1,7 +1,7 @@
 ﻿Public Class frmResults
     Private Sub frmResults_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        For Each course As Course In frmSchedule.Opt.OptimalCourseList
+        For Each course As SpecificCourse In frmSchedule.Opt.OptimalCourseList
             cbxResults.Items.Add(course.ToStringy())
         Next
 

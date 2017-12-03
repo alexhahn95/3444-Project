@@ -18,6 +18,7 @@
     End Sub
 
     Private Sub AddRequestedCourses()
+        Opt.ObjectCreator.PopulateDistinctTableDataSet()
 
         Dim Department As String
         Dim CourseNumber As Integer

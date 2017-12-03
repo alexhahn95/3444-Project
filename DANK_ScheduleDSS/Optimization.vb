@@ -4,7 +4,7 @@ Imports Microsoft.SolverFoundation.Solvers
 
 Public Class Optimization
 
-    Public OptimalCourseList As New List(Of Course)
+    Public OptimalCourseList As New List(Of SpecificCourse)
 
     Public ObjectCreator As New ObjectCreator
     Public Solver As SimplexSolver
@@ -37,13 +37,14 @@ Public Class Optimization
         AddDecisionVariables()
         AddOverlapConstraints()
         AddEnrollmentConstraints()
+        'AddDuplicateCourseConstraint()
         AddObjectiveFunction()
 
         Solve() 'And calculate slack/surplus
     End Sub
 
     Private Sub AddDecisionVariables()
-        For Each course As Course In ObjectCreator.CourseList
+        For Each course As SpecificCourse In ObjectCreator.SpecificCourseList
             DecisionVariableKey = course.CRN
             Solver.AddVariable(DecisionVariableKey, DecisionVariableIndex)
             Solver.SetIntegrality(DecisionVariableIndex, True)
@@ -56,7 +57,7 @@ Public Class Optimization
             ConstraintKey = "Overlap Constraint: " & period
             Solver.AddRow(ConstraintKey, ConstraintIndex)
             Dim iter As Integer = 0
-            For Each course As Course In ObjectCreator.CourseList
+            For Each course As SpecificCourse In ObjectCreator.SpecificCourseList
                 ConstraintCoefficient = ObjectCreator.CourseOfferings(iter, period)
                 iter = iter + 1
                 DecisionVariableKey = course.CRN
@@ -70,7 +71,7 @@ Public Class Optimization
     Private Sub AddEnrollmentConstraints()
         ConstraintKey = "Enrollment Constraint"
         Solver.AddRow(ConstraintKey, ConstraintIndex)
-        For Each course As Course In ObjectCreator.CourseList
+        For Each course As SpecificCourse In ObjectCreator.SpecificCourseList
             ConstraintCoefficient = 1
             DecisionVariableKey = course.CRN
             DecisionVariableIndex = Solver.GetIndexFromKey(DecisionVariableKey)
@@ -79,11 +80,19 @@ Public Class Optimization
         Solver.SetBounds(ConstraintIndex, AmountRequestedCourses, AmountRequestedCourses)
     End Sub
 
+    Private Sub AddDuplicateCourseConstraint()
+        ConstraintKey = "Duplicate Course Constraint"
+        Solver.AddRow(ConstraintKey, ConstraintIndex)
+        For Each course As SpecificCourse In ObjectCreator.SpecificCourseList
+            ConstraintCoefficient = 1
+        Next
+    End Sub
+
     Private Sub AddObjectiveFunction()
         Dim objKey As String = "Objective Function"
         Solver.AddRow(objKey, ObjectiveIndex)
         For section = 0 To ObjectCreator.Sections.Count - 1
-            For Each course As Course In ObjectCreator.CourseList
+            For Each course As SpecificCourse In ObjectCreator.SpecificCourseList
                 ConstraintCoefficient = Math.Abs(course.Totals(section) - GoalAmounts(section))
                 DecisionVariableKey = course.CRN
                 DecisionVariableIndex = Solver.GetIndexFromKey(DecisionVariableKey)
@@ -100,16 +109,16 @@ Public Class Optimization
         Solver.Solve(mySolverParms)
         ObjectiveFunctionValue = Solver.GetValue(ObjectiveIndex).ToString
 
-        DecisionVariableValues = New Integer(ObjectCreator.CourseList.Count - 1, 1) {}
+        DecisionVariableValues = New Integer(ObjectCreator.SpecificCourseList.Count - 1, 1) {}
 
-        For i = 0 To ObjectCreator.CourseList.Count - 1
+        For i = 0 To ObjectCreator.SpecificCourseList.Count - 1
             DecisionVariableValues(i, 0) = Solver.GetKeyFromIndex(i)
             DecisionVariableValues(i, 1) = Solver.GetValue(i).ToDouble
         Next
 
-        For i = 0 To ObjectCreator.CourseList.Count - 1
+        For i = 0 To ObjectCreator.SpecificCourseList.Count - 1
             If DecisionVariableValues(i, 1) = 1 Then
-                For Each course As Course In ObjectCreator.CourseList
+                For Each course As SpecificCourse In ObjectCreator.SpecificCourseList
                     If DecisionVariableValues(i, 0).Equals(course.CRN) Then
                         OptimalCourseList.Add(course)
                         Dim k As Object = 3

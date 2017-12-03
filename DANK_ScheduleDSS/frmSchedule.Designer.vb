@@ -41,13 +41,13 @@ Partial Class frmSchedule
         Me.Label2 = New System.Windows.Forms.Label()
         Me.tabPage = New System.Windows.Forms.TabPage()
         Me.DataGridView = New System.Windows.Forms.DataGridView()
-        Me.DepartmentDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CourseNumberDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Selected = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.DistinctBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TabControl = New System.Windows.Forms.TabControl()
         Me.ClassesTableAdapter = New DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSetTableAdapters.ClassesTableAdapter()
-        Me.DistinctTableAdapter = New DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSetTableAdapters.DistinctTableAdapter()
+        Me.CourseAbstractionBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.CourseAbstractionTableAdapter = New DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSetTableAdapters.CourseAbstractionTableAdapter()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.ClassesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Fall2017ClassesDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Fall2017ClassesDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -55,8 +55,8 @@ Partial Class frmSchedule
         Me.TabPage2.SuspendLayout()
         Me.tabPage.SuspendLayout()
         CType(Me.DataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DistinctBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl.SuspendLayout()
+        CType(Me.CourseAbstractionBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ClassesBindingSource
@@ -80,7 +80,7 @@ Partial Class frmSchedule
         Me.TabPage1.Location = New System.Drawing.Point(8, 39)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(728, 465)
+        Me.TabPage1.Size = New System.Drawing.Size(850, 845)
         Me.TabPage1.TabIndex = 2
         Me.TabPage1.Text = "Calculate"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -109,7 +109,7 @@ Partial Class frmSchedule
         Me.TabPage2.Location = New System.Drawing.Point(8, 39)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(728, 465)
+        Me.TabPage2.Size = New System.Drawing.Size(850, 845)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Weekly Goals"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -209,35 +209,18 @@ Partial Class frmSchedule
         '
         Me.DataGridView.AutoGenerateColumns = False
         Me.DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DepartmentDataGridViewTextBoxColumn, Me.CourseNumberDataGridViewTextBoxColumn, Me.Selected})
-        Me.DataGridView.DataSource = Me.DistinctBindingSource
+        Me.DataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Selected, Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2})
+        Me.DataGridView.DataSource = Me.CourseAbstractionBindingSource
         Me.DataGridView.Location = New System.Drawing.Point(6, 6)
         Me.DataGridView.Name = "DataGridView"
         Me.DataGridView.RowTemplate.Height = 33
         Me.DataGridView.Size = New System.Drawing.Size(810, 806)
         Me.DataGridView.TabIndex = 0
         '
-        'DepartmentDataGridViewTextBoxColumn
-        '
-        Me.DepartmentDataGridViewTextBoxColumn.DataPropertyName = "Department"
-        Me.DepartmentDataGridViewTextBoxColumn.HeaderText = "Department"
-        Me.DepartmentDataGridViewTextBoxColumn.Name = "DepartmentDataGridViewTextBoxColumn"
-        '
-        'CourseNumberDataGridViewTextBoxColumn
-        '
-        Me.CourseNumberDataGridViewTextBoxColumn.DataPropertyName = "CourseNumber"
-        Me.CourseNumberDataGridViewTextBoxColumn.HeaderText = "CourseNumber"
-        Me.CourseNumberDataGridViewTextBoxColumn.Name = "CourseNumberDataGridViewTextBoxColumn"
-        '
         'Selected
         '
         Me.Selected.HeaderText = "Selected"
         Me.Selected.Name = "Selected"
-        '
-        'DistinctBindingSource
-        '
-        Me.DistinctBindingSource.DataMember = "Distinct"
-        Me.DistinctBindingSource.DataSource = Me.Fall2017ClassesDataSetBindingSource
         '
         'TabControl
         '
@@ -254,9 +237,26 @@ Partial Class frmSchedule
         '
         Me.ClassesTableAdapter.ClearBeforeFill = True
         '
-        'DistinctTableAdapter
+        'CourseAbstractionBindingSource
         '
-        Me.DistinctTableAdapter.ClearBeforeFill = True
+        Me.CourseAbstractionBindingSource.DataMember = "CourseAbstraction"
+        Me.CourseAbstractionBindingSource.DataSource = Me.Fall2017ClassesDataSetBindingSource
+        '
+        'CourseAbstractionTableAdapter
+        '
+        Me.CourseAbstractionTableAdapter.ClearBeforeFill = True
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "Department"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "Department"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "CourseNumber"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "CourseNumber"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
         '
         'frmSchedule
         '
@@ -274,8 +274,8 @@ Partial Class frmSchedule
         Me.TabPage2.PerformLayout()
         Me.tabPage.ResumeLayout(False)
         CType(Me.DataGridView, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DistinctBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabControl.ResumeLayout(False)
+        CType(Me.CourseAbstractionBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -299,9 +299,11 @@ Partial Class frmSchedule
     Friend WithEvents tabPage As TabPage
     Friend WithEvents TabControl As TabControl
     Friend WithEvents DataGridView As DataGridView
-    Friend WithEvents DistinctBindingSource As BindingSource
-    Friend WithEvents DistinctTableAdapter As Fall2017ClassesDataSetTableAdapters.DistinctTableAdapter
     Friend WithEvents DepartmentDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents CourseNumberDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents Selected As DataGridViewCheckBoxColumn
+    Friend WithEvents CourseAbstractionBindingSource As BindingSource
+    Friend WithEvents CourseAbstractionTableAdapter As Fall2017ClassesDataSetTableAdapters.CourseAbstractionTableAdapter
+    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
 End Class

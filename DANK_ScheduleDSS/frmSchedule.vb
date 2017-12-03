@@ -18,7 +18,7 @@
     End Sub
 
     Private Sub AddRequestedCourses()
-        Opt.ObjectCreator.PopulateDistinctTableDataSet()
+        Opt.ObjectCreator.PopulateAbstractTableDataSet()
 
         Dim Department As String
         Dim CourseNumber As Integer
@@ -28,9 +28,10 @@
 
         For Each row As DataGridViewRow In DataGridView.Rows
 
-            Department = row.Cells(0).Value
-            CourseNumber = row.Cells(1).Value
-            Checked = row.Cells(2).Value
+            Checked = row.Cells(0).Value
+            Department = row.Cells(1).Value
+            CourseNumber = row.Cells(2).Value
+
 
             If Checked Then
                 Opt.ObjectCreator.PopulateDataSet(Department, CourseNumber)
@@ -63,7 +64,9 @@
     End Sub
 
     Private Sub frmSchedule_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.DistinctTableAdapter.Fill(Me.Fall2017ClassesDataSet.Distinct)
+        'TODO: This line of code loads data into the 'Fall2017ClassesDataSet.CourseAbstraction' table. You can move, or remove it, as needed.
+        Me.CourseAbstractionTableAdapter.Fill(Me.Fall2017ClassesDataSet.CourseAbstraction)
+
     End Sub
 
 End Class

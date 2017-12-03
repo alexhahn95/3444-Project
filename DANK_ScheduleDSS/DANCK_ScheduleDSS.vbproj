@@ -84,12 +84,12 @@
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
     <Compile Include="Course.vb" />
-    <Compile Include="SpecificCourse.vb" />
     <Compile Include="Fall2017ClassesDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Fall2017ClassesDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="SpecificCourse.vb" />
     <Compile Include="frmSchedule.Designer.vb">
       <DependentUpon>frmSchedule.vb</DependentUpon>
     </Compile>

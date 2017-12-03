@@ -27,7 +27,7 @@ Partial Public Class Fall2017ClassesDataSet
     
     Private tableClasses As ClassesDataTable
     
-    Private tableDistinct As DistinctDataTable
+    Private tableCourseAbstraction As CourseAbstractionDataTable
     
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
@@ -61,8 +61,8 @@ Partial Public Class Fall2017ClassesDataSet
             If (Not (ds.Tables("Classes")) Is Nothing) Then
                 MyBase.Tables.Add(New ClassesDataTable(ds.Tables("Classes")))
             End If
-            If (Not (ds.Tables("Distinct")) Is Nothing) Then
-                MyBase.Tables.Add(New DistinctDataTable(ds.Tables("Distinct")))
+            If (Not (ds.Tables("CourseAbstraction")) Is Nothing) Then
+                MyBase.Tables.Add(New CourseAbstractionDataTable(ds.Tables("CourseAbstraction")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -95,9 +95,9 @@ Partial Public Class Fall2017ClassesDataSet
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property Distinct() As DistinctDataTable
+    Public ReadOnly Property CourseAbstraction() As CourseAbstractionDataTable
         Get
-            Return Me.tableDistinct
+            Return Me.tableCourseAbstraction
         End Get
     End Property
     
@@ -171,8 +171,8 @@ Partial Public Class Fall2017ClassesDataSet
             If (Not (ds.Tables("Classes")) Is Nothing) Then
                 MyBase.Tables.Add(New ClassesDataTable(ds.Tables("Classes")))
             End If
-            If (Not (ds.Tables("Distinct")) Is Nothing) Then
-                MyBase.Tables.Add(New DistinctDataTable(ds.Tables("Distinct")))
+            If (Not (ds.Tables("CourseAbstraction")) Is Nothing) Then
+                MyBase.Tables.Add(New CourseAbstractionDataTable(ds.Tables("CourseAbstraction")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -212,10 +212,10 @@ Partial Public Class Fall2017ClassesDataSet
                 Me.tableClasses.InitVars
             End If
         End If
-        Me.tableDistinct = CType(MyBase.Tables("Distinct"),DistinctDataTable)
+        Me.tableCourseAbstraction = CType(MyBase.Tables("CourseAbstraction"),CourseAbstractionDataTable)
         If (initTable = true) Then
-            If (Not (Me.tableDistinct) Is Nothing) Then
-                Me.tableDistinct.InitVars
+            If (Not (Me.tableCourseAbstraction) Is Nothing) Then
+                Me.tableCourseAbstraction.InitVars
             End If
         End If
     End Sub
@@ -230,8 +230,8 @@ Partial Public Class Fall2017ClassesDataSet
         Me.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
         Me.tableClasses = New ClassesDataTable()
         MyBase.Tables.Add(Me.tableClasses)
-        Me.tableDistinct = New DistinctDataTable()
-        MyBase.Tables.Add(Me.tableDistinct)
+        Me.tableCourseAbstraction = New CourseAbstractionDataTable()
+        MyBase.Tables.Add(Me.tableCourseAbstraction)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -242,7 +242,7 @@ Partial Public Class Fall2017ClassesDataSet
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Private Function ShouldSerializeDistinct() As Boolean
+    Private Function ShouldSerializeCourseAbstraction() As Boolean
         Return false
     End Function
     
@@ -308,7 +308,7 @@ Partial Public Class Fall2017ClassesDataSet
     Public Delegate Sub ClassesRowChangeEventHandler(ByVal sender As Object, ByVal e As ClassesRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Public Delegate Sub DistinctRowChangeEventHandler(ByVal sender As Object, ByVal e As DistinctRowChangeEvent)
+    Public Delegate Sub CourseAbstractionRowChangeEventHandler(ByVal sender As Object, ByVal e As CourseAbstractionRowChangeEvent)
     
     '''<summary>
     '''Represents the strongly named DataTable class.
@@ -762,8 +762,8 @@ Partial Public Class Fall2017ClassesDataSet
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class DistinctDataTable
-        Inherits Global.System.Data.TypedTableBase(Of DistinctRow)
+    Partial Public Class CourseAbstractionDataTable
+        Inherits Global.System.Data.TypedTableBase(Of CourseAbstractionRow)
         
         Private columnDepartment As Global.System.Data.DataColumn
         
@@ -773,7 +773,7 @@ Partial Public Class Fall2017ClassesDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub New()
             MyBase.New
-            Me.TableName = "Distinct"
+            Me.TableName = "CourseAbstraction"
             Me.BeginInit
             Me.InitClass
             Me.EndInit
@@ -831,44 +831,44 @@ Partial Public Class Fall2017ClassesDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As DistinctRow
+        Public Default ReadOnly Property Item(ByVal index As Integer) As CourseAbstractionRow
             Get
-                Return CType(Me.Rows(index),DistinctRow)
+                Return CType(Me.Rows(index),CourseAbstractionRow)
             End Get
         End Property
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event DistinctRowChanging As DistinctRowChangeEventHandler
+        Public Event CourseAbstractionRowChanging As CourseAbstractionRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event DistinctRowChanged As DistinctRowChangeEventHandler
+        Public Event CourseAbstractionRowChanged As CourseAbstractionRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event DistinctRowDeleting As DistinctRowChangeEventHandler
+        Public Event CourseAbstractionRowDeleting As CourseAbstractionRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event DistinctRowDeleted As DistinctRowChangeEventHandler
+        Public Event CourseAbstractionRowDeleted As CourseAbstractionRowChangeEventHandler
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Sub AddDistinctRow(ByVal row As DistinctRow)
+        Public Overloads Sub AddCourseAbstractionRow(ByVal row As CourseAbstractionRow)
             Me.Rows.Add(row)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Function AddDistinctRow(ByVal Department As String, ByVal CourseNumber As Double) As DistinctRow
-            Dim rowDistinctRow As DistinctRow = CType(Me.NewRow,DistinctRow)
+        Public Overloads Function AddCourseAbstractionRow(ByVal Department As String, ByVal CourseNumber As Double) As CourseAbstractionRow
+            Dim rowCourseAbstractionRow As CourseAbstractionRow = CType(Me.NewRow,CourseAbstractionRow)
             Dim columnValuesArray() As Object = New Object() {Department, CourseNumber}
-            rowDistinctRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowDistinctRow)
-            Return rowDistinctRow
+            rowCourseAbstractionRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowCourseAbstractionRow)
+            Return rowCourseAbstractionRow
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As DistinctDataTable = CType(MyBase.Clone,DistinctDataTable)
+            Dim cln As CourseAbstractionDataTable = CType(MyBase.Clone,CourseAbstractionDataTable)
             cln.InitVars
             Return cln
         End Function
@@ -876,7 +876,7 @@ Partial Public Class Fall2017ClassesDataSet
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New DistinctDataTable()
+            Return New CourseAbstractionDataTable()
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -898,28 +898,28 @@ Partial Public Class Fall2017ClassesDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function NewDistinctRow() As DistinctRow
-            Return CType(Me.NewRow,DistinctRow)
+        Public Function NewCourseAbstractionRow() As CourseAbstractionRow
+            Return CType(Me.NewRow,CourseAbstractionRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New DistinctRow(builder)
+            Return New CourseAbstractionRow(builder)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(DistinctRow)
+            Return GetType(CourseAbstractionRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanged(e)
-            If (Not (Me.DistinctRowChangedEvent) Is Nothing) Then
-                RaiseEvent DistinctRowChanged(Me, New DistinctRowChangeEvent(CType(e.Row,DistinctRow), e.Action))
+            If (Not (Me.CourseAbstractionRowChangedEvent) Is Nothing) Then
+                RaiseEvent CourseAbstractionRowChanged(Me, New CourseAbstractionRowChangeEvent(CType(e.Row,CourseAbstractionRow), e.Action))
             End If
         End Sub
         
@@ -927,8 +927,8 @@ Partial Public Class Fall2017ClassesDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanging(e)
-            If (Not (Me.DistinctRowChangingEvent) Is Nothing) Then
-                RaiseEvent DistinctRowChanging(Me, New DistinctRowChangeEvent(CType(e.Row,DistinctRow), e.Action))
+            If (Not (Me.CourseAbstractionRowChangingEvent) Is Nothing) Then
+                RaiseEvent CourseAbstractionRowChanging(Me, New CourseAbstractionRowChangeEvent(CType(e.Row,CourseAbstractionRow), e.Action))
             End If
         End Sub
         
@@ -936,8 +936,8 @@ Partial Public Class Fall2017ClassesDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleted(e)
-            If (Not (Me.DistinctRowDeletedEvent) Is Nothing) Then
-                RaiseEvent DistinctRowDeleted(Me, New DistinctRowChangeEvent(CType(e.Row,DistinctRow), e.Action))
+            If (Not (Me.CourseAbstractionRowDeletedEvent) Is Nothing) Then
+                RaiseEvent CourseAbstractionRowDeleted(Me, New CourseAbstractionRowChangeEvent(CType(e.Row,CourseAbstractionRow), e.Action))
             End If
         End Sub
         
@@ -945,14 +945,14 @@ Partial Public Class Fall2017ClassesDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleting(e)
-            If (Not (Me.DistinctRowDeletingEvent) Is Nothing) Then
-                RaiseEvent DistinctRowDeleting(Me, New DistinctRowChangeEvent(CType(e.Row,DistinctRow), e.Action))
+            If (Not (Me.CourseAbstractionRowDeletingEvent) Is Nothing) Then
+                RaiseEvent CourseAbstractionRowDeleting(Me, New CourseAbstractionRowChangeEvent(CType(e.Row,CourseAbstractionRow), e.Action))
             End If
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub RemoveDistinctRow(ByVal row As DistinctRow)
+        Public Sub RemoveCourseAbstractionRow(ByVal row As CourseAbstractionRow)
             Me.Rows.Remove(row)
         End Sub
         
@@ -979,7 +979,7 @@ Partial Public Class Fall2017ClassesDataSet
             type.Attributes.Add(attribute1)
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "DistinctDataTable"
+            attribute2.FixedValue = "CourseAbstractionDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -1404,16 +1404,16 @@ Partial Public Class Fall2017ClassesDataSet
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
-    Partial Public Class DistinctRow
+    Partial Public Class CourseAbstractionRow
         Inherits Global.System.Data.DataRow
         
-        Private tableDistinct As DistinctDataTable
+        Private tableCourseAbstraction As CourseAbstractionDataTable
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
             MyBase.New(rb)
-            Me.tableDistinct = CType(Me.Table,DistinctDataTable)
+            Me.tableCourseAbstraction = CType(Me.Table,CourseAbstractionDataTable)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1421,13 +1421,13 @@ Partial Public Class Fall2017ClassesDataSet
         Public Property Department() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableDistinct.DepartmentColumn),String)
+                    Return CType(Me(Me.tableCourseAbstraction.DepartmentColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Department' in table 'Distinct' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Department' in table 'CourseAbstraction' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableDistinct.DepartmentColumn) = value
+                Me(Me.tableCourseAbstraction.DepartmentColumn) = value
             End Set
         End Property
         
@@ -1436,38 +1436,38 @@ Partial Public Class Fall2017ClassesDataSet
         Public Property CourseNumber() As Double
             Get
                 Try 
-                    Return CType(Me(Me.tableDistinct.CourseNumberColumn),Double)
+                    Return CType(Me(Me.tableCourseAbstraction.CourseNumberColumn),Double)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'CourseNumber' in table 'Distinct' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'CourseNumber' in table 'CourseAbstraction' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableDistinct.CourseNumberColumn) = value
+                Me(Me.tableCourseAbstraction.CourseNumberColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Function IsDepartmentNull() As Boolean
-            Return Me.IsNull(Me.tableDistinct.DepartmentColumn)
+            Return Me.IsNull(Me.tableCourseAbstraction.DepartmentColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub SetDepartmentNull()
-            Me(Me.tableDistinct.DepartmentColumn) = Global.System.Convert.DBNull
+            Me(Me.tableCourseAbstraction.DepartmentColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Function IsCourseNumberNull() As Boolean
-            Return Me.IsNull(Me.tableDistinct.CourseNumberColumn)
+            Return Me.IsNull(Me.tableCourseAbstraction.CourseNumberColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub SetCourseNumberNull()
-            Me(Me.tableDistinct.CourseNumberColumn) = Global.System.Convert.DBNull
+            Me(Me.tableCourseAbstraction.CourseNumberColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -1511,16 +1511,16 @@ Partial Public Class Fall2017ClassesDataSet
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Public Class DistinctRowChangeEvent
+    Public Class CourseAbstractionRowChangeEvent
         Inherits Global.System.EventArgs
         
-        Private eventRow As DistinctRow
+        Private eventRow As CourseAbstractionRow
         
         Private eventAction As Global.System.Data.DataRowAction
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub New(ByVal row As DistinctRow, ByVal action As Global.System.Data.DataRowAction)
+        Public Sub New(ByVal row As CourseAbstractionRow, ByVal action As Global.System.Data.DataRowAction)
             MyBase.New
             Me.eventRow = row
             Me.eventAction = action
@@ -1528,7 +1528,7 @@ Partial Public Class Fall2017ClassesDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property Row() As DistinctRow
+        Public ReadOnly Property Row() As CourseAbstractionRow
             Get
                 Return Me.eventRow
             End Get
@@ -2285,7 +2285,7 @@ Namespace Fall2017ClassesDataSetTableAdapters
      Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
      Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class DistinctTableAdapter
+    Partial Public Class CourseAbstractionTableAdapter
         Inherits Global.System.ComponentModel.Component
         
         Private WithEvents _adapter As Global.System.Data.OleDb.OleDbDataAdapter
@@ -2402,13 +2402,13 @@ Namespace Fall2017ClassesDataSetTableAdapters
             Me._adapter = New Global.System.Data.OleDb.OleDbDataAdapter()
             Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
             tableMapping.SourceTable = "Table"
-            tableMapping.DataSetTable = "Distinct"
+            tableMapping.DataSetTable = "CourseAbstraction"
             tableMapping.ColumnMappings.Add("Department", "Department")
             tableMapping.ColumnMappings.Add("CourseNumber", "CourseNumber")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.InsertCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO `Distinct` (`Department`, `CourseNumber`) VALUES (?, ?)"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO `CourseAbstraction` (`Department`, `CourseNumber`) VALUES (?, ?)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Department", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Department", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("CourseNumber", Global.System.Data.OleDb.OleDbType.[Double], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CourseNumber", Global.System.Data.DataRowVersion.Current, false, Nothing))
@@ -2424,22 +2424,18 @@ Namespace Fall2017ClassesDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(1) {}
+            Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT Department, CourseNumber FROM [Distinct]"
+            Me._commandCollection(0).CommandText = "SELECT Department, CourseNumber FROM CourseAbstraction"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(1) = New Global.System.Data.OleDb.OleDbCommand()
-            Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "SELECT Department, CourseNumber FROM [Distinct]"
-            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As Fall2017ClassesDataSet.DistinctDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As Fall2017ClassesDataSet.CourseAbstractionDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -2452,30 +2448,17 @@ Namespace Fall2017ClassesDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As Fall2017ClassesDataSet.DistinctDataTable
+        Public Overloads Overridable Function GetData() As Fall2017ClassesDataSet.CourseAbstractionDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As Fall2017ClassesDataSet.DistinctDataTable = New Fall2017ClassesDataSet.DistinctDataTable()
+            Dim dataTable As Fall2017ClassesDataSet.CourseAbstractionDataTable = New Fall2017ClassesDataSet.CourseAbstractionDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
-        Public Overloads Overridable Function FillBy(ByVal dataTable As Fall2017ClassesDataSet.DistinctDataTable) As Integer
-            Me.Adapter.SelectCommand = Me.CommandCollection(1)
-            If (Me.ClearBeforeFill = true) Then
-                dataTable.Clear
-            End If
-            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
-            Return returnValue
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As Fall2017ClassesDataSet.DistinctDataTable) As Integer
+        Public Overloads Overridable Function Update(ByVal dataTable As Fall2017ClassesDataSet.CourseAbstractionDataTable) As Integer
             Return Me.Adapter.Update(dataTable)
         End Function
         
@@ -2483,7 +2466,7 @@ Namespace Fall2017ClassesDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
         Public Overloads Overridable Function Update(ByVal dataSet As Fall2017ClassesDataSet) As Integer
-            Return Me.Adapter.Update(dataSet, "Distinct")
+            Return Me.Adapter.Update(dataSet, "CourseAbstraction")
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2546,7 +2529,7 @@ Namespace Fall2017ClassesDataSetTableAdapters
         
         Private _classesTableAdapter As ClassesTableAdapter
         
-        Private _distinctTableAdapter As DistinctTableAdapter
+        Private _courseAbstractionTableAdapter As CourseAbstractionTableAdapter
         
         Private _backupDataSetBeforeUpdate As Boolean
         
@@ -2582,12 +2565,12 @@ Namespace Fall2017ClassesDataSetTableAdapters
          Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
             "a", "System.Drawing.Design.UITypeEditor")>  _
-        Public Property DistinctTableAdapter() As DistinctTableAdapter
+        Public Property CourseAbstractionTableAdapter() As CourseAbstractionTableAdapter
             Get
-                Return Me._distinctTableAdapter
+                Return Me._courseAbstractionTableAdapter
             End Get
             Set
-                Me._distinctTableAdapter = value
+                Me._courseAbstractionTableAdapter = value
             End Set
         End Property
         
@@ -2614,9 +2597,9 @@ Namespace Fall2017ClassesDataSetTableAdapters
                             AndAlso (Not (Me._classesTableAdapter.Connection) Is Nothing)) Then
                     Return Me._classesTableAdapter.Connection
                 End If
-                If ((Not (Me._distinctTableAdapter) Is Nothing)  _
-                            AndAlso (Not (Me._distinctTableAdapter.Connection) Is Nothing)) Then
-                    Return Me._distinctTableAdapter.Connection
+                If ((Not (Me._courseAbstractionTableAdapter) Is Nothing)  _
+                            AndAlso (Not (Me._courseAbstractionTableAdapter.Connection) Is Nothing)) Then
+                    Return Me._courseAbstractionTableAdapter.Connection
                 End If
                 Return Nothing
             End Get
@@ -2634,7 +2617,7 @@ Namespace Fall2017ClassesDataSetTableAdapters
                 If (Not (Me._classesTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
-                If (Not (Me._distinctTableAdapter) Is Nothing) Then
+                If (Not (Me._courseAbstractionTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
                 Return count
@@ -2657,12 +2640,12 @@ Namespace Fall2017ClassesDataSetTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
-            If (Not (Me._distinctTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Distinct.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+            If (Not (Me._courseAbstractionTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.CourseAbstraction.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._distinctTableAdapter.Update(updatedRows))
+                    result = (result + Me._courseAbstractionTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -2684,11 +2667,11 @@ Namespace Fall2017ClassesDataSetTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
-            If (Not (Me._distinctTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.Distinct.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+            If (Not (Me._courseAbstractionTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.CourseAbstraction.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._distinctTableAdapter.Update(addedRows))
+                    result = (result + Me._courseAbstractionTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -2702,11 +2685,11 @@ Namespace Fall2017ClassesDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Function UpdateDeletedRows(ByVal dataSet As Fall2017ClassesDataSet, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._distinctTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Distinct.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+            If (Not (Me._courseAbstractionTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.CourseAbstraction.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._distinctTableAdapter.Update(deletedRows))
+                    result = (result + Me._courseAbstractionTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -2764,8 +2747,8 @@ Namespace Fall2017ClassesDataSetTableAdapters
                 Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
                         "tring.")
             End If
-            If ((Not (Me._distinctTableAdapter) Is Nothing)  _
-                        AndAlso (Me.MatchTableAdapterConnection(Me._distinctTableAdapter.Connection) = false)) Then
+            If ((Not (Me._courseAbstractionTableAdapter) Is Nothing)  _
+                        AndAlso (Me.MatchTableAdapterConnection(Me._courseAbstractionTableAdapter.Connection) = false)) Then
                 Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
                         "tring.")
             End If
@@ -2810,13 +2793,13 @@ Namespace Fall2017ClassesDataSetTableAdapters
                         adaptersWithAcceptChangesDuringUpdate.Add(Me._classesTableAdapter.Adapter)
                     End If
                 End If
-                If (Not (Me._distinctTableAdapter) Is Nothing) Then
-                    revertConnections.Add(Me._distinctTableAdapter, Me._distinctTableAdapter.Connection)
-                    Me._distinctTableAdapter.Connection = CType(workConnection,Global.System.Data.OleDb.OleDbConnection)
-                    Me._distinctTableAdapter.Transaction = CType(workTransaction,Global.System.Data.OleDb.OleDbTransaction)
-                    If Me._distinctTableAdapter.Adapter.AcceptChangesDuringUpdate Then
-                        Me._distinctTableAdapter.Adapter.AcceptChangesDuringUpdate = false
-                        adaptersWithAcceptChangesDuringUpdate.Add(Me._distinctTableAdapter.Adapter)
+                If (Not (Me._courseAbstractionTableAdapter) Is Nothing) Then
+                    revertConnections.Add(Me._courseAbstractionTableAdapter, Me._courseAbstractionTableAdapter.Connection)
+                    Me._courseAbstractionTableAdapter.Connection = CType(workConnection,Global.System.Data.OleDb.OleDbConnection)
+                    Me._courseAbstractionTableAdapter.Transaction = CType(workTransaction,Global.System.Data.OleDb.OleDbTransaction)
+                    If Me._courseAbstractionTableAdapter.Adapter.AcceptChangesDuringUpdate Then
+                        Me._courseAbstractionTableAdapter.Adapter.AcceptChangesDuringUpdate = false
+                        adaptersWithAcceptChangesDuringUpdate.Add(Me._courseAbstractionTableAdapter.Adapter)
                     End If
                 End If
                 '
@@ -2883,9 +2866,9 @@ Namespace Fall2017ClassesDataSetTableAdapters
                     Me._classesTableAdapter.Connection = CType(revertConnections(Me._classesTableAdapter),Global.System.Data.OleDb.OleDbConnection)
                     Me._classesTableAdapter.Transaction = Nothing
                 End If
-                If (Not (Me._distinctTableAdapter) Is Nothing) Then
-                    Me._distinctTableAdapter.Connection = CType(revertConnections(Me._distinctTableAdapter),Global.System.Data.OleDb.OleDbConnection)
-                    Me._distinctTableAdapter.Transaction = Nothing
+                If (Not (Me._courseAbstractionTableAdapter) Is Nothing) Then
+                    Me._courseAbstractionTableAdapter.Connection = CType(revertConnections(Me._courseAbstractionTableAdapter),Global.System.Data.OleDb.OleDbConnection)
+                    Me._courseAbstractionTableAdapter.Transaction = Nothing
                 End If
                 If (0 < adaptersWithAcceptChangesDuringUpdate.Count) Then
                     Dim adapters((adaptersWithAcceptChangesDuringUpdate.Count) - 1) As Global.System.Data.Common.DataAdapter

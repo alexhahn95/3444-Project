@@ -32,7 +32,7 @@ Represents a strongly typed in-memory cache of data.
 Represents the strongly named DataTable class.
 </summary>
 </member>
-<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet.DistinctDataTable">
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet.CourseAbstractionDataTable">
 <summary>
 Represents the strongly named DataTable class.
 </summary>
@@ -42,7 +42,7 @@ Represents the strongly named DataTable class.
 Represents strongly named DataRow class.
 </summary>
 </member>
-<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet.DistinctRow">
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet.CourseAbstractionRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
@@ -52,7 +52,7 @@ Represents strongly named DataRow class.
 Row event argument class
 </summary>
 </member>
-<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet.DistinctRowChangeEvent">
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSet.CourseAbstractionRowChangeEvent">
 <summary>
 Row event argument class
 </summary>
@@ -62,7 +62,7 @@ Row event argument class
 Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
-<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSetTableAdapters.DistinctTableAdapter">
+<member name="T:DANKSolutions_ClassScheduleDSS.Fall2017ClassesDataSetTableAdapters.CourseAbstractionTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>

@@ -52,7 +52,9 @@
         Dim SpecificCourseCount As Integer = 0
         For Each Row As DataGridViewRow In DataSet.Tables(tableName).Rows
             'If Course.Department = Row.Cells() Then
-            Dim h As Integer = 5
+
+            'End If
+
         Next
         Return 5
     End Function
@@ -90,9 +92,9 @@
         Database.RunSql(ConnectionString, ProjSQL, DataSet, tableName)
     End Sub
 
-    Public Sub PopulateDistinctTableDataSet()
-        ProjSQL = "SELECT * FROM Distinct"
-        Database.RunSql(ConnectionString, ProjSQL, DataSet, "Distinct")
+    Public Sub PopulateAbstractTableDataSet()
+        ProjSQL = "SELECT * FROM CourseAbstraction"
+        Database.RunSql(ConnectionString, ProjSQL, DataSet, "CourseAbstraction")
     End Sub
 
 End Class

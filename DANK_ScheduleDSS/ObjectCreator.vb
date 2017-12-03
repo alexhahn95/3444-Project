@@ -1,10 +1,9 @@
 ﻿Public Class ObjectCreator
 
-    Public Property SpecificCourseList As List(Of SpecificCourse)
-    Public Property CourseList As New List(Of Course)
+    Public Property AbstractCourseList As New List(Of AbstractCourse)
     Public Property WeightList As New List(Of Weight)
     Public Sections() As String
-    Public CourseOfferings(,) As Integer
+    Public DiscreteCourseOfferings(,) As Integer
     Public Property PeriodCount As Integer = 845
 
     Public Database As New Database
@@ -12,89 +11,91 @@
     Public ProjSQL As String
     Public DataSet As New DataSet
 
-    Public tableName As String = "Classes"
+    Public discreteTable As String = "Classes"
+    Public abstractionTable As String = "CourseAbstraction"
 
     Public Sub CreateObjects()
 
-        PopulateCourseList()
-        PopulateSpecificCourseList()
+        PopulateAbstractCourseList()
 
         'Creates Sections
         Sections = New String() {"Evening", "Morning", "TuesThurs", "MonWedFri", "MonWed"}
 
-        'Initializes Course Offerings Paramater 2D array
-        CourseOfferings = New Integer(SpecificCourseList.Count - 1, PeriodCount - 1) {}
+        'Initializes AbstractCourse Offerings Paramater 2D array
+        'DiscreteCourseOfferings = New Integer(DiscreteCourseList.Count - 1, PeriodCount - 1) {}
 
-        'Updates values for totals in the CourseList
-        For CourseIndex = 0 To SpecificCourseList.Count - 1
-            SpecificCourseList.ElementAt(CourseIndex).UpdateCourseOfferings(CourseOfferings, CourseIndex)
-        Next
+        'Updates values for totals in the AbstractCourseList
+        'For CourseIndex = 0 To DiscreteCourseList.Count - 1
+        'DiscreteCourseList.ElementAt(CourseIndex).UpdateCourseOfferings(DiscreteCourseOfferings, CourseIndex)
+        'Next
 
     End Sub
 
-    Public Sub PopulateCourseList()
-        For rowNum As Integer = 0 To DataSet.Tables("Distinct").Rows.Count - 1
-            Dim Course As New Course With {
-                    .Department = DataSet.Tables("Distinct").Rows(rowNum)("Department"),
-                    .CourseNumber = DataSet.Tables("Distinct").Rows(rowNum)("CourseNumber")
+    Public Sub PopulateAbstractCourseList()
+        For rowNum As Integer = 0 To DataSet.Tables(abstractionTable).Rows.Count - 1
+            Dim AbstractCourse As New AbstractCourse With {
+                    .Department = DataSet.Tables(abstractionTable).Rows(rowNum)("Department"),
+                    .CourseNumber = DataSet.Tables(abstractionTable).Rows(rowNum)("CourseNumber")
                 }
-            SpecificCourseList = New List(Of SpecificCourse)
 
-            For numOfSpecificCourse = 0 To CalculateNumOfSpecificCourse(Course)
-
-            Next
-            Course.SpecificCourseList = SpecificCourseList
-                CourseList.Add(Course)
-            Next
+            AbstractCourse.DiscreteCourseList = CreateDiscreteCourseList(AbstractCourse)
+            AbstractCourseList.Add(AbstractCourse)
+        Next
     End Sub
 
-    Function CalculateNumOfSpecificCourse(Course As Course)
-        Dim SpecificCourseCount As Integer = 0
-        For Each Row As DataGridViewRow In DataSet.Tables(tableName).Rows
-            'If Course.Department = Row.Cells() Then
-
-            'End If
-
+    Public Function CreateDiscreteCourseList(AbstractCourse As AbstractCourse)
+        Dim DiscreteCourseList As New List(Of DiscreteCourse)
+        Dim DiscreteCourse As DiscreteCourse
+        For rowNum As Integer = 0 To CalculateNumOfDiscreteCourses(AbstractCourse) - 1
+            DiscreteCourse = New DiscreteCourse With {
+                .CRN = DataSet.Tables(discreteTable).Rows(rowNum)("CRN"),
+                .Department = DataSet.Tables(discreteTable).Rows(rowNum)("Department"),
+                .Title = DataSet.Tables(discreteTable).Rows(rowNum)("Title"),
+                .Instructor = DataSet.Tables(discreteTable).Rows(rowNum)("Instructor"),
+                .Days = DataSet.Tables(discreteTable).Rows(rowNum)("Days"),
+                .BeginTime = DataSet.Tables(discreteTable).Rows(rowNum)("Begin"),
+                .EndTime = DataSet.Tables(discreteTable).Rows(rowNum)("End"),
+                .Location = DataSet.Tables(discreteTable).Rows(rowNum)("Location"),
+                .CourseNumber = DataSet.Tables(discreteTable).Rows(rowNum)("CourseNumber")
+            }
+            DiscreteCourse.UpdateStartAndEndIndicies()
+            DiscreteCourseList.Add(DiscreteCourse)
         Next
-        Return 5
+        Return DiscreteCourseList
     End Function
 
-    Public Sub PopulateSpecificCourseList()
-        For rowNum As Integer = 0 To DataSet.Tables(tableName).Rows.Count - 1
-            Dim SpecificCourse As New SpecificCourse With {
-                .CRN = DataSet.Tables(tableName).Rows(rowNum)("CRN"),
-                .Department = DataSet.Tables(tableName).Rows(rowNum)("Department"),
-                .Title = DataSet.Tables(tableName).Rows(rowNum)("Title"),
-                .Instructor = DataSet.Tables(tableName).Rows(rowNum)("Instructor"),
-                .Days = DataSet.Tables(tableName).Rows(rowNum)("Days"),
-                .BeginTime = DataSet.Tables(tableName).Rows(rowNum)("Begin"),
-                .EndTime = DataSet.Tables(tableName).Rows(rowNum)("End"),
-                .Location = DataSet.Tables(tableName).Rows(rowNum)("Location"),
-                .CourseNumber = DataSet.Tables(tableName).Rows(rowNum)("CourseNumber")
-            }
-
-            SpecificCourse.UpdateStartAndEndIndicies()
+    Private Function CalculateNumOfDiscreteCourses(AbstractCourse As AbstractCourse)
+        Dim NumOfDiscreteCourses As Integer = 0
+        For Each Row As DataRow In DataSet.Tables(discreteTable).Rows
+            If AbstractCourse.Department = Row.ItemArray(2) And AbstractCourse.CourseNumber = Row.ItemArray(3) Then
+                NumOfDiscreteCourses = NumOfDiscreteCourses + 1
+            End If
         Next
-    End Sub
+        Return NumOfDiscreteCourses
+    End Function
 
-    Public Sub PopulateDataSet(Department As String, CourseNumber As Integer)
-        ProjSQL = "SELECT * FROM " & tableName & " WHERE Department = "
+
+
+    Public Sub PopulateDiscreteDataSet(Department As String, CourseNumber As Integer)
+        ProjSQL = "SELECT * FROM " & discreteTable & " WHERE Department = "
         Dim FormattedDepartmentAndCourse As String = "'" & Department & "'" & " AND CourseNumber = " & CourseNumber
         ProjSQL = ProjSQL + FormattedDepartmentAndCourse
-        Database.RunSql(ConnectionString, ProjSQL, DataSet, tableName)
+        Database.RunSql(ConnectionString, ProjSQL, DataSet, discreteTable)
     End Sub
 
 
-    Public Sub PopulateDataSet(Department As String)
-        ProjSQL = "SELECT * FROM " & tableName & " WHERE Department = "
+    Public Sub PopulateDiscreteDataSet(Department As String)
+        ProjSQL = "SELECT * FROM " & discreteTable & " WHERE Department = "
         Dim FormattedDepartment As String = "'" & Department & "'"
         ProjSQL = ProjSQL + FormattedDepartment
-        Database.RunSql(ConnectionString, ProjSQL, DataSet, tableName)
+        Database.RunSql(ConnectionString, ProjSQL, DataSet, discreteTable)
     End Sub
 
-    Public Sub PopulateAbstractTableDataSet()
-        ProjSQL = "SELECT * FROM CourseAbstraction"
-        Database.RunSql(ConnectionString, ProjSQL, DataSet, "CourseAbstraction")
+    Public Sub PopulateAbstractTableDataSet(Department As String, CourseNumber As Integer)
+        ProjSQL = "SELECT * FROM CourseAbstraction" & " WHERE Department = "
+        Dim FormattedDepartmentAndCourse As String = "'" & Department & "'" & " AND CourseNumber = " & CourseNumber
+        ProjSQL = ProjSQL + FormattedDepartmentAndCourse
+        Database.RunSql(ConnectionString, ProjSQL, DataSet, abstractionTable)
     End Sub
 
 End Class

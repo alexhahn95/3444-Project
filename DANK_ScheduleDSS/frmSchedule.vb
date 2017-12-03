@@ -18,7 +18,7 @@
     End Sub
 
     Private Sub AddRequestedCourses()
-        Opt.ObjectCreator.PopulateAbstractTableDataSet()
+
 
         Dim Department As String
         Dim CourseNumber As Integer
@@ -34,10 +34,13 @@
 
 
             If Checked Then
-                Opt.ObjectCreator.PopulateDataSet(Department, CourseNumber)
+                Opt.ObjectCreator.PopulateDiscreteDataSet(Department, CourseNumber)
+                Opt.ObjectCreator.PopulateAbstractTableDataSet(Department, CourseNumber)
                 NumberOfCoursesRequested = NumberOfCoursesRequested + 1
             End If
         Next
+
+
 
         Opt.AmountRequestedCourses = NumberOfCoursesRequested
         Opt.BuildModel()

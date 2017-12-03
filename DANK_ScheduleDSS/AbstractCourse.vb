@@ -1,8 +1,8 @@
-﻿Public Class Course
+﻿Public Class AbstractCourse
 
     Public Property Department As String
     Public Property CourseNumber As Integer
-    Public Property SpecificCourseList As New List(Of SpecificCourse)
+    Public Property DiscreteCourseList As New List(Of DiscreteCourse)
 
     Public Sub New()
 

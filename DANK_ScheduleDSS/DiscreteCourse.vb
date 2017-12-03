@@ -1,6 +1,6 @@
 ﻿Imports System.Text.RegularExpressions
 
-Public Class SpecificCourse
+Public Class DiscreteCourse
 
     Public Property CRN As Integer
     Public Property Department As String

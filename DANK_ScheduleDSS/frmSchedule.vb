@@ -11,8 +11,8 @@
     Public Shared Opt As Optimization
 
     Private Sub btnCalculate_Click(sender As Object, e As EventArgs) Handles btnCalculate.Click
-        CreateOptimization()
         SetGoalAmounts()
+        CreateOptimization()
         AddRequestedCourses()
         ShowResultsForm()
     End Sub
@@ -36,12 +36,13 @@
                 NumberOfCoursesRequested = NumberOfCoursesRequested + 1
             End If
         Next
+
+        Opt.AmountRequestedCourses = NumberOfCoursesRequested
         Opt.BuildModel()
     End Sub
 
     Private Sub CreateOptimization()
         Opt = New Optimization With {
-            .AmountRequestedCourses = NumberOfCoursesRequested,
             .GoalAmounts = New Integer() {evening, morning, TR, MW, MWF}
         }
 

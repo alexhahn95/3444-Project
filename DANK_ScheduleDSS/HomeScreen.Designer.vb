@@ -74,7 +74,7 @@ Partial Class frmHomeScreen
         Me.btnViewTeam.Location = New System.Drawing.Point(296, 18)
         Me.btnViewTeam.Margin = New System.Windows.Forms.Padding(2)
         Me.btnViewTeam.Name = "btnViewTeam"
-        Me.btnViewTeam.Size = New System.Drawing.Size(103, 29)
+        Me.btnViewTeam.Size = New System.Drawing.Size(103, 34)
         Me.btnViewTeam.TabIndex = 3
         Me.btnViewTeam.Text = "View"
         Me.btnViewTeam.UseVisualStyleBackColor = True
@@ -85,7 +85,7 @@ Partial Class frmHomeScreen
         Me.btnSetSchedule.Location = New System.Drawing.Point(296, 82)
         Me.btnSetSchedule.Margin = New System.Windows.Forms.Padding(2)
         Me.btnSetSchedule.Name = "btnSetSchedule"
-        Me.btnSetSchedule.Size = New System.Drawing.Size(103, 29)
+        Me.btnSetSchedule.Size = New System.Drawing.Size(103, 36)
         Me.btnSetSchedule.TabIndex = 4
         Me.btnSetSchedule.Text = "View"
         Me.btnSetSchedule.UseVisualStyleBackColor = True
@@ -107,7 +107,7 @@ Partial Class frmHomeScreen
         Me.btnResultsView.Location = New System.Drawing.Point(296, 148)
         Me.btnResultsView.Margin = New System.Windows.Forms.Padding(2)
         Me.btnResultsView.Name = "btnResultsView"
-        Me.btnResultsView.Size = New System.Drawing.Size(103, 29)
+        Me.btnResultsView.Size = New System.Drawing.Size(103, 40)
         Me.btnResultsView.TabIndex = 6
         Me.btnResultsView.Text = "View"
         Me.btnResultsView.UseVisualStyleBackColor = True
@@ -118,7 +118,7 @@ Partial Class frmHomeScreen
         Me.btnInstructions.Location = New System.Drawing.Point(296, 214)
         Me.btnInstructions.Margin = New System.Windows.Forms.Padding(2)
         Me.btnInstructions.Name = "btnInstructions"
-        Me.btnInstructions.Size = New System.Drawing.Size(103, 29)
+        Me.btnInstructions.Size = New System.Drawing.Size(103, 35)
         Me.btnInstructions.TabIndex = 10
         Me.btnInstructions.Text = "View"
         Me.btnInstructions.UseVisualStyleBackColor = True

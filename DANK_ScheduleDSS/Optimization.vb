@@ -37,15 +37,15 @@ Public Class Optimization
         AddDecisionVariables()
         AddOverlapConstraints()
         AddEnrollmentConstraints()
-        'AddDuplicateCourseConstraint()
+        AddDuplicateCourseConstraint()
         AddObjectiveFunction()
 
         Solve() 'And calculate slack/surplus
     End Sub
 
     Private Sub AddDecisionVariables()
-        For Each course As DiscreteCourse In ObjectCreator.ReferenceList
-            DecisionVariableKey = course.CRN
+        For courseIndex As Integer = 0 To ObjectCreator.ReferenceList.Count - 1
+            DecisionVariableKey = ObjectCreator.ReferenceList.ElementAt(courseIndex).CRN
             Solver.AddVariable(DecisionVariableKey, DecisionVariableIndex)
             Solver.SetIntegrality(DecisionVariableIndex, True)
             Solver.SetBounds(DecisionVariableIndex, 0, 1)
@@ -71,9 +71,9 @@ Public Class Optimization
     Private Sub AddEnrollmentConstraints()
         ConstraintKey = "Enrollment Constraint"
         Solver.AddRow(ConstraintKey, ConstraintIndex)
-        For Each course As DiscreteCourse In ObjectCreator.ReferenceList
+        For Each DiscreteCourse As DiscreteCourse In ObjectCreator.ReferenceList
             ConstraintCoefficient = 1
-            DecisionVariableKey = course.CRN
+            DecisionVariableKey = DiscreteCourse.CRN
             DecisionVariableIndex = Solver.GetIndexFromKey(DecisionVariableKey)
             Solver.SetCoefficient(ConstraintIndex, DecisionVariableIndex, ConstraintCoefficient)
         Next
@@ -81,10 +81,16 @@ Public Class Optimization
     End Sub
 
     Private Sub AddDuplicateCourseConstraint()
-        ConstraintKey = "Duplicate Course Constraint"
-        Solver.AddRow(ConstraintKey, ConstraintIndex)
-        For Each course As DiscreteCourse In ObjectCreator.ReferenceList
-            ConstraintCoefficient = 1
+        For Each AbstractCourse As AbstractCourse In ObjectCreator.AbstractCourseList
+            ConstraintKey = "Duplicate Course Constraint: " + AbstractCourse.Department + " " + AbstractCourse.CourseNumber.ToString
+            Solver.AddRow(ConstraintKey, ConstraintIndex)
+            For Each DiscreteCourse As DiscreteCourse In AbstractCourse.DiscreteCourseList
+                ConstraintCoefficient = 1
+                DecisionVariableKey = DiscreteCourse.CRN
+                DecisionVariableIndex = Solver.GetIndexFromKey(DecisionVariableKey)
+                Solver.SetCoefficient(ConstraintIndex, DecisionVariableIndex, ConstraintCoefficient)
+            Next
+            Solver.SetBounds(ConstraintIndex, 0, 1)
         Next
     End Sub
 

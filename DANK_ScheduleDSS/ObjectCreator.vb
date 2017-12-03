@@ -15,9 +15,12 @@
     Public discreteTable As String = "Classes"
     Public abstractionTable As String = "CourseAbstraction"
 
+
+    Private Iteration As Integer = 0
     Public Sub CreateObjects()
 
         PopulateAbstractCourseList()
+
         PopulateReferenceList(AbstractCourseList)
 
         'Creates Sections
@@ -48,7 +51,7 @@
     Public Function CreateDiscreteCourseList(AbstractCourse As AbstractCourse)
         Dim DiscreteCourseList As New List(Of DiscreteCourse)
         Dim DiscreteCourse As DiscreteCourse
-        For rowNum As Integer = 0 To CalculateNumOfDiscreteCourses(AbstractCourse) - 1
+        For rowNum = Iteration To Iteration + CalculateNumOfDiscreteCourses(AbstractCourse) - 1
             DiscreteCourse = New DiscreteCourse With {
                 .CRN = DataSet.Tables(discreteTable).Rows(rowNum)("CRN"),
                 .Department = DataSet.Tables(discreteTable).Rows(rowNum)("Department"),
@@ -62,6 +65,7 @@
             }
             DiscreteCourse.UpdateStartAndEndIndicies()
             DiscreteCourseList.Add(DiscreteCourse)
+            Iteration = Iteration + 1
         Next
         Return DiscreteCourseList
     End Function

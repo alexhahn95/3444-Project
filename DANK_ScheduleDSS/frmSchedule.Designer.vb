@@ -200,7 +200,7 @@ Partial Class frmSchedule
         Me.tabPage.Location = New System.Drawing.Point(8, 39)
         Me.tabPage.Name = "tabPage"
         Me.tabPage.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabPage.Size = New System.Drawing.Size(728, 465)
+        Me.tabPage.Size = New System.Drawing.Size(850, 845)
         Me.tabPage.TabIndex = 0
         Me.tabPage.Text = "Requested Courses"
         Me.tabPage.UseVisualStyleBackColor = True
@@ -211,10 +211,10 @@ Partial Class frmSchedule
         Me.DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DepartmentDataGridViewTextBoxColumn, Me.CourseNumberDataGridViewTextBoxColumn, Me.Selected})
         Me.DataGridView.DataSource = Me.DistinctBindingSource
-        Me.DataGridView.Location = New System.Drawing.Point(32, 33)
+        Me.DataGridView.Location = New System.Drawing.Point(6, 6)
         Me.DataGridView.Name = "DataGridView"
         Me.DataGridView.RowTemplate.Height = 33
-        Me.DataGridView.Size = New System.Drawing.Size(632, 384)
+        Me.DataGridView.Size = New System.Drawing.Size(810, 806)
         Me.DataGridView.TabIndex = 0
         '
         'DepartmentDataGridViewTextBoxColumn
@@ -247,7 +247,7 @@ Partial Class frmSchedule
         Me.TabControl.Location = New System.Drawing.Point(51, 30)
         Me.TabControl.Name = "TabControl"
         Me.TabControl.SelectedIndex = 0
-        Me.TabControl.Size = New System.Drawing.Size(744, 512)
+        Me.TabControl.Size = New System.Drawing.Size(866, 892)
         Me.TabControl.TabIndex = 0
         '
         'ClassesTableAdapter
@@ -262,7 +262,7 @@ Partial Class frmSchedule
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(876, 609)
+        Me.ClientSize = New System.Drawing.Size(1040, 991)
         Me.Controls.Add(Me.TabControl)
         Me.Name = "frmSchedule"
         Me.Text = "Set Schedule"

@@ -58,33 +58,33 @@ Public Class DiscreteCourse
 
     End Sub
 
-    Public Sub UpdateCourseOfferings(ByRef CourseOfferings(,) As Integer, CourseIndex As Integer)
-        UpdateCourseOfferingsDaysOfWeek(CourseOfferings, CourseIndex)
+    Public Sub UpdateCourseOfferings(ByRef DiscreteCourseOfferings(,) As Integer, CourseIndex As Integer)
+        UpdateCourseOfferingsDaysOfWeek(DiscreteCourseOfferings, CourseIndex)
         UpdateCourseTotalsDaysOfWeek()
-        UpdateCourseTotalsTimeOfDay(CourseOfferings, CourseIndex)
+        UpdateCourseTotalsTimeOfDay(DiscreteCourseOfferings, CourseIndex)
     End Sub
 
-    Private Sub UpdateCourseOfferingsDaysOfWeek(ByRef CourseOfferings(,) As Integer, CourseIndex As Integer)
+    Private Sub UpdateCourseOfferingsDaysOfWeek(ByRef DiscreteCourseOfferings(,) As Integer, CourseIndex As Integer)
         Select Case Days
             Case "T R"
-                DaysOfWeekHelper(CourseOfferings, CourseIndex, 1)
-                DaysOfWeekHelper(CourseOfferings, CourseIndex, 3)
+                DaysOfWeekHelper(DiscreteCourseOfferings, CourseIndex, 1)
+                DaysOfWeekHelper(DiscreteCourseOfferings, CourseIndex, 3)
             Case "M W"
-                DaysOfWeekHelper(CourseOfferings, CourseIndex, 0)
-                DaysOfWeekHelper(CourseOfferings, CourseIndex, 2)
+                DaysOfWeekHelper(DiscreteCourseOfferings, CourseIndex, 0)
+                DaysOfWeekHelper(DiscreteCourseOfferings, CourseIndex, 2)
             Case "M W F"
-                DaysOfWeekHelper(CourseOfferings, CourseIndex, 0)
-                DaysOfWeekHelper(CourseOfferings, CourseIndex, 2)
-                DaysOfWeekHelper(CourseOfferings, CourseIndex, 4)
+                DaysOfWeekHelper(DiscreteCourseOfferings, CourseIndex, 0)
+                DaysOfWeekHelper(DiscreteCourseOfferings, CourseIndex, 2)
+                DaysOfWeekHelper(DiscreteCourseOfferings, CourseIndex, 4)
             Case Else
                 Throw New Exception(message:="Invalid Days")
         End Select
     End Sub
 
-    Private Sub DaysOfWeekHelper(ByRef CourseOfferings(,) As Integer, CourseIndex As Integer, Day As Integer)
+    Private Sub DaysOfWeekHelper(ByRef DiscreteCourseOfferings(,) As Integer, CourseIndex As Integer, Day As Integer)
         For i = 0 To 168
             If i >= startIndex And i < endIndex Then
-                CourseOfferings(CourseIndex, i + DayAmtOfIndicies * Day) = 1
+                DiscreteCourseOfferings(CourseIndex, i + DayAmtOfIndicies * Day) = 1
             End If
         Next
     End Sub
@@ -102,55 +102,55 @@ Public Class DiscreteCourse
         End Select
     End Sub
 
-    Private Sub UpdateCourseTotalsTimeOfDay(ByRef CourseOfferings(,) As Integer, CourseIndex As Integer)
+    Private Sub UpdateCourseTotalsTimeOfDay(ByRef DiscreteCourseOfferings(,) As Integer, CourseIndex As Integer)
         'Monday Morning
         For i = 0 To 47
-            Totals(1) = CourseOfferings(CourseIndex, i) + Totals(1)
+            Totals(1) = DiscreteCourseOfferings(CourseIndex, i) + Totals(1)
         Next
 
         'Monday Evening
         For i = 48 To 168
-            Totals(0) = CourseOfferings(CourseIndex, i) + Totals(0)
+            Totals(0) = DiscreteCourseOfferings(CourseIndex, i) + Totals(0)
         Next
 
         'Tuesday Morning
         For i = 169 To 216
-            Totals(1) = CourseOfferings(CourseIndex, i) + Totals(1)
+            Totals(1) = DiscreteCourseOfferings(CourseIndex, i) + Totals(1)
         Next
 
         'Tuesday Evening
         For i = 217 To 337
-            Totals(0) = CourseOfferings(CourseIndex, i) + Totals(0)
+            Totals(0) = DiscreteCourseOfferings(CourseIndex, i) + Totals(0)
         Next
 
         'Wednesday Morning
         For i = 338 To 385
-            Totals(1) = CourseOfferings(CourseIndex, i) + Totals(1)
+            Totals(1) = DiscreteCourseOfferings(CourseIndex, i) + Totals(1)
         Next
 
         'Wednesday Evening
         For i = 386 To 506
-            Totals(0) = CourseOfferings(CourseIndex, i) + Totals(0)
+            Totals(0) = DiscreteCourseOfferings(CourseIndex, i) + Totals(0)
         Next
 
         'Thursday Morning
         For i = 507 To 554
-            Totals(1) = CourseOfferings(CourseIndex, i) + Totals(1)
+            Totals(1) = DiscreteCourseOfferings(CourseIndex, i) + Totals(1)
         Next
 
         'Thursday Evening
         For i = 555 To 675
-            Totals(0) = CourseOfferings(CourseIndex, i) + Totals(0)
+            Totals(0) = DiscreteCourseOfferings(CourseIndex, i) + Totals(0)
         Next
 
         'Friday Morning
         For i = 676 To 723
-            Totals(1) = CourseOfferings(CourseIndex, i) + Totals(1)
+            Totals(1) = DiscreteCourseOfferings(CourseIndex, i) + Totals(1)
         Next
 
         'Friday Evening
         For i = 724 To 844
-            Totals(0) = CourseOfferings(CourseIndex, i) + Totals(0)
+            Totals(0) = DiscreteCourseOfferings(CourseIndex, i) + Totals(0)
         Next
 
     End Sub

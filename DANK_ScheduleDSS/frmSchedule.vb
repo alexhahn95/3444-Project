@@ -19,7 +19,6 @@
 
     Private Sub AddRequestedCourses()
 
-
         Dim Department As String
         Dim CourseNumber As Integer
         Dim Checked As Boolean

@@ -2,6 +2,7 @@
 
     Public Property AbstractCourseList As New List(Of AbstractCourse)
     Public Property WeightList As New List(Of Weight)
+    Public Property ReferenceList As New List(Of DiscreteCourse)
     Public Sections() As String
     Public DiscreteCourseOfferings(,) As Integer
     Public Property PeriodCount As Integer = 845
@@ -17,17 +18,18 @@
     Public Sub CreateObjects()
 
         PopulateAbstractCourseList()
+        PopulateReferenceList(AbstractCourseList)
 
         'Creates Sections
         Sections = New String() {"Evening", "Morning", "TuesThurs", "MonWedFri", "MonWed"}
 
         'Initializes AbstractCourse Offerings Paramater 2D array
-        'DiscreteCourseOfferings = New Integer(DiscreteCourseList.Count - 1, PeriodCount - 1) {}
+        DiscreteCourseOfferings = New Integer(ReferenceList.Count - 1, PeriodCount - 1) {}
 
         'Updates values for totals in the AbstractCourseList
-        'For CourseIndex = 0 To DiscreteCourseList.Count - 1
-        'DiscreteCourseList.ElementAt(CourseIndex).UpdateCourseOfferings(DiscreteCourseOfferings, CourseIndex)
-        'Next
+        For courseindex = 0 To ReferenceList.Count - 1
+            ReferenceList.ElementAt(courseindex).UpdateCourseOfferings(DiscreteCourseOfferings, courseindex)
+        Next
 
     End Sub
 
@@ -73,6 +75,14 @@
         Next
         Return NumOfDiscreteCourses
     End Function
+
+    Public Sub PopulateReferenceList(AbstractList As List(Of AbstractCourse))
+        For Each AbstractCourse As AbstractCourse In AbstractCourseList
+            For Each DiscreteCourse As DiscreteCourse In AbstractCourse.DiscreteCourseList
+                ReferenceList.Add(DiscreteCourse)
+            Next
+        Next
+    End Sub
 
 
 

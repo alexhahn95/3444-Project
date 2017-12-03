@@ -24,7 +24,6 @@ Partial Class frmResults
     Private Sub InitializeComponent()
         Me.txtCourseResults = New System.Windows.Forms.Label()
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
-        Me.cbxResults = New System.Windows.Forms.ComboBox()
         Me.lblObjFunction = New System.Windows.Forms.Label()
         Me.txtObjFunction = New System.Windows.Forms.TextBox()
         Me.lblEvening = New System.Windows.Forms.Label()
@@ -39,6 +38,7 @@ Partial Class frmResults
         Me.txtMW = New System.Windows.Forms.TextBox()
         Me.txtMWF = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.lstResults = New System.Windows.Forms.ListBox()
         Me.SuspendLayout()
         '
         'txtCourseResults
@@ -58,18 +58,10 @@ Partial Class frmResults
         Me.RichTextBox1.TabIndex = 2
         Me.RichTextBox1.Text = ""
         '
-        'cbxResults
-        '
-        Me.cbxResults.FormattingEnabled = True
-        Me.cbxResults.Location = New System.Drawing.Point(123, 144)
-        Me.cbxResults.Name = "cbxResults"
-        Me.cbxResults.Size = New System.Drawing.Size(1015, 33)
-        Me.cbxResults.TabIndex = 0
-        '
         'lblObjFunction
         '
         Me.lblObjFunction.AutoSize = True
-        Me.lblObjFunction.Location = New System.Drawing.Point(307, 437)
+        Me.lblObjFunction.Location = New System.Drawing.Point(301, 481)
         Me.lblObjFunction.Name = "lblObjFunction"
         Me.lblObjFunction.Size = New System.Drawing.Size(258, 25)
         Me.lblObjFunction.TabIndex = 3
@@ -77,7 +69,7 @@ Partial Class frmResults
         '
         'txtObjFunction
         '
-        Me.txtObjFunction.Location = New System.Drawing.Point(691, 434)
+        Me.txtObjFunction.Location = New System.Drawing.Point(707, 475)
         Me.txtObjFunction.Name = "txtObjFunction"
         Me.txtObjFunction.Size = New System.Drawing.Size(236, 31)
         Me.txtObjFunction.TabIndex = 4
@@ -181,11 +173,21 @@ Partial Class frmResults
         Me.Label1.TabIndex = 16
         Me.Label1.Text = "Negative values denote slack and postive values denote surplus"
         '
+        'lstResults
+        '
+        Me.lstResults.FormattingEnabled = True
+        Me.lstResults.ItemHeight = 25
+        Me.lstResults.Location = New System.Drawing.Point(83, 12)
+        Me.lstResults.Name = "lstResults"
+        Me.lstResults.Size = New System.Drawing.Size(1118, 379)
+        Me.lstResults.TabIndex = 17
+        '
         'frmResults
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1286, 1051)
+        Me.Controls.Add(Me.lstResults)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtMWF)
         Me.Controls.Add(Me.txtMW)
@@ -202,7 +204,6 @@ Partial Class frmResults
         Me.Controls.Add(Me.lblObjFunction)
         Me.Controls.Add(Me.RichTextBox1)
         Me.Controls.Add(Me.txtCourseResults)
-        Me.Controls.Add(Me.cbxResults)
         Me.Name = "frmResults"
         Me.Text = "Results"
         Me.ResumeLayout(False)
@@ -211,7 +212,6 @@ Partial Class frmResults
     End Sub
     Friend WithEvents txtCourseResults As Label
     Friend WithEvents RichTextBox1 As RichTextBox
-    Friend WithEvents cbxResults As ComboBox
     Friend WithEvents lblObjFunction As Label
     Friend WithEvents txtObjFunction As TextBox
     Friend WithEvents lblEvening As Label
@@ -226,4 +226,5 @@ Partial Class frmResults
     Friend WithEvents txtMW As TextBox
     Friend WithEvents txtMWF As TextBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents lstResults As ListBox
 End Class

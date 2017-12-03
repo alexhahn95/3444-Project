@@ -2,7 +2,7 @@
     Private Sub frmResults_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         For Each course As DiscreteCourse In frmSchedule.Opt.OptimalCourseList
-            cbxResults.Items.Add(course.ToStringy())
+            lstResults.Items.Add(course.ToStringy())
         Next
 
         txtObjFunction.Text = frmSchedule.Opt.ObjectiveFunctionValue
@@ -14,4 +14,7 @@
         txtMWF.Text = frmSchedule.Opt.SlackSurplus(4)
     End Sub
 
+    Private Sub lstResults_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstResults.SelectedIndexChanged
+
+    End Sub
 End Class

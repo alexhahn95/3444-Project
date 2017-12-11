@@ -45,7 +45,7 @@
         Next
 
         If NumberOfCoursesRequested = 0 Or NumberOfCoursesRequested > 6 Then
-            Throw New Exception
+            MessageBox.Show("Invalid course amount")
         End If
 
         Opt.AmountRequestedCourses = NumberOfCoursesRequested

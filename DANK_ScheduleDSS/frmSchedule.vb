@@ -11,10 +11,15 @@
     Public Shared Opt As Optimization
 
     Private Sub btnCalculate_Click(sender As Object, e As EventArgs) Handles btnCalculate.Click
-        SetGoalAmounts()
-        CreateOptimization()
-        AddRequestedCourses()
-        ShowResultsForm()
+        Try
+            SetGoalAmounts()
+            CreateOptimization()
+            AddRequestedCourses()
+            ShowResultsForm()
+        Catch ex As Exception
+            MessageBox.Show("Goal Amounts must be nonzero,nonnegative integers and you must select from 1 to 6 classes")
+        End Try
+
     End Sub
 
     Private Sub AddRequestedCourses()
@@ -39,7 +44,9 @@
             End If
         Next
 
-
+        If NumberOfCoursesRequested = 0 Or NumberOfCoursesRequested > 6 Then
+            Throw New Exception
+        End If
 
         Opt.AmountRequestedCourses = NumberOfCoursesRequested
         Opt.BuildModel()
@@ -53,11 +60,20 @@
     End Sub
 
     Private Sub SetGoalAmounts()
-        evening = txtEvening.Text
-        morning = txtMorning.Text
-        TR = txtTR.Text
-        MW = txtMW.Text
-        MWF = txtMWF.Text
+        If IsNumeric(txtEvening.Text) And IsNumeric(txtMorning.Text) And IsNumeric(txtTR.Text) And IsNumeric(txtMW.Text) And IsNumeric(txtMWF.Text) Then
+            evening = txtEvening.Text
+            morning = txtMorning.Text
+            TR = txtTR.Text
+            MW = txtMW.Text
+            MWF = txtMWF.Text
+        Else
+            Throw New Exception()
+        End If
+
+        If txtEvening.Text <= 0 Or txtMorning.Text <= 0 Or txtTR.Text <= 0 Or txtMW.Text <= 0 Or txtMWF.Text <= 0 Then
+            Throw New Exception()
+        End If
+
     End Sub
 
     Private Sub ShowResultsForm()
@@ -71,4 +87,7 @@
 
     End Sub
 
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+
+    End Sub
 End Class

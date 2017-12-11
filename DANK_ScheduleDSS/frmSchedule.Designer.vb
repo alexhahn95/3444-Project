@@ -80,21 +80,19 @@ Partial Class frmSchedule
         '
         Me.TabPage1.BackColor = System.Drawing.Color.Gainsboro
         Me.TabPage1.Controls.Add(Me.btnCalculate)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 25)
-        Me.TabPage1.Margin = New System.Windows.Forms.Padding(2)
+        Me.TabPage1.Location = New System.Drawing.Point(8, 39)
         Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(2)
-        Me.TabPage1.Size = New System.Drawing.Size(900, 542)
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.TabPage1.Size = New System.Drawing.Size(1346, 845)
         Me.TabPage1.TabIndex = 2
         Me.TabPage1.Text = "Calculate"
         '
         'btnCalculate
         '
         Me.btnCalculate.Font = New System.Drawing.Font("Arial", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCalculate.Location = New System.Drawing.Point(276, 212)
-        Me.btnCalculate.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnCalculate.Location = New System.Drawing.Point(414, 331)
         Me.btnCalculate.Name = "btnCalculate"
-        Me.btnCalculate.Size = New System.Drawing.Size(349, 118)
+        Me.btnCalculate.Size = New System.Drawing.Size(524, 184)
         Me.btnCalculate.TabIndex = 0
         Me.btnCalculate.Text = "Calculate"
         Me.btnCalculate.UseVisualStyleBackColor = True
@@ -113,78 +111,70 @@ Partial Class frmSchedule
         Me.TabPage2.Controls.Add(Me.Label4)
         Me.TabPage2.Controls.Add(Me.Label3)
         Me.TabPage2.Controls.Add(Me.Label2)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 25)
-        Me.TabPage2.Margin = New System.Windows.Forms.Padding(2)
+        Me.TabPage2.Location = New System.Drawing.Point(8, 39)
         Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(2)
-        Me.TabPage2.Size = New System.Drawing.Size(900, 542)
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.TabPage2.Size = New System.Drawing.Size(1346, 845)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Weekly Goals"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(25, 399)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label1.Font = New System.Drawing.Font("Arial", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(81, 651)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(859, 69)
+        Me.Label1.Size = New System.Drawing.Size(1184, 96)
         Me.Label1.TabIndex = 10
         Me.Label1.Text = resources.GetString("Label1.Text")
         '
         'txtMWF
         '
         Me.txtMWF.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtMWF.Location = New System.Drawing.Point(518, 282)
-        Me.txtMWF.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtMWF.Location = New System.Drawing.Point(777, 441)
         Me.txtMWF.Name = "txtMWF"
-        Me.txtMWF.Size = New System.Drawing.Size(132, 30)
+        Me.txtMWF.Size = New System.Drawing.Size(196, 44)
         Me.txtMWF.TabIndex = 9
         '
         'txtMW
         '
         Me.txtMW.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtMW.Location = New System.Drawing.Point(518, 235)
-        Me.txtMW.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtMW.Location = New System.Drawing.Point(777, 367)
         Me.txtMW.Name = "txtMW"
-        Me.txtMW.Size = New System.Drawing.Size(132, 30)
+        Me.txtMW.Size = New System.Drawing.Size(196, 44)
         Me.txtMW.TabIndex = 8
         '
         'txtTR
         '
         Me.txtTR.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTR.Location = New System.Drawing.Point(518, 188)
-        Me.txtTR.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtTR.Location = New System.Drawing.Point(777, 294)
         Me.txtTR.Name = "txtTR"
-        Me.txtTR.Size = New System.Drawing.Size(132, 30)
+        Me.txtTR.Size = New System.Drawing.Size(196, 44)
         Me.txtTR.TabIndex = 7
         '
         'txtMorning
         '
         Me.txtMorning.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtMorning.Location = New System.Drawing.Point(518, 141)
-        Me.txtMorning.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtMorning.Location = New System.Drawing.Point(777, 220)
         Me.txtMorning.Name = "txtMorning"
-        Me.txtMorning.Size = New System.Drawing.Size(132, 30)
+        Me.txtMorning.Size = New System.Drawing.Size(196, 44)
         Me.txtMorning.TabIndex = 6
         '
         'txtEvening
         '
         Me.txtEvening.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtEvening.Location = New System.Drawing.Point(518, 94)
-        Me.txtEvening.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtEvening.Location = New System.Drawing.Point(777, 147)
         Me.txtEvening.Name = "txtEvening"
-        Me.txtEvening.Size = New System.Drawing.Size(132, 30)
+        Me.txtEvening.Size = New System.Drawing.Size(196, 44)
         Me.txtEvening.TabIndex = 1
         '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(181, 289)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label6.Location = New System.Drawing.Point(272, 452)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(299, 23)
+        Me.Label6.Size = New System.Drawing.Size(471, 36)
         Me.Label6.TabIndex = 5
         Me.Label6.Text = "Monday/Wednesday/Friday Goal"
         '
@@ -192,10 +182,9 @@ Partial Class frmSchedule
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(181, 242)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label5.Location = New System.Drawing.Point(272, 378)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(238, 23)
+        Me.Label5.Size = New System.Drawing.Size(375, 36)
         Me.Label5.TabIndex = 4
         Me.Label5.Text = "Monday/Wednesday Goal"
         '
@@ -203,10 +192,9 @@ Partial Class frmSchedule
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(181, 195)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label4.Location = New System.Drawing.Point(272, 305)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(219, 23)
+        Me.Label4.Size = New System.Drawing.Size(348, 36)
         Me.Label4.TabIndex = 3
         Me.Label4.Text = "Tuesday/Thursday Goal"
         '
@@ -214,10 +202,9 @@ Partial Class frmSchedule
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(181, 148)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label3.Location = New System.Drawing.Point(272, 231)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(207, 23)
+        Me.Label3.Size = New System.Drawing.Size(332, 36)
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "Morning Courses Goal"
         '
@@ -225,21 +212,19 @@ Partial Class frmSchedule
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(181, 101)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label2.Location = New System.Drawing.Point(272, 158)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(205, 23)
+        Me.Label2.Size = New System.Drawing.Size(330, 36)
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "Evening Courses Goal"
         '
         'tabPage
         '
         Me.tabPage.Controls.Add(Me.DataGridView)
-        Me.tabPage.Location = New System.Drawing.Point(4, 25)
-        Me.tabPage.Margin = New System.Windows.Forms.Padding(2)
+        Me.tabPage.Location = New System.Drawing.Point(8, 39)
         Me.tabPage.Name = "tabPage"
-        Me.tabPage.Padding = New System.Windows.Forms.Padding(2)
-        Me.tabPage.Size = New System.Drawing.Size(900, 542)
+        Me.tabPage.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.tabPage.Size = New System.Drawing.Size(1346, 845)
         Me.tabPage.TabIndex = 0
         Me.tabPage.Text = "Requested Courses"
         Me.tabPage.UseVisualStyleBackColor = True
@@ -251,11 +236,10 @@ Partial Class frmSchedule
         Me.DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Selected, Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2})
         Me.DataGridView.DataSource = Me.CourseAbstractionBindingSource
-        Me.DataGridView.Location = New System.Drawing.Point(4, 4)
-        Me.DataGridView.Margin = New System.Windows.Forms.Padding(2)
+        Me.DataGridView.Location = New System.Drawing.Point(6, 6)
         Me.DataGridView.Name = "DataGridView"
         Me.DataGridView.RowTemplate.Height = 33
-        Me.DataGridView.Size = New System.Drawing.Size(913, 552)
+        Me.DataGridView.Size = New System.Drawing.Size(1370, 862)
         Me.DataGridView.TabIndex = 0
         '
         'Selected
@@ -285,11 +269,10 @@ Partial Class frmSchedule
         Me.TabControl.Controls.Add(Me.tabPage)
         Me.TabControl.Controls.Add(Me.TabPage2)
         Me.TabControl.Controls.Add(Me.TabPage1)
-        Me.TabControl.Location = New System.Drawing.Point(21, 11)
-        Me.TabControl.Margin = New System.Windows.Forms.Padding(2)
+        Me.TabControl.Location = New System.Drawing.Point(32, 17)
         Me.TabControl.Name = "TabControl"
         Me.TabControl.SelectedIndex = 0
-        Me.TabControl.Size = New System.Drawing.Size(908, 571)
+        Me.TabControl.Size = New System.Drawing.Size(1362, 892)
         Me.TabControl.TabIndex = 0
         '
         'ClassesTableAdapter
@@ -302,13 +285,12 @@ Partial Class frmSchedule
         '
         'frmSchedule
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(953, 603)
+        Me.ClientSize = New System.Drawing.Size(1430, 942)
         Me.Controls.Add(Me.TabControl)
-        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "frmSchedule"
         Me.Text = "Set Schedule"
         CType(Me.ClassesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

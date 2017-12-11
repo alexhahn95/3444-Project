@@ -4,7 +4,12 @@
     End Sub
 
     Private Sub btnResultsView_Click(sender As Object, e As EventArgs) Handles btnResultsView.Click
-        My.Forms.frmResults.Show()
+        Try
+            My.Forms.frmResults.Show()
+        Catch ex As Exception
+            MessageBox.Show("You must create a schedule first")
+        End Try
+
     End Sub
 
     Private Sub btnSetSchedule_Click(sender As Object, e As EventArgs) Handles btnSetSchedule.Click

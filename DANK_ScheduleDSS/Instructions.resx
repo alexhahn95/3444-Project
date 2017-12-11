@@ -121,7 +121,16 @@
     <value>True</value>
   </metadata>
   <data name="RichTextBox1.Text" xml:space="preserve">
-    <value>
-After a successful login, there are five options. The first option is a list of group memebers with emails and pictures. The second option is to set user preference for desired classes and to calculate an optimal schedule. The third option shows the results of the optimization. The fourth option is a description of the mathmatical model used for the backend of this application. The fifth option is this one which describes what all of the functionality of this applicaiton is.</value>
+    <value>Welcome form:
+The first form displayed is the welcome form. The form prompts the user for a username and password to access the remainder of the application.
+Home form:
+Once the user is logged in a home form is displayed. The form has buttons that open other forms such as, view the team, set a schedule, view results, and instructions. 
+	View the team: The view the team form provides the name, a picture, and email of each member of the project team. 
+	Set the schedule: This form begins with a table grid view that allow the user to select each class he or she would like to be enrolled in. The user must select 1 to 6 classes. After selecting each class, the user can click on the “weekly goals” tab to indicate how much time per week he or she would like to spend in each section. Time is divided into 5 minute intervals, so 3 units would represent 15 minutes of class for the week. Next, the user can click the calculate tab and the proceed to click the calculate button. Once, the button is click the results form appears. 
+	Results form: The results tab on the results form displays the ideal schedule for a user. The second tab on the form, labeled LP information, displays the details of the linear programming model. The user can view the value of the objective function as well as the slack and surplus values for each section. These values are the deviation from the user’s preferences. Slack is negative deviation and surplus is positive deviation. The goal of the optimization is to minimize slack and surplus.
+</value>
   </data>
+  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

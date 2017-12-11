@@ -47,7 +47,7 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>appLogo.ico</ApplicationIcon>
+    <ApplicationIcon>Service References\appLogo.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Itenso.TimePeriod, Version=2.1.1.0, Culture=neutral, PublicKeyToken=8cb6db75b4e81486, processorArchitecture=MSIL">
@@ -216,7 +216,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="appLogo.ico" />
+    <Content Include="Service References\appLogo.ico" />
     <Content Include="Fall2017Classes.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

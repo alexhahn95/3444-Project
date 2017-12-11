@@ -23,9 +23,9 @@ Partial Class frmWelcome
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmWelcome))
         Dim UsernameLabel As System.Windows.Forms.Label
         Dim PasswordLabel As System.Windows.Forms.Label
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmWelcome))
         Me.UsersDataSet = New DANKSolutions_ClassScheduleDSS.UsersDataSet()
         Me.UsersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.UsersTableAdapter = New DANKSolutions_ClassScheduleDSS.UsersDataSetTableAdapters.UsersTableAdapter()
@@ -44,10 +44,10 @@ Partial Class frmWelcome
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.UsersBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
         Me.grpLogin = New System.Windows.Forms.GroupBox()
-        Me.btnLogin = New System.Windows.Forms.Button()
         Me.PasswordTextBox = New System.Windows.Forms.TextBox()
-        Me.UsernameTextBox = New System.Windows.Forms.TextBox()
         Me.lblInstructions = New System.Windows.Forms.Label()
+        Me.btnLogin = New System.Windows.Forms.Button()
+        Me.UsernameTextBox = New System.Windows.Forms.TextBox()
         Me.lblWelcome = New System.Windows.Forms.Label()
         UsernameLabel = New System.Windows.Forms.Label()
         PasswordLabel = New System.Windows.Forms.Label()
@@ -57,6 +57,30 @@ Partial Class frmWelcome
         Me.UsersBindingNavigator.SuspendLayout()
         Me.grpLogin.SuspendLayout()
         Me.SuspendLayout()
+        '
+        'UsernameLabel
+        '
+        UsernameLabel.AutoSize = True
+        UsernameLabel.BackColor = System.Drawing.Color.Transparent
+        UsernameLabel.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        UsernameLabel.Location = New System.Drawing.Point(134, 106)
+        UsernameLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        UsernameLabel.Name = "UsernameLabel"
+        UsernameLabel.Size = New System.Drawing.Size(105, 23)
+        UsernameLabel.TabIndex = 7
+        UsernameLabel.Text = "Username:"
+        '
+        'PasswordLabel
+        '
+        PasswordLabel.AutoSize = True
+        PasswordLabel.BackColor = System.Drawing.Color.Transparent
+        PasswordLabel.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        PasswordLabel.Location = New System.Drawing.Point(135, 142)
+        PasswordLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        PasswordLabel.Name = "PasswordLabel"
+        PasswordLabel.Size = New System.Drawing.Size(104, 23)
+        PasswordLabel.TabIndex = 9
+        PasswordLabel.Text = "Password:"
         '
         'UsersDataSet
         '
@@ -207,59 +231,15 @@ Partial Class frmWelcome
         Me.grpLogin.TabIndex = 11
         Me.grpLogin.TabStop = False
         '
-        'btnLogin
-        '
-        Me.btnLogin.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnLogin.Location = New System.Drawing.Point(232, 203)
-        Me.btnLogin.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnLogin.Name = "btnLogin"
-        Me.btnLogin.Size = New System.Drawing.Size(108, 36)
-        Me.btnLogin.TabIndex = 6
-        Me.btnLogin.Text = "Log In"
-        Me.btnLogin.UseVisualStyleBackColor = True
-        '
         'PasswordTextBox
         '
         Me.PasswordTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsersBindingSource, "Password", True))
         Me.PasswordTextBox.Location = New System.Drawing.Point(249, 142)
-        Me.PasswordTextBox.Margin = New System.Windows.Forms.Padding(2)
+        Me.PasswordTextBox.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.PasswordTextBox.Name = "PasswordTextBox"
         Me.PasswordTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.PasswordTextBox.Size = New System.Drawing.Size(130, 30)
         Me.PasswordTextBox.TabIndex = 10
-        '
-        'UsernameTextBox
-        '
-        Me.UsernameTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsersBindingSource, "Username", True))
-        Me.UsernameTextBox.Location = New System.Drawing.Point(249, 108)
-        Me.UsernameTextBox.Margin = New System.Windows.Forms.Padding(2)
-        Me.UsernameTextBox.Name = "UsernameTextBox"
-        Me.UsernameTextBox.Size = New System.Drawing.Size(130, 30)
-        Me.UsernameTextBox.TabIndex = 8
-        '
-        'UsernameLabel
-        '
-        UsernameLabel.AutoSize = True
-        UsernameLabel.BackColor = System.Drawing.Color.Transparent
-        UsernameLabel.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        UsernameLabel.Location = New System.Drawing.Point(134, 106)
-        UsernameLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        UsernameLabel.Name = "UsernameLabel"
-        UsernameLabel.Size = New System.Drawing.Size(105, 23)
-        UsernameLabel.TabIndex = 7
-        UsernameLabel.Text = "Username:"
-        '
-        'PasswordLabel
-        '
-        PasswordLabel.AutoSize = True
-        PasswordLabel.BackColor = System.Drawing.Color.Transparent
-        PasswordLabel.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        PasswordLabel.Location = New System.Drawing.Point(135, 142)
-        PasswordLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        PasswordLabel.Name = "PasswordLabel"
-        PasswordLabel.Size = New System.Drawing.Size(104, 23)
-        PasswordLabel.TabIndex = 9
-        PasswordLabel.Text = "Password:"
         '
         'lblInstructions
         '
@@ -272,6 +252,26 @@ Partial Class frmWelcome
         Me.lblInstructions.Size = New System.Drawing.Size(488, 23)
         Me.lblInstructions.TabIndex = 1
         Me.lblInstructions.Text = "Please enter your username and password to continue"
+        '
+        'btnLogin
+        '
+        Me.btnLogin.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLogin.Location = New System.Drawing.Point(232, 203)
+        Me.btnLogin.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnLogin.Name = "btnLogin"
+        Me.btnLogin.Size = New System.Drawing.Size(108, 36)
+        Me.btnLogin.TabIndex = 6
+        Me.btnLogin.Text = "Log In"
+        Me.btnLogin.UseVisualStyleBackColor = True
+        '
+        'UsernameTextBox
+        '
+        Me.UsernameTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsersBindingSource, "Username", True))
+        Me.UsernameTextBox.Location = New System.Drawing.Point(249, 108)
+        Me.UsernameTextBox.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.UsernameTextBox.Name = "UsernameTextBox"
+        Me.UsernameTextBox.Size = New System.Drawing.Size(130, 30)
+        Me.UsernameTextBox.TabIndex = 8
         '
         'lblWelcome
         '

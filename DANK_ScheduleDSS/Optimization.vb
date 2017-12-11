@@ -4,7 +4,7 @@ Imports Microsoft.SolverFoundation.Solvers
 
 Public Class Optimization
 
-    Public OptimalCourseList As New List(Of Course)
+    Public OptimalCourseList As New List(Of DiscreteCourse)
 
     Public ObjectCreator As New ObjectCreator
     Public Solver As SimplexSolver
@@ -37,14 +37,15 @@ Public Class Optimization
         AddDecisionVariables()
         AddOverlapConstraints()
         AddEnrollmentConstraints()
+        AddDuplicateCourseConstraint()
         AddObjectiveFunction()
 
         Solve() 'And calculate slack/surplus
     End Sub
 
     Private Sub AddDecisionVariables()
-        For Each course As Course In ObjectCreator.CourseList
-            DecisionVariableKey = course.CRN
+        For courseIndex As Integer = 0 To ObjectCreator.ReferenceList.Count - 1
+            DecisionVariableKey = ObjectCreator.ReferenceList.ElementAt(courseIndex).CRN
             Solver.AddVariable(DecisionVariableKey, DecisionVariableIndex)
             Solver.SetIntegrality(DecisionVariableIndex, True)
             Solver.SetBounds(DecisionVariableIndex, 0, 1)
@@ -56,8 +57,8 @@ Public Class Optimization
             ConstraintKey = "Overlap Constraint: " & period
             Solver.AddRow(ConstraintKey, ConstraintIndex)
             Dim iter As Integer = 0
-            For Each course As Course In ObjectCreator.CourseList
-                ConstraintCoefficient = ObjectCreator.CourseOfferings(iter, period)
+            For Each course As DiscreteCourse In ObjectCreator.ReferenceList
+                ConstraintCoefficient = ObjectCreator.DiscreteCourseOfferings(iter, period)
                 iter = iter + 1
                 DecisionVariableKey = course.CRN
                 DecisionVariableIndex = Solver.GetIndexFromKey(DecisionVariableKey)
@@ -70,20 +71,34 @@ Public Class Optimization
     Private Sub AddEnrollmentConstraints()
         ConstraintKey = "Enrollment Constraint"
         Solver.AddRow(ConstraintKey, ConstraintIndex)
-        For Each course As Course In ObjectCreator.CourseList
+        For Each DiscreteCourse As DiscreteCourse In ObjectCreator.ReferenceList
             ConstraintCoefficient = 1
-            DecisionVariableKey = course.CRN
+            DecisionVariableKey = DiscreteCourse.CRN
             DecisionVariableIndex = Solver.GetIndexFromKey(DecisionVariableKey)
             Solver.SetCoefficient(ConstraintIndex, DecisionVariableIndex, ConstraintCoefficient)
         Next
         Solver.SetBounds(ConstraintIndex, AmountRequestedCourses, AmountRequestedCourses)
     End Sub
 
+    Private Sub AddDuplicateCourseConstraint()
+        For Each AbstractCourse As AbstractCourse In ObjectCreator.AbstractCourseList
+            ConstraintKey = "Duplicate Course Constraint: " + AbstractCourse.Department + " " + AbstractCourse.CourseNumber.ToString
+            Solver.AddRow(ConstraintKey, ConstraintIndex)
+            For Each DiscreteCourse As DiscreteCourse In AbstractCourse.DiscreteCourseList
+                ConstraintCoefficient = 1
+                DecisionVariableKey = DiscreteCourse.CRN
+                DecisionVariableIndex = Solver.GetIndexFromKey(DecisionVariableKey)
+                Solver.SetCoefficient(ConstraintIndex, DecisionVariableIndex, ConstraintCoefficient)
+            Next
+            Solver.SetBounds(ConstraintIndex, 0, 1)
+        Next
+    End Sub
+
     Private Sub AddObjectiveFunction()
         Dim objKey As String = "Objective Function"
         Solver.AddRow(objKey, ObjectiveIndex)
         For section = 0 To ObjectCreator.Sections.Count - 1
-            For Each course As Course In ObjectCreator.CourseList
+            For Each course As DiscreteCourse In ObjectCreator.ReferenceList
                 ConstraintCoefficient = Math.Abs(course.Totals(section) - GoalAmounts(section))
                 DecisionVariableKey = course.CRN
                 DecisionVariableIndex = Solver.GetIndexFromKey(DecisionVariableKey)
@@ -98,18 +113,23 @@ Public Class Optimization
         Dim mySolverParms As New SimplexSolverParams
 
         Solver.Solve(mySolverParms)
-        ObjectiveFunctionValue = Solver.GetValue(ObjectiveIndex).ToString
+        Try
+            ObjectiveFunctionValue = Solver.GetValue(ObjectiveIndex).ToString
+        Catch ex As Exception
+            MessageBox.Show("Indeterminate")
+        End Try
 
-        DecisionVariableValues = New Integer(ObjectCreator.CourseList.Count - 1, 1) {}
 
-        For i = 0 To ObjectCreator.CourseList.Count - 1
+        DecisionVariableValues = New Integer(ObjectCreator.ReferenceList.Count - 1, 1) {}
+
+        For i = 0 To ObjectCreator.ReferenceList.Count - 1
             DecisionVariableValues(i, 0) = Solver.GetKeyFromIndex(i)
             DecisionVariableValues(i, 1) = Solver.GetValue(i).ToDouble
         Next
 
-        For i = 0 To ObjectCreator.CourseList.Count - 1
+        For i = 0 To ObjectCreator.ReferenceList.Count - 1
             If DecisionVariableValues(i, 1) = 1 Then
-                For Each course As Course In ObjectCreator.CourseList
+                For Each course As DiscreteCourse In ObjectCreator.ReferenceList
                     If DecisionVariableValues(i, 0).Equals(course.CRN) Then
                         OptimalCourseList.Add(course)
                         Dim k As Object = 3

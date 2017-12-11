@@ -48,99 +48,120 @@ Partial Class frmTeam
         'lblAlexName
         '
         Me.lblAlexName.AutoSize = True
-        Me.lblAlexName.Location = New System.Drawing.Point(345, 52)
+        Me.lblAlexName.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAlexName.Location = New System.Drawing.Point(284, 33)
+        Me.lblAlexName.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblAlexName.Name = "lblAlexName"
-        Me.lblAlexName.Size = New System.Drawing.Size(166, 25)
+        Me.lblAlexName.Size = New System.Drawing.Size(124, 19)
         Me.lblAlexName.TabIndex = 0
         Me.lblAlexName.Text = "Alexander Hahn"
         '
         'lblCodyName
         '
         Me.lblCodyName.AutoSize = True
-        Me.lblCodyName.Location = New System.Drawing.Point(918, 116)
+        Me.lblCodyName.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCodyName.Location = New System.Drawing.Point(666, 74)
+        Me.lblCodyName.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblCodyName.Name = "lblCodyName"
-        Me.lblCodyName.Size = New System.Drawing.Size(145, 25)
+        Me.lblCodyName.Size = New System.Drawing.Size(111, 19)
         Me.lblCodyName.TabIndex = 1
         Me.lblCodyName.Text = "Cody Dewees"
         '
         'lblDiamondName
         '
         Me.lblDiamondName.AutoSize = True
-        Me.lblDiamondName.Location = New System.Drawing.Point(608, 354)
+        Me.lblDiamondName.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDiamondName.Location = New System.Drawing.Point(459, 227)
+        Me.lblDiamondName.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblDiamondName.Name = "lblDiamondName"
-        Me.lblDiamondName.Size = New System.Drawing.Size(139, 25)
+        Me.lblDiamondName.Size = New System.Drawing.Size(106, 19)
         Me.lblDiamondName.TabIndex = 2
         Me.lblDiamondName.Text = "Diamond Lee"
         '
         'lblKaraName
         '
         Me.lblKaraName.AutoSize = True
-        Me.lblKaraName.Location = New System.Drawing.Point(1052, 546)
+        Me.lblKaraName.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblKaraName.Location = New System.Drawing.Point(712, 350)
+        Me.lblKaraName.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblKaraName.Name = "lblKaraName"
-        Me.lblKaraName.Size = New System.Drawing.Size(119, 25)
+        Me.lblKaraName.Size = New System.Drawing.Size(93, 19)
         Me.lblKaraName.TabIndex = 3
         Me.lblKaraName.Text = "Kara Wong"
         '
         'lblNolanName
         '
         Me.lblNolanName.AutoSize = True
-        Me.lblNolanName.Location = New System.Drawing.Point(295, 742)
+        Me.lblNolanName.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNolanName.Location = New System.Drawing.Point(251, 475)
+        Me.lblNolanName.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblNolanName.Name = "lblNolanName"
-        Me.lblNolanName.Size = New System.Drawing.Size(134, 25)
+        Me.lblNolanName.Size = New System.Drawing.Size(99, 19)
         Me.lblNolanName.TabIndex = 4
         Me.lblNolanName.Text = "Nolan Turley"
         '
         'lblAlexEmail
         '
         Me.lblAlexEmail.AutoSize = True
-        Me.lblAlexEmail.Location = New System.Drawing.Point(361, 81)
+        Me.lblAlexEmail.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAlexEmail.Location = New System.Drawing.Point(295, 52)
+        Me.lblAlexEmail.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblAlexEmail.Name = "lblAlexEmail"
-        Me.lblAlexEmail.Size = New System.Drawing.Size(180, 25)
+        Me.lblAlexEmail.Size = New System.Drawing.Size(133, 19)
         Me.lblAlexEmail.TabIndex = 5
         Me.lblAlexEmail.Text = "alexhahn@vt.edu"
         '
         'lblCodyEmail
         '
         Me.lblCodyEmail.AutoSize = True
-        Me.lblCodyEmail.Location = New System.Drawing.Point(939, 145)
+        Me.lblCodyEmail.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCodyEmail.Location = New System.Drawing.Point(680, 93)
+        Me.lblCodyEmail.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblCodyEmail.Name = "lblCodyEmail"
-        Me.lblCodyEmail.Size = New System.Drawing.Size(165, 25)
+        Me.lblCodyEmail.Size = New System.Drawing.Size(125, 19)
         Me.lblCodyEmail.TabIndex = 6
         Me.lblCodyEmail.Text = "codywd@vt.edu"
         '
         'lblDiamondEmail
         '
         Me.lblDiamondEmail.AutoSize = True
-        Me.lblDiamondEmail.Location = New System.Drawing.Point(634, 383)
+        Me.lblDiamondEmail.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDiamondEmail.Location = New System.Drawing.Point(477, 245)
+        Me.lblDiamondEmail.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblDiamondEmail.Name = "lblDiamondEmail"
-        Me.lblDiamondEmail.Size = New System.Drawing.Size(189, 25)
+        Me.lblDiamondEmail.Size = New System.Drawing.Size(143, 19)
         Me.lblDiamondEmail.TabIndex = 7
         Me.lblDiamondEmail.Text = "Diamond7@vt.edu"
         '
         'lblKaraEmail
         '
         Me.lblKaraEmail.AutoSize = True
-        Me.lblKaraEmail.Location = New System.Drawing.Point(1073, 582)
+        Me.lblKaraEmail.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblKaraEmail.Location = New System.Drawing.Point(731, 369)
+        Me.lblKaraEmail.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblKaraEmail.Name = "lblKaraEmail"
-        Me.lblKaraEmail.Size = New System.Drawing.Size(185, 25)
+        Me.lblKaraEmail.Size = New System.Drawing.Size(139, 19)
         Me.lblKaraEmail.TabIndex = 8
         Me.lblKaraEmail.Text = "karawong@vt.edu"
         '
         'lblNolanEmail
         '
         Me.lblNolanEmail.AutoSize = True
-        Me.lblNolanEmail.Location = New System.Drawing.Point(316, 771)
+        Me.lblNolanEmail.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNolanEmail.Location = New System.Drawing.Point(265, 493)
+        Me.lblNolanEmail.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblNolanEmail.Name = "lblNolanEmail"
-        Me.lblNolanEmail.Size = New System.Drawing.Size(151, 25)
+        Me.lblNolanEmail.Size = New System.Drawing.Size(112, 19)
         Me.lblNolanEmail.TabIndex = 9
         Me.lblNolanEmail.Text = "nolant@vt.edu"
         '
         'picAlex
         '
         Me.picAlex.Image = CType(resources.GetObject("picAlex.Image"), System.Drawing.Image)
-        Me.picAlex.Location = New System.Drawing.Point(12, 12)
+        Me.picAlex.Location = New System.Drawing.Point(62, 11)
+        Me.picAlex.Margin = New System.Windows.Forms.Padding(2)
         Me.picAlex.Name = "picAlex"
-        Me.picAlex.Size = New System.Drawing.Size(327, 314)
+        Me.picAlex.Size = New System.Drawing.Size(218, 201)
         Me.picAlex.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.picAlex.TabIndex = 10
         Me.picAlex.TabStop = False
@@ -148,9 +169,10 @@ Partial Class frmTeam
         'picCody
         '
         Me.picCody.Image = CType(resources.GetObject("picCody.Image"), System.Drawing.Image)
-        Me.picCody.Location = New System.Drawing.Point(660, 81)
+        Me.picCody.Location = New System.Drawing.Point(494, 52)
+        Me.picCody.Margin = New System.Windows.Forms.Padding(2)
         Me.picCody.Name = "picCody"
-        Me.picCody.Size = New System.Drawing.Size(241, 225)
+        Me.picCody.Size = New System.Drawing.Size(161, 144)
         Me.picCody.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.picCody.TabIndex = 11
         Me.picCody.TabStop = False
@@ -158,9 +180,10 @@ Partial Class frmTeam
         'picDiamond
         '
         Me.picDiamond.Image = CType(resources.GetObject("picDiamond.Image"), System.Drawing.Image)
-        Me.picDiamond.Location = New System.Drawing.Point(310, 341)
+        Me.picDiamond.Location = New System.Drawing.Point(261, 218)
+        Me.picDiamond.Margin = New System.Windows.Forms.Padding(2)
         Me.picDiamond.Name = "picDiamond"
-        Me.picDiamond.Size = New System.Drawing.Size(284, 266)
+        Me.picDiamond.Size = New System.Drawing.Size(189, 170)
         Me.picDiamond.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.picDiamond.TabIndex = 12
         Me.picDiamond.TabStop = False
@@ -168,9 +191,10 @@ Partial Class frmTeam
         'picKara
         '
         Me.picKara.Image = CType(resources.GetObject("picKara.Image"), System.Drawing.Image)
-        Me.picKara.Location = New System.Drawing.Point(723, 523)
+        Me.picKara.Location = New System.Drawing.Point(494, 369)
+        Me.picKara.Margin = New System.Windows.Forms.Padding(2)
         Me.picKara.Name = "picKara"
-        Me.picKara.Size = New System.Drawing.Size(324, 274)
+        Me.picKara.Size = New System.Drawing.Size(216, 175)
         Me.picKara.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.picKara.TabIndex = 13
         Me.picKara.TabStop = False
@@ -178,18 +202,21 @@ Partial Class frmTeam
         'picNolan
         '
         Me.picNolan.Image = CType(resources.GetObject("picNolan.Image"), System.Drawing.Image)
-        Me.picNolan.Location = New System.Drawing.Point(24, 556)
+        Me.picNolan.Location = New System.Drawing.Point(70, 356)
+        Me.picNolan.Margin = New System.Windows.Forms.Padding(2)
         Me.picNolan.Name = "picNolan"
-        Me.picNolan.Size = New System.Drawing.Size(265, 338)
+        Me.picNolan.Size = New System.Drawing.Size(177, 216)
         Me.picNolan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.picNolan.TabIndex = 14
         Me.picNolan.TabStop = False
         '
         'frmTeam
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1270, 929)
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ClientSize = New System.Drawing.Size(953, 603)
         Me.Controls.Add(Me.picNolan)
         Me.Controls.Add(Me.picKara)
         Me.Controls.Add(Me.picDiamond)
@@ -205,6 +232,7 @@ Partial Class frmTeam
         Me.Controls.Add(Me.lblDiamondName)
         Me.Controls.Add(Me.lblCodyName)
         Me.Controls.Add(Me.lblAlexName)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "frmTeam"
         Me.Text = "The Team"
         CType(Me.picAlex, System.ComponentModel.ISupportInitialize).EndInit()

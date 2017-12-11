@@ -22,6 +22,7 @@ Partial Class frmHomeScreen
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmHomeScreen))
         Me.lblTeam = New System.Windows.Forms.Label()
         Me.lblSchedule = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -29,52 +30,62 @@ Partial Class frmHomeScreen
         Me.btnSetSchedule = New System.Windows.Forms.Button()
         Me.lblResults = New System.Windows.Forms.Label()
         Me.btnResultsView = New System.Windows.Forms.Button()
-        Me.btnModel = New System.Windows.Forms.Button()
-        Me.lblModel = New System.Windows.Forms.Label()
         Me.btnInstructions = New System.Windows.Forms.Button()
         Me.lblInstructions = New System.Windows.Forms.Label()
+        Me.grpHome = New System.Windows.Forms.GroupBox()
+        Me.grpHome.SuspendLayout()
         Me.SuspendLayout()
         '
         'lblTeam
         '
         Me.lblTeam.AutoSize = True
-        Me.lblTeam.Location = New System.Drawing.Point(63, 92)
+        Me.lblTeam.Font = New System.Drawing.Font("Arial", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTeam.Location = New System.Drawing.Point(17, 18)
+        Me.lblTeam.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblTeam.Name = "lblTeam"
-        Me.lblTeam.Size = New System.Drawing.Size(154, 25)
+        Me.lblTeam.Size = New System.Drawing.Size(167, 27)
         Me.lblTeam.TabIndex = 0
         Me.lblTeam.Text = "View the Team"
         '
         'lblSchedule
         '
         Me.lblSchedule.AutoSize = True
-        Me.lblSchedule.Location = New System.Drawing.Point(63, 177)
+        Me.lblSchedule.Font = New System.Drawing.Font("Arial", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSchedule.Location = New System.Drawing.Point(17, 84)
+        Me.lblSchedule.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblSchedule.Name = "lblSchedule"
-        Me.lblSchedule.Size = New System.Drawing.Size(192, 25)
+        Me.lblSchedule.Size = New System.Drawing.Size(213, 27)
         Me.lblSchedule.TabIndex = 1
         Me.lblSchedule.Text = "Set Your Schedule"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(63, 316)
+        Me.Label3.Font = New System.Drawing.Font("Arial", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(17, 161)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(0, 25)
+        Me.Label3.Size = New System.Drawing.Size(0, 27)
         Me.Label3.TabIndex = 2
         '
         'btnViewTeam
         '
-        Me.btnViewTeam.Location = New System.Drawing.Point(413, 92)
+        Me.btnViewTeam.Font = New System.Drawing.Font("Arial", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnViewTeam.Location = New System.Drawing.Point(296, 18)
+        Me.btnViewTeam.Margin = New System.Windows.Forms.Padding(2)
         Me.btnViewTeam.Name = "btnViewTeam"
-        Me.btnViewTeam.Size = New System.Drawing.Size(95, 45)
+        Me.btnViewTeam.Size = New System.Drawing.Size(103, 34)
         Me.btnViewTeam.TabIndex = 3
         Me.btnViewTeam.Text = "View"
         Me.btnViewTeam.UseVisualStyleBackColor = True
         '
         'btnSetSchedule
         '
-        Me.btnSetSchedule.Location = New System.Drawing.Point(413, 177)
+        Me.btnSetSchedule.Font = New System.Drawing.Font("Arial", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSetSchedule.Location = New System.Drawing.Point(296, 82)
+        Me.btnSetSchedule.Margin = New System.Windows.Forms.Padding(2)
         Me.btnSetSchedule.Name = "btnSetSchedule"
-        Me.btnSetSchedule.Size = New System.Drawing.Size(95, 45)
+        Me.btnSetSchedule.Size = New System.Drawing.Size(103, 36)
         Me.btnSetSchedule.TabIndex = 4
         Me.btnSetSchedule.Text = "View"
         Me.btnSetSchedule.UseVisualStyleBackColor = True
@@ -82,44 +93,32 @@ Partial Class frmHomeScreen
         'lblResults
         '
         Me.lblResults.AutoSize = True
-        Me.lblResults.Location = New System.Drawing.Point(63, 262)
+        Me.lblResults.Font = New System.Drawing.Font("Arial", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblResults.Location = New System.Drawing.Point(17, 150)
+        Me.lblResults.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblResults.Name = "lblResults"
-        Me.lblResults.Size = New System.Drawing.Size(136, 25)
+        Me.lblResults.Size = New System.Drawing.Size(150, 27)
         Me.lblResults.TabIndex = 5
         Me.lblResults.Text = "View Results"
         '
         'btnResultsView
         '
-        Me.btnResultsView.Location = New System.Drawing.Point(413, 262)
+        Me.btnResultsView.Font = New System.Drawing.Font("Arial", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnResultsView.Location = New System.Drawing.Point(296, 148)
+        Me.btnResultsView.Margin = New System.Windows.Forms.Padding(2)
         Me.btnResultsView.Name = "btnResultsView"
-        Me.btnResultsView.Size = New System.Drawing.Size(95, 45)
+        Me.btnResultsView.Size = New System.Drawing.Size(103, 40)
         Me.btnResultsView.TabIndex = 6
         Me.btnResultsView.Text = "View"
         Me.btnResultsView.UseVisualStyleBackColor = True
         '
-        'btnModel
-        '
-        Me.btnModel.Location = New System.Drawing.Point(413, 341)
-        Me.btnModel.Name = "btnModel"
-        Me.btnModel.Size = New System.Drawing.Size(95, 45)
-        Me.btnModel.TabIndex = 8
-        Me.btnModel.Text = "View"
-        Me.btnModel.UseVisualStyleBackColor = True
-        '
-        'lblModel
-        '
-        Me.lblModel.AutoSize = True
-        Me.lblModel.Location = New System.Drawing.Point(63, 341)
-        Me.lblModel.Name = "lblModel"
-        Me.lblModel.Size = New System.Drawing.Size(245, 25)
-        Me.lblModel.TabIndex = 7
-        Me.lblModel.Text = "View Mathmatical Model"
-        '
         'btnInstructions
         '
-        Me.btnInstructions.Location = New System.Drawing.Point(413, 407)
+        Me.btnInstructions.Font = New System.Drawing.Font("Arial", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnInstructions.Location = New System.Drawing.Point(296, 214)
+        Me.btnInstructions.Margin = New System.Windows.Forms.Padding(2)
         Me.btnInstructions.Name = "btnInstructions"
-        Me.btnInstructions.Size = New System.Drawing.Size(95, 45)
+        Me.btnInstructions.Size = New System.Drawing.Size(103, 35)
         Me.btnInstructions.TabIndex = 10
         Me.btnInstructions.Text = "View"
         Me.btnInstructions.UseVisualStyleBackColor = True
@@ -127,32 +126,46 @@ Partial Class frmHomeScreen
         'lblInstructions
         '
         Me.lblInstructions.AutoSize = True
-        Me.lblInstructions.Location = New System.Drawing.Point(63, 407)
+        Me.lblInstructions.Font = New System.Drawing.Font("Arial", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblInstructions.Location = New System.Drawing.Point(17, 216)
+        Me.lblInstructions.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblInstructions.Name = "lblInstructions"
-        Me.lblInstructions.Size = New System.Drawing.Size(122, 25)
+        Me.lblInstructions.Size = New System.Drawing.Size(136, 27)
         Me.lblInstructions.TabIndex = 9
         Me.lblInstructions.Text = "Instructions"
         '
+        'grpHome
+        '
+        Me.grpHome.BackColor = System.Drawing.Color.Gainsboro
+        Me.grpHome.Controls.Add(Me.lblTeam)
+        Me.grpHome.Controls.Add(Me.btnInstructions)
+        Me.grpHome.Controls.Add(Me.lblSchedule)
+        Me.grpHome.Controls.Add(Me.lblInstructions)
+        Me.grpHome.Controls.Add(Me.Label3)
+        Me.grpHome.Controls.Add(Me.btnViewTeam)
+        Me.grpHome.Controls.Add(Me.btnSetSchedule)
+        Me.grpHome.Controls.Add(Me.btnResultsView)
+        Me.grpHome.Controls.Add(Me.lblResults)
+        Me.grpHome.Location = New System.Drawing.Point(244, 155)
+        Me.grpHome.Name = "grpHome"
+        Me.grpHome.Size = New System.Drawing.Size(454, 272)
+        Me.grpHome.TabIndex = 11
+        Me.grpHome.TabStop = False
+        '
         'frmHomeScreen
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(742, 571)
-        Me.Controls.Add(Me.btnInstructions)
-        Me.Controls.Add(Me.lblInstructions)
-        Me.Controls.Add(Me.btnModel)
-        Me.Controls.Add(Me.lblModel)
-        Me.Controls.Add(Me.btnResultsView)
-        Me.Controls.Add(Me.lblResults)
-        Me.Controls.Add(Me.btnSetSchedule)
-        Me.Controls.Add(Me.btnViewTeam)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.lblSchedule)
-        Me.Controls.Add(Me.lblTeam)
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.ClientSize = New System.Drawing.Size(953, 603)
+        Me.Controls.Add(Me.grpHome)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "frmHomeScreen"
         Me.Text = "Home"
+        Me.grpHome.ResumeLayout(False)
+        Me.grpHome.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -163,8 +176,7 @@ Partial Class frmHomeScreen
     Friend WithEvents btnSetSchedule As Button
     Friend WithEvents lblResults As Label
     Friend WithEvents btnResultsView As Button
-    Friend WithEvents btnModel As Button
-    Friend WithEvents lblModel As Label
     Friend WithEvents btnInstructions As Button
     Friend WithEvents lblInstructions As Label
+    Friend WithEvents grpHome As GroupBox
 End Class

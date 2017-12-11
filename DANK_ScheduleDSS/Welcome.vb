@@ -17,44 +17,4 @@ Public Class frmWelcome
         Me.TableAdapterManager.UpdateAll(Me.UsersDataSet)
 
     End Sub
-
-    Private Sub frmWelcome_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
-
-    Private Sub PasswordTextBox_TextChanged(sender As Object, e As EventArgs) Handles PasswordTextBox.TextChanged
-
-    End Sub
-
-    Private Sub lblWelcome_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub UsernameTextBox_TextChanged(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub UsernameLabel_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub PasswordLabel_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub lblInstructions_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub GroupBox1_Enter_1(sender As Object, e As EventArgs) Handles grpLogin.Enter
-
-    End Sub
-
-    Private Sub lblWelcome_Click_1(sender As Object, e As EventArgs) Handles lblWelcome.Click
-
-    End Sub
 End Class

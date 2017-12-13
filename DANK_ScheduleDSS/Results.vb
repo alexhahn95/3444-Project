@@ -1,4 +1,6 @@
 ﻿Public Class frmResults
+
+    'Outputs the data
     Private Sub frmResults_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             For Each course As DiscreteCourse In frmSchedule.Opt.OptimalCourseList
@@ -18,15 +20,4 @@
         End Try
     End Sub
 
-    Private Sub lstResults_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstResults.SelectedIndexChanged
-
-    End Sub
-
-    Private Sub lblMW_Click(sender As Object, e As EventArgs) Handles lblMW.Click
-
-    End Sub
-
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
-
-    End Sub
 End Class

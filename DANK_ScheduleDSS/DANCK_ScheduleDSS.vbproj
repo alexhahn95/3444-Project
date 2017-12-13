@@ -122,7 +122,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UsersDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Weight.vb" />
     <Compile Include="Welcome.vb">
       <SubType>Form</SubType>
     </Compile>

@@ -2,16 +2,21 @@
 Imports Microsoft.SolverFoundation.Services
 Imports Microsoft.SolverFoundation.Solvers
 
+'Used to find the ideal schedule
 Public Class Optimization
 
+    'The optimal course list
     Public OptimalCourseList As New List(Of DiscreteCourse)
 
+    'Solver fields
     Public ObjectCreator As New ObjectCreator
     Public Solver As SimplexSolver
 
+    'Output data from solver
     Public ObjectiveFunctionValue As Integer
     Public DecisionVariableValues(,) As Integer
 
+    'Variables used for solver
     Private DecisionVariableKey As String
     Private DecisionVariableIndex As Integer
 
@@ -29,6 +34,7 @@ Public Class Optimization
     'These need to change to be set by the user and maybe change locations
     Public Property AmountRequestedCourses As Integer
 
+    'Creates the optimization
     Public Sub BuildModel()
         Solver = New SimplexSolver
 
@@ -43,6 +49,7 @@ Public Class Optimization
         Solve() 'And calculate slack/surplus
     End Sub
 
+    'Adds decision variables
     Private Sub AddDecisionVariables()
         For courseIndex As Integer = 0 To ObjectCreator.ReferenceList.Count - 1
             DecisionVariableKey = ObjectCreator.ReferenceList.ElementAt(courseIndex).CRN
@@ -52,6 +59,7 @@ Public Class Optimization
         Next
     End Sub
 
+    'Adds overlap constraints
     Private Sub AddOverlapConstraints()
         For period = 0 To ObjectCreator.PeriodCount - 1
             ConstraintKey = "Overlap Constraint: " & period
@@ -68,6 +76,7 @@ Public Class Optimization
         Next
     End Sub
 
+    'Adds enrollment constraints
     Private Sub AddEnrollmentConstraints()
         ConstraintKey = "Enrollment Constraint"
         Solver.AddRow(ConstraintKey, ConstraintIndex)
@@ -80,6 +89,7 @@ Public Class Optimization
         Solver.SetBounds(ConstraintIndex, AmountRequestedCourses, AmountRequestedCourses)
     End Sub
 
+    'Adds duplicate course constraint
     Private Sub AddDuplicateCourseConstraint()
         For Each AbstractCourse As AbstractCourse In ObjectCreator.AbstractCourseList
             ConstraintKey = "Duplicate Course Constraint: " + AbstractCourse.Department + " " + AbstractCourse.CourseNumber.ToString
@@ -94,6 +104,7 @@ Public Class Optimization
         Next
     End Sub
 
+    'Adds objective function
     Private Sub AddObjectiveFunction()
         Dim objKey As String = "Objective Function"
         Solver.AddRow(objKey, ObjectiveIndex)
@@ -107,12 +118,14 @@ Public Class Optimization
         Next
     End Sub
 
+    'Solves
     Private Sub Solve()
         Solver.AddGoal(ObjectiveIndex, 0, True)
 
         Dim mySolverParms As New SimplexSolverParams
 
         Solver.Solve(mySolverParms)
+
         Try
             ObjectiveFunctionValue = Solver.GetValue(ObjectiveIndex).ToString
         Catch ex As Exception
@@ -145,4 +158,5 @@ Public Class Optimization
             SlackSurplus(i) = SectionPerformance(i) - GoalAmounts(i)
         Next
     End Sub
+
 End Class

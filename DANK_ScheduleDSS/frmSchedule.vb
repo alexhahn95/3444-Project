@@ -1,15 +1,19 @@
 ﻿Public Class frmSchedule
 
+    'Fields for different sections
     Private evening As Integer
     Private morning As Integer
     Private TR As Integer
     Private MW As Integer
     Private MWF As Integer
 
+    'Number of courses the student wishes to take
     Private NumberOfCoursesRequested As Integer
 
+    'Optimization object
     Public Shared Opt As Optimization
 
+    'Tries to create an optimal schedule. Shows a messagebox if input is invalid.
     Private Sub btnCalculate_Click(sender As Object, e As EventArgs) Handles btnCalculate.Click
         Try
             SetGoalAmounts()
@@ -22,6 +26,15 @@
 
     End Sub
 
+    'Creates the Optimization
+    Private Sub CreateOptimization()
+        Opt = New Optimization With {
+            .GoalAmounts = New Integer() {evening, morning, TR, MW, MWF}
+        }
+
+    End Sub
+
+    'Adds the requested courses to the dataset
     Private Sub AddRequestedCourses()
 
         Dim Department As String
@@ -35,7 +48,6 @@
             Checked = row.Cells(0).Value
             Department = row.Cells(1).Value
             CourseNumber = row.Cells(2).Value
-
 
             If Checked Then
                 Opt.ObjectCreator.PopulateDiscreteDataSet(Department, CourseNumber)
@@ -52,13 +64,7 @@
         Opt.BuildModel()
     End Sub
 
-    Private Sub CreateOptimization()
-        Opt = New Optimization With {
-            .GoalAmounts = New Integer() {evening, morning, TR, MW, MWF}
-        }
-
-    End Sub
-
+    'Sets goal amounts from the UI
     Private Sub SetGoalAmounts()
         If IsNumeric(txtEvening.Text) And IsNumeric(txtMorning.Text) And IsNumeric(txtTR.Text) And IsNumeric(txtMW.Text) And IsNumeric(txtMWF.Text) Then
             evening = txtEvening.Text
@@ -76,18 +82,16 @@
 
     End Sub
 
+    'Shows results form
     Private Sub ShowResultsForm()
         My.Forms.frmResults.Show()
         Me.Close()
     End Sub
 
+    'Load form event handler
     Private Sub frmSchedule_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'Fall2017ClassesDataSet.CourseAbstraction' table. You can move, or remove it, as needed.
         Me.CourseAbstractionTableAdapter.Fill(Me.Fall2017ClassesDataSet.CourseAbstraction)
-
     End Sub
 
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
-
-    End Sub
 End Class

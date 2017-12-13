@@ -1,26 +1,29 @@
 ﻿Public Class ObjectCreator
 
+    'List fields
     Public Property AbstractCourseList As New List(Of AbstractCourse)
-    Public Property WeightList As New List(Of Weight)
     Public Property ReferenceList As New List(Of DiscreteCourse)
-    Public Sections() As String
-    Public DiscreteCourseOfferings(,) As Integer
-    Public Property PeriodCount As Integer = 845
+
+    Public Sections() As String                   'Different sections for a course
+    Public DiscreteCourseOfferings(,) As Integer  'Paramaters in a 2D array
+    Public Property PeriodCount As Integer = 845  'Number of periods in a week
 
     Public Database As New Database
     Public ConnectionString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\Fall2017Classes.accdb"
     Public ProjSQL As String
     Public DataSet As New DataSet
 
+    'Strings for SQL queries
     Public discreteTable As String = "Classes"
     Public abstractionTable As String = "CourseAbstraction"
 
+    Private Iteration As Integer = 0 'Used for for loop
 
-    Private Iteration As Integer = 0
+    'Creates objects
     Public Sub CreateObjects()
 
+        'Populates lists
         PopulateAbstractCourseList()
-
         PopulateReferenceList(AbstractCourseList)
 
         'Creates Sections
@@ -36,6 +39,7 @@
 
     End Sub
 
+    'Populates abstract course list
     Public Sub PopulateAbstractCourseList()
         For rowNum As Integer = 0 To DataSet.Tables(abstractionTable).Rows.Count - 1
             Dim AbstractCourse As New AbstractCourse With {
@@ -48,6 +52,7 @@
         Next
     End Sub
 
+    'Populates discrete course list
     Public Function CreateDiscreteCourseList(AbstractCourse As AbstractCourse)
         Dim DiscreteCourseList As New List(Of DiscreteCourse)
         Dim DiscreteCourse As DiscreteCourse
@@ -70,6 +75,7 @@
         Return DiscreteCourseList
     End Function
 
+    'Calculates the number of discrete courses
     Private Function CalculateNumOfDiscreteCourses(AbstractCourse As AbstractCourse)
         Dim NumOfDiscreteCourses As Integer = 0
         For Each Row As DataRow In DataSet.Tables(discreteTable).Rows
@@ -80,6 +86,7 @@
         Return NumOfDiscreteCourses
     End Function
 
+    'Populates the reference list
     Public Sub PopulateReferenceList(AbstractList As List(Of AbstractCourse))
         For Each AbstractCourse As AbstractCourse In AbstractCourseList
             For Each DiscreteCourse As DiscreteCourse In AbstractCourse.DiscreteCourseList
@@ -88,8 +95,7 @@
         Next
     End Sub
 
-
-
+    'Populates the dataset with discrete courses
     Public Sub PopulateDiscreteDataSet(Department As String, CourseNumber As Integer)
         ProjSQL = "SELECT * FROM " & discreteTable & " WHERE Department = "
         Dim FormattedDepartmentAndCourse As String = "'" & Department & "'" & " AND CourseNumber = " & CourseNumber
@@ -97,7 +103,7 @@
         Database.RunSql(ConnectionString, ProjSQL, DataSet, discreteTable)
     End Sub
 
-
+    'Populates the dataset with discrete courses (entire department)
     Public Sub PopulateDiscreteDataSet(Department As String)
         ProjSQL = "SELECT * FROM " & discreteTable & " WHERE Department = "
         Dim FormattedDepartment As String = "'" & Department & "'"
@@ -105,6 +111,7 @@
         Database.RunSql(ConnectionString, ProjSQL, DataSet, discreteTable)
     End Sub
 
+    'Populates the dataset with abstract courses
     Public Sub PopulateAbstractTableDataSet(Department As String, CourseNumber As Integer)
         ProjSQL = "SELECT * FROM CourseAbstraction" & " WHERE Department = "
         Dim FormattedDepartmentAndCourse As String = "'" & Department & "'" & " AND CourseNumber = " & CourseNumber
